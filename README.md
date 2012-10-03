@@ -13,7 +13,7 @@ Install dependencies
 Running it
 ----------
 
-    rackup
+    rackup   # or passenger, or thin, or unicorn, or whatever
 
 Development
 -----------

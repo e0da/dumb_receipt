@@ -27,11 +27,11 @@ Queries
 
 ### sync.json
 
-Fetching <http://localhost:9393/sync.json> will give you sample `sync` data.
+Fetching [/sync.json](/sync.json) will give you sample `sync` data.
 
 License
 -------
-<http://www.opensource.org/licenses/MIT>
+Licensed under the [MIT License](http://www.opensource.org/licenses/MIT).
 
 Copyright
 ---------

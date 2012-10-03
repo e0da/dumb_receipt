@@ -1,7 +1,10 @@
 $sr_red: #a61623
 
-html, body
+html
   background: $sr_red
+
+body
+  background: transparent
 
 #page
   max-width: 640px
@@ -13,3 +16,12 @@ html, body
 
 .sr_red
   color: $sr_red
+
+#shadow
+  position: fixed
+  height: 100%
+  width: 100%
+  bottom: 0
+  right: 0
+  z-index: -1
+  box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.6)

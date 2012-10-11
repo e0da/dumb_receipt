@@ -13,20 +13,21 @@ module DumbReceipt
     # working with rackup, so here it is explicitly.
     set :public_folder, 'public'
 
-    get '/' do
-      markdown :README, layout_engine: :slim
+    # README requests
+    get('/')                { markdown :README, layout_engine: :slim }
+    get('/application.css') { sass     :application }
+    get('/application.js')  { coffee   :application }
+
+    # JSON requests (the meat)
+    %w[sync receipts offers].each do |type|
+      get("/#{type}.json") { render_json_for type }
     end
 
-    get '/application.css' do
-      sass :application
-    end
+    private
 
-    get '/application.js' do
-      coffee :application
-    end
-
-    get '/sync.json' do
-      YAML.load_file('lib/dumb_receipt/views/sample_data.yml').to_json
+    def render_json_for(type)
+      content_type :json
+      YAML.load_file('lib/dumb_receipt/views/sample_data.yml')[type].to_json
     end
   end
 end

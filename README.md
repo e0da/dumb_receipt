@@ -25,9 +25,9 @@ Use shotgun to automatically restart the server during development:
 Queries
 -------
 
-### sync.json
-
-Fetching [/sync.json](/sync.json) will give you sample `sync` data.
+* [/sync.json](/sync.json) will give you sample _sync_ data.
+* [/offers.json](/offers.json) will give you sample _offers_ data.
+* [/receipts.json](/receipts.json) will give you sample _receipts_ data.
 
 License
 -------

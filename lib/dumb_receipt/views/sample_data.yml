@@ -1,18 +1,19 @@
 ---
-sync_timestamp: 2012-07-13T13:09Z
-user:
-  email: jane.doe@example.com
-  name: Plain Jane
-offers:
-- uuid: 618lSzaQ-vnCiIy1o-4NBfy2r9pqr
-  name: Offer 1
-  expires: 2012-07-15T17:00Z
-  contents: Lorem ipsum dolor set amit
-receipts:
-- total: '15.47'
-  tax: '1.00'
-  subtotal: '14.47'
-  currency: USD
-  store: Store 1094
+sync:
+  sync_timestamp: 2012-07-13T13:09Z
+  user:
+    email: jane.doe@example.com
+    name: Plain Jane
   offers:
-  - 618lSzaQ-vnCiIy1o-4NBfy2r9pqr
+  - uuid: 618lSzaQ-vnCiIy1o-4NBfy2r9pqr
+    name: Offer 1
+    expires: 2012-07-15T17:00Z
+    contents: Lorem ipsum dolor set amit
+  receipts:
+  - total: '15.47'
+    tax: '1.00'
+    subtotal: '14.47'
+    currency: USD
+    store: Store 1094
+    offers:
+    - 618lSzaQ-vnCiIy1o-4NBfy2r9pqr

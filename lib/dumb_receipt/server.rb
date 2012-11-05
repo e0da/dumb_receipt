@@ -21,7 +21,7 @@ module DumbReceipt
 
     # JSON requests (the meat)
     %w[sync receipts offers].each do |type|
-      get("/#{type}.json") do
+      get("/#{type}") do
         content_type :json
         YAML.load_file('lib/dumb_receipt/views/sample_data.yml')[type].to_json
       end

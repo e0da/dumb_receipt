@@ -25,5 +25,32 @@ module DumbReceipt
         YAML.load_file('lib/dumb_receipt/views/sample_data.yml')[type].to_json
       end
     end
+
+    # "registration"
+    post '/registration' do
+      if params[:fail]
+        [400, authentication_error]
+      else
+        {
+          "auth_token" => "examplecu9ouV74T56dZAbJcHv1IYeciaamyj",
+          "user" =>  {
+            "email" =>  "alice@example.com",
+            "name" =>  "Alice"
+          }
+        }.to_json
+      end
+    end
+
+
+    private
+
+    def authentication_error
+      {
+        "error" => {
+          "type" => "MissingRequiredField",
+          "message" => "Email address field is missing."
+        }
+      }.to_json
+    end
   end
 end

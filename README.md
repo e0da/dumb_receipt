@@ -51,4 +51,4 @@ failure of registration:
 
 ---
 
-© [SmartReceipt](http://receipt.com) — [license](/LICENSE)
+© [SmartReceipt](http://receipt.com) — Licensed under the [MIT license](http://opensource.org/licenses/MIT)

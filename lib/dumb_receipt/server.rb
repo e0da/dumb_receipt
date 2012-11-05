@@ -1,3 +1,4 @@
+require 'dumb_receipt'
 require 'sinatra'
 require 'redcarpet'
 require 'slim'
@@ -27,30 +28,17 @@ module DumbReceipt
     end
 
     # "registration"
+    #
+    # If the client sets a parameter called 'fail', fail authentication.
+    # Otherwise, succeed. This has no effect on the client's ability to access
+    # data; it's just a mechanism for testing registration behavior in clients.
+    #
     post '/registration' do
       if params[:fail]
-        [400, authentication_error]
+        [400, DumbReceipt::JSON::AUTH_FAILURE]
       else
-        {
-          "auth_token" => "examplecu9ouV74T56dZAbJcHv1IYeciaamyj",
-          "user" =>  {
-            "email" =>  "alice@example.com",
-            "name" =>  "Alice"
-          }
-        }.to_json
+        DumbReceipt::JSON::AUTH_SUCCESS
       end
-    end
-
-
-    private
-
-    def authentication_error
-      {
-        "error" => {
-          "type" => "MissingRequiredField",
-          "message" => "Email address field is missing."
-        }
-      }.to_json
     end
   end
 end

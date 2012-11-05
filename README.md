@@ -25,9 +25,25 @@ Use shotgun to automatically restart the server during development:
 Queries
 -------
 
-* [/sync.json](/sync.json) will give you sample _sync_ data.
-* [/offers.json](/offers.json) will give you sample _offers_ data.
-* [/receipts.json](/receipts.json) will give you sample _receipts_ data.
+### POST
+
+* [/registration](/registration) gives you sample registration feedback
+  * Most any POST request will result in success and give you a dummy
+    auth_token
+  * Setting a paramter called fail (i.e. `&fail=true`) will cause
+    authentication to fail
+
+To test post requests, you can use `curl`. Here are examples for success and
+failure of registration (copy the _/registration_ URL above):
+
+    curl http://localhost:9393/registration -d ''
+    curl http://localhost:9393/registration -d 'fail=true'
+
+### GET
+
+* [/sync](/sync) will give you sample _sync_ data.
+* [/offers](/offers) will give you sample _offers_ data.
+* [/receipts](/receipts) will give you sample _receipts_ data.
 
 License
 -------

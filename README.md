@@ -22,6 +22,10 @@ Use shotgun to automatically restart the server during development:
 
     shotgun
 
+Now you can view this README in your browser for convenient access to shortcuts
+and URLs by visiting the URL indicated by shotgun, (e.g.
+[http://localhost:9393](http://localhost:9393) or similar).
+
 Queries
 -------
 
@@ -34,7 +38,7 @@ Queries
     authentication to fail
 
 To test post requests, you can use `curl`. Here are examples for success and
-failure of registration (copy the _/registration_ URL above):
+failure of registration:
 
     curl http://localhost:9393/registration -d ''
     curl http://localhost:9393/registration -d 'fail=true'
@@ -45,11 +49,6 @@ failure of registration (copy the _/registration_ URL above):
 * [/offers](/offers) will give you sample _offers_ data.
 * [/receipts](/receipts) will give you sample _receipts_ data.
 
-License
--------
-Licensed under the [MIT License](http://www.opensource.org/licenses/MIT).
+---
 
-Copyright
----------
-
-Copyright © 2012 [SmartReceipt](http://receipt.com)
+© [SmartReceipt](http://receipt.com) — [license](/LICENSE)

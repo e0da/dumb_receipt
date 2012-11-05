@@ -1,4 +1,3 @@
-require 'dumb_receipt'
 require 'sinatra'
 require 'redcarpet'
 require 'slim'
@@ -23,7 +22,7 @@ module DumbReceipt
     %w[sync receipts offers].each do |type|
       get("/#{type}") do
         content_type :json
-        YAML.load_file('lib/dumb_receipt/views/sample_data.yml')[type].to_json
+        data[type].to_json
       end
     end
 
@@ -35,10 +34,16 @@ module DumbReceipt
     #
     post '/registration' do
       if params[:fail]
-        [400, DumbReceipt::JSON::AUTH_FAILURE]
+        [400, data['auth']['failure'].to_json]
       else
-        DumbReceipt::JSON::AUTH_SUCCESS
+        data['auth']['success'].to_json
       end
+    end
+
+    private
+
+    def data
+      @data ||= YAML.load_file('lib/dumb_receipt/views/data.yml')
     end
   end
 end

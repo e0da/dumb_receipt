@@ -1,0 +1,100 @@
+---
+sync:
+  sync_timestamp: 2012-07-13T13:09Z
+  user:
+    email: jane.doe@example.com
+    name: Plain Jane
+  offers:
+  - uuid: 618lSzaQ-vnCiIy1o-4NBfy2r9pqr
+    name: Offer 1
+    expires: 2012-07-15T17:00Z
+    contents: Lorem ipsum dolor set amit
+  receipts:
+  - total: '15.47'
+    tax: '1.00'
+    subtotal: '14.47'
+    currency: USD
+    store: Store 1094
+    offers:
+    - 618lSzaQ-vnCiIy1o-4NBfy2r9pqr
+
+receipts:
+  receipts:
+  - uuid: 4YCQE8Gwn-WVBt0nYtt-c0k9qVp3eps
+    total: '15.47'
+    tax: '1.00'
+    subtotal: '14.47'
+    currency: USD
+    offers:
+    - 618lSzaQ-vnCiIy1o-4NBfy2r9pqr
+    location: wLioVypFN-YTNb49Dik-lfmn3HKvOx
+  - uuid: Jv7MUoOgB-jcI7MCTyH-VKKahLuhj
+    total: '15.47'
+    tax: '1.00'
+    subtotal: '14.47'
+    currency: USD
+    offers:
+    - 618lSzaQ-vnCiIy1o-4NBfy2r9pqr
+    - 8SOzXeB9w-iRmgXse4n-jMGvGmlcoS0
+    location: wLioVypFN-YTNb49Dik-lfmn3HKvOx
+  offers:
+  - uuid: 618lSzaQ-vnCiIy1o-4NBfy2r9pqr
+    name: Offer 1
+    expires: 2012-07-15T17:00Z
+    contents: Lorem ipsum dolor set amit
+  - uuid: 8SOzXeB9w-iRmgXse4n-jMGvGmlcoS0
+    name: Offer 2
+    expires: 2012-07-15T17:00Z
+    contents: Lorem ipsum dolor set amit
+  locations:
+  - uuid: wLioVypFN-YTNb49Dik-lfmn3HKvOx
+    name: Store 1094
+    company: Subway
+    address1: 12345 Main St
+    address2: 'Suite #42'
+    city: Goleta
+    state: California
+    zip: 93117
+    country: United States
+
+receipt:
+  receipt:
+    uuid: Jv7MUoOgB-jcI7MCTyH-VKKahLuhj
+    total: '15.47'
+    tax: '1.00'
+    subtotal: '14.47'
+    currency: USD
+    offers:
+    - 618lSzaQ-vnCiIy1o-4NBfy2r9pqr
+    - 8SOzXeB9w-iRmgXse4n-jMGvGmlcoS0
+    location: wLioVypFN-YTNb49Dik-lfmn3HKvOx
+  offers:
+  - uuid: 618lSzaQ-vnCiIy1o-4NBfy2r9pqr
+    name: Offer 1
+    expires: 2012-07-15T17:00Z
+    contents: I
+  - uuid: 8SOzXeB9w-iRmgXse4n-jMGvGmlcoS0
+    name: Offer 2
+    expires: 2012-07-15T17:00Z
+    contents: Lorem ipsum dolor set amit
+  locations:
+  - uuid: wLioVypFN-YTNb49Dik-lfmn3HKvOx
+    name: Store 1094
+    company: Subway
+    address1: 12345 Main St
+    address2: 'Suite #42'
+    city: Goleta
+    state: California
+    zip: '93117'
+    country: United States
+
+auth:
+  success:
+    auth_token: examplecu9ouV74T56dZAbJcHv1IYeciaamyj
+    user:
+      email: alice@example.com
+      name: Alice
+  failure:
+    error:
+      type: MissingRequiredField
+      message: Email address field is missing.

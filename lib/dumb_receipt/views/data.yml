@@ -1,92 +1,114 @@
 ---
-sync:
-  sync_timestamp: 2012-07-13T13:09Z
-  user:
-    email: jane.doe@example.com
-    name: Plain Jane
-  offers:
-  - uuid: 618lSzaQ-vnCiIy1o-4NBfy2r9pqr
-    name: Offer 1
-    expires: 2012-07-15T17:00Z
-    contents: Lorem ipsum dolor set amit
-  receipts:
-  - total: '15.47'
-    tax: '1.00'
-    subtotal: '14.47'
-    currency: USD
-    store: Store 1094
-    offers:
-    - 618lSzaQ-vnCiIy1o-4NBfy2r9pqr
-
 receipts:
-  receipts:
-  - uuid: 4YCQE8Gwn-WVBt0nYtt-c0k9qVp3eps
-    total: '15.47'
-    tax: '1.00'
-    subtotal: '14.47'
-    currency: USD
-    offers:
-    - 618lSzaQ-vnCiIy1o-4NBfy2r9pqr
-    location: wLioVypFN-YTNb49Dik-lfmn3HKvOx
-  - uuid: Jv7MUoOgB-jcI7MCTyH-VKKahLuhj
-    total: '15.47'
-    tax: '1.00'
-    subtotal: '14.47'
-    currency: USD
-    offers:
-    - 618lSzaQ-vnCiIy1o-4NBfy2r9pqr
-    - 8SOzXeB9w-iRmgXse4n-jMGvGmlcoS0
-    location: wLioVypFN-YTNb49Dik-lfmn3HKvOx
+- uuid: 442c5d34-2eb7-11e2-81c1-0800200c9a66
+  currency: USD
+  claimed_at: 2013-10-19T09:39Z
+  completed_at: 2013-11-19T09:39Z
+  item_count: '4'
+  total:
+    total: '10.50'
+    tax: '0.78'
+    subtotal: '11.28'
+  items:
+  - name: Candy
+    price: '0.50'
+    quantity: '1'
+  - name: Pizza
+    price: '5.00'
+    quantity: '2'
+  zones:
+  - type: header
+    image_url: https://assets.receipt.com/images/header.png
   offers:
-  - uuid: 618lSzaQ-vnCiIy1o-4NBfy2r9pqr
-    name: Offer 1
-    expires: 2012-07-15T17:00Z
-    contents: Lorem ipsum dolor set amit
-  - uuid: 8SOzXeB9w-iRmgXse4n-jMGvGmlcoS0
-    name: Offer 2
-    expires: 2012-07-15T17:00Z
-    contents: Lorem ipsum dolor set amit
-  locations:
-  - uuid: wLioVypFN-YTNb49Dik-lfmn3HKvOx
-    name: Store 1094
-    company: Subway
-    address1: 12345 Main St
-    address2: 'Suite #42'
-    city: Goleta
-    state: California
-    zip: 93117
-    country: United States
-
-receipt:
-  receipt:
-    uuid: Jv7MUoOgB-jcI7MCTyH-VKKahLuhj
-    total: '15.47'
-    tax: '1.00'
-    subtotal: '14.47'
-    currency: USD
-    offers:
-    - 618lSzaQ-vnCiIy1o-4NBfy2r9pqr
-    - 8SOzXeB9w-iRmgXse4n-jMGvGmlcoS0
-    location: wLioVypFN-YTNb49Dik-lfmn3HKvOx
+  - 439c5d30-2eb7-10e2-81c1-0800200c9a66
+  - 439c5d31-2eb7-10e2-81c1-0800200c9a66
+  - 439c5d32-2eb7-10e2-81c1-0800200c9a66
+  location: 439c5d34-2eb7-11e2-81c1-0800200c9a66
+- uuid: 440c5d34-2eb7-11e2-81c1-0800200c9a66
+  currency: USD
+  claimed_at: 2013-07-19T09:39Z
+  completed_at: 2013-07-19T09:39Z
+  item_count: '3'
+  total:
+    total: '10.50'
+    tax: '0.78'
+    subtotal: '11.28'
+  items:
+  - name: Candy
+    price: '0.50'
+    quantity: '1'
+  - name: Pizza
+    price: '5.00'
+    quantity: '2'
+  zones:
+  - type: items
+  location: 439c5d34-2eb7-11e2-81c1-0800200c9a66
+- uuid: 444c5d34-2eb7-11e2-81c1-0800200c9a66
+  currency: USD
+  claimed_at: 2012-12-19T09:39Z
+  completed_at: 2012-14-19T09:39Z
+  item_count: '4'
+  total:
+    total: '0.79'
+    tax: '0.61'
+    subtotal: '0.85'
+  items:
+  - name: Taco
+    price: '0.79'
+    quantity: '1'
+  zones:
+  - type: totals
   offers:
-  - uuid: 618lSzaQ-vnCiIy1o-4NBfy2r9pqr
-    name: Offer 1
-    expires: 2012-07-15T17:00Z
-    contents: I
-  - uuid: 8SOzXeB9w-iRmgXse4n-jMGvGmlcoS0
-    name: Offer 2
-    expires: 2012-07-15T17:00Z
-    contents: Lorem ipsum dolor set amit
-  locations:
-  - uuid: wLioVypFN-YTNb49Dik-lfmn3HKvOx
-    name: Store 1094
-    company: Subway
-    address1: 12345 Main St
-    address2: 'Suite #42'
-    city: Goleta
-    state: California
-    zip: '93117'
-    country: United States
+  - 441c5d32-2eb7-11e2-81c1-0800200c9a66
+  location: 439c5d33-2eb7-11e2-81c1-0800200c9a66
+- uuid: 439c5d34-2eb7-11e2-81c1-0800200c9a66
+  currency: USD
+  claimed_at: 2012-07-19T09:39Z
+  completed_at: 2012-07-19T09:39Z
+  item_count: '2'
+  total:
+    total: '2.48'
+    tax: '0.19'
+    subtotal: '2.67'
+  items:
+  - name: Burrito
+    price: '1.49'
+    quantity: '1'
+  - name: Soda
+    price: '0.99'
+    quantity: '1'
+  zones:
+  - type: items
+  offers:
+  - 444c5d31-2eb7-11e2-81c1-0800200c9a66
+  - 446c5d32-2eb7-11e2-81c1-0800200c9a66
+  location: 439c5d33-2eb7-11e2-81c1-0800200c9a66
+- uuid: 439c5d34-2eb7-11e2-81c1-0800200c9a66
+  currency: USD
+  claimed_at: 2012-07-19T09:39Z
+  completed_at: 2012-07-19T09:39Z
+  item_count: '4'
+  total:
+    total: '9.00'
+    tax: '1.09'
+    subtotal: '10.09'
+  items:
+  - name: Bagel
+    price: '3.00'
+    quantity: '1'
+  - name: Sandwich
+    price: '5.00'
+    quantity: '2'
+  - name: Cookie
+    price: '1.00'
+    quantity: '1'
+  zones:
+  - type: totals
+  offers:
+  - 439c5d30-2eb7-11e2-81c1-0800200c9a66
+  - 439c5d31-2eb7-11e2-81c1-0800200c9a66
+  - 439c5d32-2eb7-11e2-81c1-0800200c9a66
+  location: 439c5d33-2eb7-11e2-81c1-0800200c9a66
 
 auth:
   success:

@@ -25,7 +25,7 @@ module DumbReceipt
     %w[receipts offers].each do |type|
       get("/#{type}") do
         content_type :json
-        {type.to_sym => results_for(type)}.to_json
+        {type => results_for(type)}.to_json
       end
     end
 

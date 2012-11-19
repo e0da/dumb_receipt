@@ -30,6 +30,7 @@ module DumbReceipt
     end
 
     get '/sync' do
+      content_type :json
       sync.to_json
     end
 

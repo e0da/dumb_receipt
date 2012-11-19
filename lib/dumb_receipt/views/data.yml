@@ -110,6 +110,200 @@ receipts:
   - 439c5d32-2eb7-11e2-81c1-0800200c9a66
   location: 439c5d33-2eb7-11e2-81c1-0800200c9a66
 
+offers:
+- uuid: 439c5d30-2eb7-11e2-81c1-0800200c9a66
+  name: Offer 1
+  contents: Lorem ipsum dolor set amit
+  image_url: https://assets.receipt.com/offers/wLioVypFNYTNb49Diklfmn3HKvOx.png
+  thumbnail_image_url: https://assets.receipt.com/offers/wLioVypFN.png
+  is_read: true
+  is_redeemed: true
+  barcode_image_url: https://assets.receipt.com/offers/49Diklfmn3HKvOx.png
+  coupon_code: ABC12345
+  expires: 2012-07-30T17:00Z
+  redeemd_at: 2012-07-21T09:39Z
+  created_at: 2012-07-19T09:39Z
+  updated_at: 2012-07-19T09:39Z
+- uuid: 439c5d31-2eb7-11e2-81c1-0800200c9a66
+  name: Offer 2
+  contents: Second Offer!
+  image_url: https://assets.receipt.com/offers/wLioVypFNYTNb50Diklfmn3HKvOx.png
+  thumbnail_image_url: https://assets.receipt.com/offers/wLioVypFM.png
+  is_read: true
+  is_redeemed: true
+  barcode_image_url: https://assets.receipt.com/offers/50Diklfmn3HKvOx.png
+  coupon_code: ABC12346
+  expires: 2012-07-30T18:00Z
+  redeemd_at: 2012-07-21T09:39Z
+  created_at: 2012-07-19T09:39Z
+  updated_at: 2012-07-19T09:39Z
+- uuid: 439c5d32-2eb7-11e2-81c1-0800200c9a66
+  name: Offer 1
+  contents: Lorem ipsum dolor set amit
+  image_url: https://assets.receipt.com/offers/wLioVypFNYTNb49Diklfmn3HKvOx.png
+  thumbnail_image_url: https://assets.receipt.com/offers/wLioVypFN.png
+  is_read: true
+  is_redeemed: true
+  barcode_image_url: https://assets.receipt.com/offers/49Diklfmn3HKvOx.png
+  coupon_code: ABC12345
+  expires: 2012-07-30T17:00Z
+  redeemd_at: 2012-07-21T09:39Z
+  created_at: 2012-07-19T09:39Z
+  updated_at: 2012-07-19T09:39Z
+- uuid: 452c5d30-2eb7-11e2-81c1-0800200c9a66
+  name: Offer 1
+  contents: Lorem ipsum dolor set amit
+  image_url: https://assets.receipt.com/offers/wLioVypFNYTNb49Diklfmn3HKvOx.png
+  thumbnail_image_url: https://assets.receipt.com/offers/wLioVypFN.png
+  is_read: true
+  is_redeemed: true
+  barcode_image_url: https://assets.receipt.com/offers/49Diklfmn3HKvOx.png
+  coupon_code: ABC12345
+  expires: 2012-07-30T17:00Z
+  redeemd_at: 2012-07-21T09:39Z
+  created_at: 2012-07-19T09:39Z
+  updated_at: 2012-07-19T09:39Z
+- uuid: 466c5d30-2eb7-11e2-81c1-0800200c9a66
+  name: Offer 1
+  contents: Lorem ipsum dolor set amit
+  image_url: https://assets.receipt.com/offers/wLioVypFNYTNb49Diklfmn3HKvOx.png
+  thumbnail_image_url: https://assets.receipt.com/offers/wLioVypFN.png
+  is_read: true
+  is_redeemed: true
+  barcode_image_url: https://assets.receipt.com/offers/49Diklfmn3HKvOx.png
+  coupon_code: ABC12345
+  expires: 2012-07-30T17:00Z
+  redeemd_at: 2012-07-21T09:39Z
+  created_at: 2012-07-19T09:39Z
+  updated_at: 2012-07-19T09:39Z
+
+locations:
+- uuid: wLioVypFN-YTNb49Dik-lfmn3HKvOx
+  name: Store 1094
+  brand: Subway
+  address1: 12345 Main St
+  address2: 'Suite #42'
+  city: Goleta
+  state: California
+  zip: 93117
+  country: United States
+  logo_url: https://assets.receipt.com/images/logo.png
+- uuid: wLioVypFN-YTNb51Dik-lfmn3HKvOx
+  name: Store 1096
+  brand: Subway
+  address1: 2347 7th St
+  city: Goleta
+  state: California
+  zip: 93117
+  country: United States
+  logo_url: https://assets.receipt.com/images/logo.png
+- uuid: wLioVypFN-YTNb55Dik-lfmn3HKvOx
+  name: Store 1102
+  brand: Panda
+  address1: 15 Commerce Dr
+  address2: 'Suite #420'
+  city: Shafter
+  state: California
+  zip: 93263
+  country: United States
+  logo_url: https://assets.receipt.com/images/logo.png
+- uuid: wLioVypFN-YTNb68Dik-lfmn3HKvOx
+  name: Store 1117
+  brand: Subway
+  address1: 125 Main St
+  city: Goleta
+  state: California
+  zip: 93117
+  country: United States
+  logo_url: https://assets.receipt.com/images/logo.png
+- uuid: wLioVypFN-YTNb64Dik-lfmn3HKvOx
+  name: Store 168
+  brand: Pizza Store
+  address1: 19823 Main St
+  address2: 'Suite #66'
+  city: Santa Barbara
+  state: California
+  zip: 93106
+  country: United States
+  logo_url: https://assets.receipt.com/images/logo.png
+
+users:
+- uuid: wLioVypFN-YTNb62Dik-lfmn3HKvOx
+  first_name: Jane
+  last_name: Doe
+  email: jane.doe@example.com
+  profile_image_url: http://gravatar.com/wLioVypFNYTNb53Diklfmn3HKvOx.png
+  sign_in_count: 5
+  receipts_count: 6
+  offers_count: 7
+  created_at: 2012-07-19T09:39Z
+  updated_at: 2012-07-19T09:39Z
+  confirmed_at: 2012-07-19T09:39Z
+  current_sign_in_at: 2012-07-19T09:39Z
+  last_sign_in_at: 2012-07-19T09:39Z
+  current_sign_in_ip: 10.1.0.5
+  last_sign_in_ip: 10.1.0.5
+- uuid: wLioVypFN-YTNb86Dik-lfmn3HKvOx
+  first_name: John
+  last_name: Derp
+  email: john.derp@example.com
+  profile_image_url: http://gravatar.com/wLioVypFNYTNb64Diklfmn3HKvOx.png
+  sign_in_count: 8
+  receipts_count: 9
+  offers_count: 7
+  created_at: 2012-07-19T09:39Z
+  updated_at: 2012-07-19T09:39Z
+  confirmed_at: 2012-07-19T09:39Z
+  current_sign_in_at: 2012-07-19T09:39Z
+  last_sign_in_at: 2012-07-19T09:39Z
+  current_sign_in_ip: 10.1.0.2
+  last_sign_in_ip: 10.1.0.1
+- uuid: wLioVypFN-YTNb85Dik-lfmn3HKvOx
+  first_name: Lars
+  last_name: Derpwich
+  email: lars.derpwich@example.org
+  profile_image_url: http://gravatar.com/wLioVypFNYTNb80Diklfmn3HKvOx.png
+  sign_in_count: 7
+  receipts_count: 7
+  offers_count: 11
+  created_at: 2012-07-19T09:39Z
+  updated_at: 2012-07-19T09:39Z
+  confirmed_at: 2012-07-19T09:39Z
+  current_sign_in_at: 2012-07-19T09:39Z
+  last_sign_in_at: 2012-07-19T09:39Z
+  current_sign_in_ip: 10.1.3.2
+  last_sign_in_ip: 10.1.0.9
+- uuid: wLioVypFN-YTNb94Dik-lfmn3HKvOx
+  first_name: Bryan
+  last_name: Cranstone
+  email: brycranz@example.net
+  profile_image_url: http://gravatar.com/wLioVypFNYTNb73Diklfmn3HKvOx.png
+  sign_in_count: 6
+  receipts_count: 10
+  offers_count: 16
+  created_at: 2012-07-19T09:39Z
+  updated_at: 2012-07-19T09:39Z
+  confirmed_at: 2012-07-19T09:39Z
+  current_sign_in_at: 2012-07-19T09:39Z
+  last_sign_in_at: 2012-07-19T09:39Z
+  current_sign_in_ip: 10.1.20.2
+  last_sign_in_ip: 10.1.0.24
+- uuid: wLioVypFN-YTNb100Dik-lfmn3HKvOx
+  first_name: Lorna
+  last_name: Swarlap
+  email: swarlz@example.com
+  profile_image_url: http://gravatar.com/wLioVypFNYTNb83Diklfmn17HKvOx.png
+  sign_in_count: 14
+  receipts_count: 19
+  offers_count: 8
+  created_at: 2012-07-19T09:39Z
+  updated_at: 2012-07-19T09:39Z
+  confirmed_at: 2012-07-19T09:39Z
+  current_sign_in_at: 2012-07-19T09:39Z
+  last_sign_in_at: 2012-07-19T09:39Z
+  current_sign_in_ip: 10.1.48.2
+  last_sign_in_ip: 10.1.0.42
+
 auth:
   success:
     auth_token: examplecu9ouV74T56dZAbJcHv1IYeciaamyj

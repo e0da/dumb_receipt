@@ -22,11 +22,15 @@ module DumbReceipt
 
     # JSON requests (the meat)
     #
-    %w[sync receipts offers].each do |type|
+    %w[receipts offers].each do |type|
       get("/#{type}") do
         content_type :json
-        results_for(type).to_json
+        {type.to_sym => results_for(type)}.to_json
       end
+    end
+
+    get '/sync' do
+      sync.to_json
     end
 
     # "registration"
@@ -44,6 +48,15 @@ module DumbReceipt
     end
 
     private
+
+    def sync
+      {
+        sync_timestamp: '2012-07-13T13:09Z',
+        user:           results_for('users')[0],
+        offers:         results_for('offers'),
+        receipts:       results_for('receipts'),
+      }
+    end
 
     def results_for(type)
       results = data[type]

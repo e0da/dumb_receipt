@@ -8,4 +8,8 @@ gem 'coffee-script'
 
 group :development, :test do
   gem 'shotgun'
+  gem 'rake'
+  gem 'guard'
+  gem 'rspec'
+  gem 'guard-rspec'
 end

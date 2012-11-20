@@ -1,7 +1,3 @@
-require 'capybara/rspec'
-
-require 'dumb_receipt/server'
-
 begin
   require 'simplecov'
   SimpleCov.configure { add_filter 'spec' }
@@ -9,6 +5,9 @@ begin
 rescue LoadError
   # No coverage then. Moving on...
 end
+
+require 'capybara/rspec'
+require 'dumb_receipt/server'
 
 Capybara.app = DumbReceipt::Server
 

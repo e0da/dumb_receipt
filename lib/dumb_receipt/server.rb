@@ -5,6 +5,7 @@ require 'sass'
 require 'coffee-script'
 require 'yaml'
 require 'json'
+require 'time'
 
 module DumbReceipt
   class Server < Sinatra::Base
@@ -52,7 +53,7 @@ module DumbReceipt
 
     def sync
       {
-        sync_timestamp: '2012-07-13T13:09Z',
+        sync_timestamp: Time.now.utc.iso8601,
         user:           results_for('users')[0],
         offers:         results_for('offers'),
         receipts:       results_for('receipts'),

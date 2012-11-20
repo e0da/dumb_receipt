@@ -1,3 +1,7 @@
+require 'capybara/rspec'
+
+require 'dumb_receipt/server'
+
 begin
   require 'simplecov'
   SimpleCov.configure { add_filter 'spec' }
@@ -6,7 +10,7 @@ rescue LoadError
   # No coverage then. Moving on...
 end
 
-$: << '.'
+Capybara.app = DumbReceipt::Server
 
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true

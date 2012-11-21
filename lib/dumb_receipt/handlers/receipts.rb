@@ -12,15 +12,21 @@ module DumbReceipt
 
       post '/receipts/add' do
         content_type :json
+        result
+      end
 
+      private
+
+      def failure(id)
+        data['responses']['receipts']['add']['failures'][id]
+      end
+
+      def result
         case params[:fail]
-
         when 'ReceiptAlreadyAssociated'
           [403, failure('receipt_already_associated').to_json]
-
         when 'ReceiptNotFound'
           [404, failure('receipt_not_found').to_json]
-
         else
           {
             receipt:  data['receipts'][0],
@@ -28,12 +34,6 @@ module DumbReceipt
             location: data['locations'][0],
           }.to_json
         end
-      end
-
-      private
-
-      def failure(id)
-        data['responses']['receipts']['add']['failures'][id]
       end
     end
   end

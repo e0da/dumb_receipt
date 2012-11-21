@@ -5,5 +5,4 @@ guard 'rspec' do
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }
   watch('lib/dumb_receipt/views/data.yml')  { "spec" }
-  watch(%r[lib/dumb_receipt/handlers/.*])  { "spec" }
 end

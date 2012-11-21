@@ -304,13 +304,23 @@ users:
   current_sign_in_ip: 10.1.48.2
   last_sign_in_ip: 10.1.0.42
 
-auth:
-  success:
-    auth_token: examplecu9ouV74T56dZAbJcHv1IYeciaamyj
-    user:
-      email: alice@example.com
-      name: Alice
-  failure:
-    error:
-      type: MissingRequiredField
-      message: Email address field is missing.
+responses:
+  registration:
+    success:
+      auth_token: examplecu9ouV74T56dZAbJcHv1IYeciaamyj
+      user:
+        email: alice@example.com
+        name: Alice
+    failure:
+      error:
+        type: MissingRequiredField
+        message: Email address field is missing.
+  receipts:
+    add:
+      failures:
+        receipt_already_associated:
+          type: ReceiptAlreadyAssociated
+          message: This receipt has already been claimed by another user
+        receipt_not_found:
+          type: ReceiptNotFound
+          message: 'We could not find a receipt matching identifier: waka fula kasu tylu'

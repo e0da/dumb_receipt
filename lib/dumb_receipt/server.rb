@@ -44,9 +44,26 @@ module DumbReceipt
     post '/registration' do
       content_type :json
       if params[:fail]
-        [400, data['auth']['failure'].to_json]
+        [400, data['responses']['registration']['failure'].to_json]
       else
-        data['auth']['success'].to_json
+        data['responses']['registration']['success'].to_json
+      end
+    end
+
+    post '/receipts/add' do
+      content_type :json
+
+      case params[:fail]
+      when 'ReceiptAlreadyAssociated'
+        [403, data['responses']['receipts']['add']['failures']['receipt_already_associated'].to_json]
+      when 'ReceiptNotFound'
+        [404, data['responses']['receipts']['add']['failures']['receipt_not_found'].to_json]
+      else
+        {
+          :receipt => data['receipts'][0],
+          :offers => data['offers'][0..1],
+          :location => data['locations'][0],
+        }.to_json
       end
     end
 

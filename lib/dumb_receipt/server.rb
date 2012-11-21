@@ -42,6 +42,7 @@ module DumbReceipt
     # data; it's just a mechanism for testing registration behavior in clients.
     #
     post '/registration' do
+      content_type :json
       if params[:fail]
         [400, data['auth']['failure'].to_json]
       else

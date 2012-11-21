@@ -1,34 +1,73 @@
 require 'spec_helper'
 
 require 'dumb_receipt/server'
+require 'json'
 
 describe DumbReceipt::Server do
 
-  describe 'GET /', type: :feature do
-    it 'renders the README' do
-      visit '/'
-      page.should have_content 'Serve up fake receipt and offer information for API testing'
-    end
-  end
+  describe 'routes', type: :feature do
+    include Rack::Test::Methods
 
-  describe 'GET /application.css', type: :feature do
-    it 'renders the stylesheet' do
-      visit '/application.css'
-      response_headers['Content-Type'].should =~ %r[text/css]
+    describe 'GET /' do
+      it 'renders the README' do
+        get '/'
+        last_response.headers['Content-Type'].should match %r[text/html]
+        last_response.body.should match 'Serve up fake receipt and offer information for API testing'
+      end
     end
-  end
 
-  describe 'GET /application.js', type: :feature do
-    it 'renders the javascript' do
-      visit '/application.js'
-      response_headers['Content-Type'].should =~ %r[application/javascript]
+    describe 'assets' do
+      [%w[css text/css], %w[js application/javascript]].each do |ext, mime|
+        route = "/application.#{ext}"
+        describe "GET #{route}" do
+          it "renders the results as #{mime}" do
+            get route
+            last_response.headers['Content-Type'].should match %r[#{mime}]
+          end
+        end
+      end
     end
-  end
 
-  describe 'GET /receipts', type: :feature do
-    it 'renders the results as JSON' do
-      visit '/receipts'
-      response_headers['Content-Type'].should =~ %r[application/json]
+    describe 'GETs' do
+      %w[sync receipts offers].each do |action|
+        route = "/#{action}"
+        describe "GET #{route}" do
+          it 'renders the results as JSON' do
+            get route
+            last_response.headers['Content-Type'].should match %r[application/json]
+          end
+        end
+      end
+
+      describe 'the limit parameter' do
+        it 'specifies the number of results to be returned' do
+          get '/receipts', 'limit' => '37' do
+            JSON.parse(last_response.body)['receipts'].length.should be 37
+          end
+        end
+      end
+    end
+
+    describe 'POSTs' do
+      describe 'POST /registration' do
+        it 'fails if you pass a fail attribute' do
+          post '/registration', 'fail' => 'yes'
+          last_response.status.should be 400
+          last_response.headers['Content-Type'].should match %r[application/json]
+        end
+
+        it 'succeeds if you pass in anything else' do
+          post '/registration', 'wooly' => 'willy'
+          last_response.status.should be 200
+          last_response.headers['Content-Type'].should match %r[application/json]
+        end
+
+        it 'succeeds if you pass in nothing' do
+          post '/registration'
+          last_response.status.should be 200
+          last_response.headers['Content-Type'].should match %r[application/json]
+        end
+      end
     end
   end
 end

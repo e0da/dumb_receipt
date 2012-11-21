@@ -13,9 +13,7 @@ require 'dumb_receipt/handlers/sync'
 module DumbReceipt
   class Server < Sinatra::Base
 
-    # this is supposed to be the default, but the implicit setting isn't
-    # working with rackup, so here it is explicitly.
-    #
+    # the implicit setting isn't working with rackup
     set :public_folder, 'public'
 
     get('/')                { markdown :README, layout_engine: :slim }

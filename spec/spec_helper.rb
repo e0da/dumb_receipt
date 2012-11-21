@@ -7,6 +7,7 @@ rescue LoadError
 end
 
 require 'dumb_receipt/server'
+require 'dumb_receipt/data'
 require 'rack/test'
 
 RSpec.configure do |config|
@@ -26,3 +27,5 @@ end
 def app
   DumbReceipt::Server
 end
+
+include DumbReceipt::Data

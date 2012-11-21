@@ -45,7 +45,6 @@ Install dependencies
     bundle
 
 ### Running it
-----------
 
 Run it with rackup or passenger or thin or whatever:
 

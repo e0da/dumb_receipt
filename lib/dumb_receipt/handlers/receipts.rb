@@ -18,15 +18,15 @@ module DumbReceipt
       private
 
       def failure(id)
-        data['responses']['receipts']['add']['failures'][id]
+        data['responses']['receipts']['add']['failures'][id].to_json
       end
 
       def result
         case params[:fail]
         when 'ReceiptAlreadyAssociated'
-          [403, failure('receipt_already_associated').to_json]
+          [403, failure('receipt_already_associated')]
         when 'ReceiptNotFound'
-          [404, failure('receipt_not_found').to_json]
+          [404, failure('receipt_not_found')]
         else
           {
             receipt:  data['receipts'][0],

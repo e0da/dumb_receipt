@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'dumb_receipt/handlers/base'
 
 module DumbReceipt
   module Handlers

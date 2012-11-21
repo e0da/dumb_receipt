@@ -1,12 +1,14 @@
 require 'spec_helper'
-
 require 'dumb_receipt/server'
-require 'json'
 
 describe DumbReceipt::Server do
 
   describe 'routes' do
     include Rack::Test::Methods
+
+    def app
+      DumbReceipt::Server
+    end
 
     describe 'GET /' do
       it 'renders the README' do

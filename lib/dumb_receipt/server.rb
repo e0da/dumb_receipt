@@ -4,7 +4,6 @@ require 'slim'
 require 'sass'
 require 'coffee-script'
 
-require 'dumb_receipt/data'
 require 'dumb_receipt/handlers/offers'
 require 'dumb_receipt/handlers/receipts'
 require 'dumb_receipt/handlers/registration'

@@ -1,6 +1,5 @@
 require 'dumb_receipt/handlers/base'
 require 'time'
-require 'json'
 
 module DumbReceipt
   module Handlers

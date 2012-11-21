@@ -6,6 +6,9 @@ module DumbReceipt
     describe Registration do
       include Rack::Test::Methods
 
+      def app
+        DumbReceipt::Handlers::Registration
+      end
 
       describe 'POST' do
 

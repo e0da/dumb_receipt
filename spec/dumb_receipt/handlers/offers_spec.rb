@@ -6,6 +6,10 @@ module DumbReceipt
     describe Offers do
       include Rack::Test::Methods
 
+      def app
+        DumbReceipt::Handlers::Offers
+      end
+
       describe 'GET /offers' do
         it 'renders the results as JSON' do
           get '/offers'

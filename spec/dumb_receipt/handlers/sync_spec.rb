@@ -6,6 +6,10 @@ module DumbReceipt
     describe Sync do
       include Rack::Test::Methods
 
+      def app
+        DumbReceipt::Handlers::Sync
+      end
+
       describe 'GET /sync' do
         it 'renders the results as JSON' do
           get '/sync'

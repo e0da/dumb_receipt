@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'dumb_receipt/data'
 require 'dumb_receipt/handlers/helpers'
+require 'json'
 
 module DumbReceipt
   module Handlers

@@ -6,6 +6,10 @@ module DumbReceipt
     describe Receipts do
       include Rack::Test::Methods
 
+      def app
+        DumbReceipt::Handlers::Receipts
+      end
+
       describe 'GET /receipts' do
         it 'renders the results as JSON' do
           get '/receipts'
@@ -18,7 +22,6 @@ module DumbReceipt
           JSON.parse(last_response.body)['receipts'].length.should == 37
         end
       end
-
 
       describe 'POST /receipts/add' do
 

@@ -8,7 +8,7 @@ Queries
 
 ### POST
 
-* [/registration](/registration) gives you sample registration feedback
+* [/registration][] gives you sample registration feedback
   * Most any POST request will result in success and give you a dummy
     auth_token
   * Setting a paramter called fail (i.e. `?fail=true`) will cause
@@ -31,12 +31,15 @@ Because the point of DumbReceipt is to provide dummy testing data,
 UUIDs and item counts won't necessarily line up between data types (e.g. all of
 the offers listed by a receipt won't necessarily exist or be returned).
 
-* [/sync](/sync) will give you sample _sync_ data.
-* [/offers](/offers) will give you sample _offers_ data.
-* [/receipts](/receipts) will give you sample _receipts_ data.
+* [/sync][] will give you sample _sync_ data.
+* [/offers][] will give you sample _offers_ data.
+* [/receipts][] will give you sample _receipts_ data.
 
 Development
 -----------
+
+The project is open source and hosted at GitHub:
+<https://github.com/SmartReceipt/dumb_receipt>
 
 ### Setup
 
@@ -56,8 +59,16 @@ Or use shotgun so the server automatically restarts during development:
 
 You can view this README in your browser for convenient access to shortcuts and
 URLs by visiting the URL indicated by the web server, (e.g.
-[http://localhost:9393](http://localhost:9393) or similar).
+<http://localhost:9393> or similar).
 
 ---
 
-© [SmartReceipt](http://receipt.com) — Licensed under the [MIT license](http://opensource.org/licenses/MIT)
+© [SmartReceipt][] — Licensed under the [MIT license][]
+
+[SmartReceipt]: http://receipt.com
+[MIT license]: http://opensource.org/licenses/MIT
+
+[/registration]: /registration
+[/sync]:         /sync
+[/offers]:       /offers
+[/receipts]:     /receipts

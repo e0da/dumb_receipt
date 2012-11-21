@@ -52,7 +52,7 @@ describe DumbReceipt::Server do
     describe 'POST' do
 
       describe '/registration' do
-        it 'fails if you pass a fail attribute' do
+        it 'fails if you pass a fail parameter' do
           post '/registration', 'fail' => 'yes'
           last_response.status.should be 400
           last_response.headers['Content-Type'].should match %r[application/json]

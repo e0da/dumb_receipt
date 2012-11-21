@@ -10,7 +10,7 @@ group :development, :test do
   gem 'shotgun'
   gem 'rake'
   gem 'rspec'
-  gem 'capybara'
+  gem 'rack-test'
   gem 'guard'
   gem 'guard-rspec'
   gem 'rb-inotify', require: false

@@ -17,8 +17,8 @@ module DumbReceipt
           json = JSON.parse(last_response.body)
           json['sync_timestamp'].should_not be nil
           json['user'].should_not be nil
-          json['offers'].length.should be > 1
-          json['receipts'].length.should be > 1
+          json['offers'].length.should_not be nil
+          json['receipts'].length.should_not be nil
         end
       end
     end

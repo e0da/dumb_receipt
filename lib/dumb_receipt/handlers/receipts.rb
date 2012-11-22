@@ -14,6 +14,11 @@ module DumbReceipt
         add_result
       end
 
+      post '/receipts/email' do
+        content_type :json
+        email_result
+      end
+
       delete '/receipts/:id' do
         content_type :json
         delete_result
@@ -37,6 +42,17 @@ module DumbReceipt
             offers:   data['offers'][0..1],
             location: data['locations'][0],
           }.to_json
+        end
+      end
+
+      def email_result
+        case params[:fail]
+        when 'ReceiptNotFound'
+          [404, failure('email', 'receipt_not_found')]
+        when 'InvalidEmailOrMissingReceiptUUID'
+          [400, failure('email', 'invalid_email_or_missing_receipt_uuid')]
+        else
+          [200, nil]
         end
       end
 

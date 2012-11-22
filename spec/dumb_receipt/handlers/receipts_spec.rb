@@ -44,9 +44,8 @@ module DumbReceipt
               'fail' => 'ReceiptAlreadyAssociated'
 
             last_response.status.should be 403
-            json = JSON.parse(last_response.body)
-            json['type'].should == 'ReceiptAlreadyAssociated'
-            json['message'].should == 'This receipt has already been claimed by another user'
+            error['type'].should == 'ReceiptAlreadyAssociated'
+            error['message'].should == 'This receipt has already been claimed by another user'
           end
 
           it 'gives a 404 when the receipt is not found' do
@@ -56,14 +55,44 @@ module DumbReceipt
               'fail' => 'ReceiptNotFound'
 
             last_response.status.should be 404
-            json = JSON.parse(last_response.body)
-            json['type'].should == 'ReceiptNotFound'
-            json['message'].should == 'We could not find a receipt matching identifier: waka fula kasu tylu'
+            error['type'].should == 'ReceiptNotFound'
+            error['message'].should == 'We could not find a receipt matching identifier: waka fula kasu tylu'
           end
         end
       end
 
-      describe 'DELETE /receipts' do
+      describe 'POST /receipts/email' do
+
+        it 'responds with success' do
+          post '/receipts/email'
+          last_response.status.should be 200
+        end
+
+        context 'when you specify a fail parameter' do
+
+          it 'gives a 404 when the receipt is not found or does not belong to the user' do
+            post '/receipts/email', 'fail' => 'ReceiptNotFound'
+            last_response.status.should be 404
+            error['type'].should == 'ReceiptNotFound'
+            error['message'].should == [
+              'We could not email the receipt you selected because it could not',
+              ' be found.'
+            ] * ''
+          end
+
+          it 'gives a 400 when the email is invalid or the receipt UUID is missing' do
+            post '/receipts/email', 'fail' => 'InvalidEmailOrMissingReceiptUUID'
+            last_response.status.should be 400
+            error['type'].should == 'InvalidEmailOrMissingReceiptUUID'
+            error['message'].should == [
+              'We could not email the receipt you selected because the email',
+              ' address is invalid or the receipt UUID is missing.'
+            ] * ''
+          end
+        end
+      end
+
+      describe 'DELETE /receipts/:id' do
 
         it 'responds with success' do
           delete '/receipts/some-fake-id' do
@@ -75,9 +104,8 @@ module DumbReceipt
           delete '/receipts/some-fake-id', 'fail' => 'yes'
           last_response.status.should be 400
           last_response.headers['Content-Type'].should match %r[application/json]
-          json = JSON.parse(last_response.body)
-          json['type'].should == 'ReceiptNotDeleted'
-          json['message'].should == 'The receipt was not deleted'
+          error['type'].should == 'ReceiptNotDeleted'
+          error['message'].should == 'The receipt was not deleted'
         end
       end
     end

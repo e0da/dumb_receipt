@@ -25,3 +25,7 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = 'random'
 end
+
+def error
+  JSON.parse(last_response.body)['error']
+end

@@ -319,13 +319,26 @@ responses:
     add:
       failures:
         receipt_already_associated:
-          type: ReceiptAlreadyAssociated
-          message: This receipt has already been claimed by another user
+          error:
+            type: ReceiptAlreadyAssociated
+            message: This receipt has already been claimed by another user
         receipt_not_found:
-          type: ReceiptNotFound
-          message: 'We could not find a receipt matching identifier: waka fula kasu tylu'
+          error:
+            type: ReceiptNotFound
+            message: 'We could not find a receipt matching identifier: waka fula kasu tylu'
     delete:
       failures:
         receipt_not_deleted:
-          type: ReceiptNotDeleted
-          message: The receipt was not deleted
+          error:
+            type: ReceiptNotDeleted
+            message: The receipt was not deleted
+    email:
+      failures:
+        receipt_not_found:
+          error:
+            type: ReceiptNotFound
+            message: We could not email the receipt you selected because it could not be found.
+        invalid_email_or_missing_receipt_uuid:
+          error:
+            type: InvalidEmailOrMissingReceiptUUID
+            message: We could not email the receipt you selected because the email address is invalid or the receipt UUID is missing.

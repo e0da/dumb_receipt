@@ -62,6 +62,24 @@ module DumbReceipt
           end
         end
       end
+
+      describe 'DELETE /receipts' do
+
+        it 'responds with success' do
+          delete '/receipts/some-fake-id' do
+            last_response.status.should be 200
+          end
+        end
+
+        it 'responds with 400 and an error message if you tell it to fail' do
+          delete '/receipts/some-fake-id', 'fail' => 'yes'
+          last_response.status.should be 400
+          last_response.headers['Content-Type'].should match %r[application/json]
+          json = JSON.parse(last_response.body)
+          json['type'].should == 'ReceiptNotDeleted'
+          json['message'].should == 'The receipt was not deleted'
+        end
+      end
     end
   end
 end

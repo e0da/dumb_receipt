@@ -11,27 +11,40 @@ module DumbReceipt
 
       post '/receipts/add' do
         content_type :json
-        result
+        add_result
+      end
+
+      delete '/receipts/:id' do
+        content_type :json
+        delete_result
       end
 
       private
 
-      def failure(id)
-        data['responses']['receipts']['add']['failures'][id].to_json
+      def failure(action, type)
+        data['responses']['receipts'][action]['failures'][type].to_json
       end
 
-      def result
+      def add_result
         case params[:fail]
         when 'ReceiptAlreadyAssociated'
-          [403, failure('receipt_already_associated')]
+          [403, failure('add', 'receipt_already_associated')]
         when 'ReceiptNotFound'
-          [404, failure('receipt_not_found')]
+          [404, failure('add', 'receipt_not_found')]
         else
           {
             receipt:  data['receipts'][0],
             offers:   data['offers'][0..1],
             location: data['locations'][0],
           }.to_json
+        end
+      end
+
+      def delete_result
+        if params[:fail]
+          [400, failure('delete', 'receipt_not_deleted')]
+        else
+          [200, nil]
         end
       end
     end

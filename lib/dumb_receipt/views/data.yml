@@ -324,3 +324,8 @@ responses:
         receipt_not_found:
           type: ReceiptNotFound
           message: 'We could not find a receipt matching identifier: waka fula kasu tylu'
+    delete:
+      failures:
+        receipt_not_deleted:
+          type: ReceiptNotDeleted
+          message: The receipt was not deleted

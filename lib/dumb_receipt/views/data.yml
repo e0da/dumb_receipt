@@ -342,3 +342,11 @@ responses:
           error:
             type: InvalidEmailOrMissingReceiptUUID
             message: We could not email the receipt you selected because the email address is invalid or the receipt UUID is missing.
+
+  offers:
+    read:
+      failures:
+        offers_not_redeemed:
+          error:
+            type: OffersNotRedeemed
+            message: The offers could not all be redeemed.

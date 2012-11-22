@@ -26,10 +26,6 @@ module DumbReceipt
 
       private
 
-      def failure(action, type)
-        data['responses']['receipts'][action]['failures'][type].to_json
-      end
-
       def add_result
         case params[:fail]
         when 'ReceiptAlreadyAssociated'

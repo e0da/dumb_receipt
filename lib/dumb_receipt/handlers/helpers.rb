@@ -1,4 +1,5 @@
 require 'dumb_receipt/data'
+require 'json'
 
 module DumbReceipt
   module Handlers
@@ -16,6 +17,14 @@ module DumbReceipt
       def pad(results, limit)
         multiplier = [(limit / results.length).ceil, limit].max
         (results * multiplier)[0...limit]
+      end
+
+      def failure(action, type)
+        data['responses'][base_class_name.downcase][action]['failures'][type].to_json
+      end
+
+      def base_class_name
+        self.class.name.split('::')[-1]
       end
     end
   end

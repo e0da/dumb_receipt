@@ -6,20 +6,6 @@ Serve up fake receipt and offer information for API testing
 Queries
 -------
 
-### POST
-
-* [/registration][] gives you sample registration feedback
-  * Most any POST request will result in success and give you a dummy
-    auth_token
-  * Setting a paramter called fail (i.e. `?fail=true`) will cause
-    authentication to fail
-
-To test post requests, you can use `curl`. Here are examples for success and
-failure of registration:
-
-    curl http://localhost:9393/registration -d ''
-    curl http://localhost:9393/registration -d 'fail=true'
-
 ### GET
 
 You can specify a `?limit=20`-style parameter to specify the number of results
@@ -34,6 +20,46 @@ the offers listed by a receipt won't necessarily exist or be returned).
 * [/sync][] will give you sample _sync_ data.
 * [/offers][] will give you sample _offers_ data.
 * [/receipts][] will give you sample _receipts_ data.
+
+### POST
+
+Parameters are ignored unless otherwise stated. The point is to give you
+well-formatted data in response to requests.
+
+* [/registration][] gives you sample registration feedback
+  * Most any POST request will result in success and give you a dummy
+    auth_token
+  * Setting a paramter called fail (i.e. `?fail=true`) will cause
+    authentication to fail
+* Receipts
+  * [/receipts/add][] to add a receipt. It supports 2 fail parameters.
+    * Specify `fail=ReceiptalreadyAssociated` for a 403 error
+    * Specify `fail=ReceiptNotFound` for a 404 error
+  * [/receipts/email][] to email a receipt. It supports 2 fail parameters.
+    * Specify `fail=ReceiptNotFound` for a 404 error
+    * Specify `fail=InvalidEmailOrMissingReceiptUUID` for a 400 error
+* Offers
+  * [/offers/read][] to mark offers as read. It supports a `fail=yes`
+    parameter to test failure.
+  * [/offers/redeem][] to redeem an offer. It supports a `fail=yes` parameter to
+    test failure.
+
+To test POST requests, you can use `curl`. Here are examples for success and
+failure of registration:
+
+    curl http://localhost:9393/registration -d ''
+    curl http://localhost:9393/registration -d 'fail=true'
+
+### DELETE
+
+* [/receipts/delete][] to delete a receipt. This supports a `fail=yes`
+  parameter to test failure. Any other parameters are ignored.
+
+To test DELETE requests, you can use `curl`. Here are examples for success and
+failure of receipt deletion:
+
+    curl http://localhost:9393/receipts/delete --request DELETE
+    curl http://localhost:9393/receipts/delete --request DELETE -d 'fail=true'
 
 Development
 -----------
@@ -66,9 +92,16 @@ URLs by visiting the URL indicated by the web server, (e.g.
 © [SmartReceipt][] — Licensed under the [MIT license][]
 
 [SmartReceipt]: http://receipt.com
-[MIT license]: http://opensource.org/licenses/MIT
+[MIT license]:  http://opensource.org/licenses/MIT
 
 [/registration]: /registration
 [/sync]:         /sync
 [/offers]:       /offers
 [/receipts]:     /receipts
+
+[/receipts/add]:    /receipts/add
+[/receipts/email]:  /receipts/email
+[/receipts/delete]: /receipts/delete
+
+[/offers/read]:   /offers/read
+[/offers/redeem]: /offers/redeem

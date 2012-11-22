@@ -50,6 +50,11 @@ module DumbReceipt
           dummy_class.any_instance.stub(:class).and_return(DumbReceipt::Data)
           dummy_class.new.base_class_name.should == 'Data'
         end
+
+        it 'works with an already base class name' do
+          dummy_class.any_instance.stub(:class).and_return(Kernel)
+          dummy_class.new.base_class_name.should == 'Kernel'
+        end
       end
     end
   end

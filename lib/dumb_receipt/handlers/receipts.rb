@@ -52,7 +52,7 @@ module DumbReceipt
         when 'InvalidEmailOrMissingReceiptUUID'
           [400, failure('email', 'invalid_email_or_missing_receipt_uuid')]
         else
-          [200, nil]
+          [200]
         end
       end
 
@@ -60,7 +60,7 @@ module DumbReceipt
         if params[:fail]
           [400, failure('delete', 'receipt_not_deleted')]
         else
-          [200, nil]
+          [200]
         end
       end
     end

@@ -6,7 +6,6 @@ rescue LoadError
   # No coverage then. Moving on...
 end
 
-require 'dumb_receipt/server'
 require 'dumb_receipt/data'
 require 'rack/test'
 

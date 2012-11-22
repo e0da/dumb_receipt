@@ -1,5 +1,5 @@
 $: << 'lib'
 
-require 'dumb_receipt/server'
+require 'dumb_receipt/app'
 
-run DumbReceipt::Server.new
+run DumbReceipt::App.new

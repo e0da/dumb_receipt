@@ -1,13 +1,13 @@
 require 'spec_helper'
-require 'dumb_receipt/server'
+require 'dumb_receipt/app'
 
-describe DumbReceipt::Server do
+describe DumbReceipt::App do
 
   describe 'routes' do
     include Rack::Test::Methods
 
     def app
-      DumbReceipt::Server
+      DumbReceipt::App
     end
 
     describe 'GET /' do

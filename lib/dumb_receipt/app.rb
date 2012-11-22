@@ -10,7 +10,7 @@ require 'dumb_receipt/handlers/registration'
 require 'dumb_receipt/handlers/sync'
 
 module DumbReceipt
-  class Server < Sinatra::Base
+  class App < Sinatra::Base
 
     # the implicit setting isn't working with rackup
     set :public_folder, 'public'

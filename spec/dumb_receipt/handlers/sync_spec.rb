@@ -11,14 +11,12 @@ module DumbReceipt
       end
 
       describe 'GET /sync' do
-        it 'renders the results as JSON' do
+        it 'returns a sync-like response' do
           get '/sync'
-          last_response.headers['Content-Type'].should match %r[application/json]
-          json = JSON.parse(last_response.body)
-          json['sync_timestamp'].should_not be nil
-          json['user'].should_not be nil
-          json['offers'].length.should_not be nil
-          json['receipts'].length.should_not be nil
+          response_data['sync_timestamp'].should_not be nil
+          response_data['user'].should_not be nil
+          response_data['offers'].length.should_not be nil
+          response_data['receipts'].length.should_not be nil
         end
       end
     end

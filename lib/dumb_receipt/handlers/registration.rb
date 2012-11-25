@@ -5,7 +5,6 @@ module DumbReceipt
     class Registration < DumbReceipt::Handlers::Base
 
       post '/registration' do
-        content_type :json
         if params[:fail]
           [400, result('failure')]
         else

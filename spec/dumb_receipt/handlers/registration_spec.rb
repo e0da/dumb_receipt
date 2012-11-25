@@ -13,14 +13,12 @@ module DumbReceipt
       describe 'POST /registration' do
         it 'responds with success' do
           post '/registration'
-          last_response.status.should be 200
-          last_response.headers['Content-Type'].should match %r[application/json]
+          status.should be 200
         end
 
         it 'fails if you pass a fail parameter' do
           post '/registration', 'fail' => 'yes'
-          last_response.status.should be 400
-          last_response.headers['Content-Type'].should match %r[application/json]
+          status.should be 400
         end
       end
     end

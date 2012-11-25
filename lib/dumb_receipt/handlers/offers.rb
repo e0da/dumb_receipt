@@ -5,17 +5,14 @@ module DumbReceipt
     class Offers < DumbReceipt::Handlers::Base
 
       get '/offers' do
-        content_type :json
         {offers: results_for('offers')}.to_json
       end
 
       post '/offers/read' do
-        content_type :json
         read_result
       end
 
       post '/offers/redeem' do
-        content_type :json
         redeem_result
       end
 

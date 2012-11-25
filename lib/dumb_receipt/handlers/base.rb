@@ -8,6 +8,10 @@ module DumbReceipt
     class Base < Sinatra::Base
       include DumbReceipt::Data
       include DumbReceipt::Handlers::Helpers
+
+      before do
+        content_type :json
+      end
     end
   end
 end

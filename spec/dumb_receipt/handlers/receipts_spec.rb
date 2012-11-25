@@ -11,15 +11,15 @@ module DumbReceipt
       end
 
       describe 'GET /receipts' do
-        it 'renders the results as JSON' do
+
+        it 'returns the receipts' do
           get '/receipts'
-          last_response.headers['Content-Type'].should match %r[application/json]
-          JSON.parse(last_response.body)['receipts'].length.should == data['receipts'].length
+          response_data['receipts'].should == data['receipts']
         end
 
         it 'honors the limit parameter' do
           get '/receipts', 'limit' => 37
-          JSON.parse(last_response.body)['receipts'].length.should == 37
+          response_data['receipts'].length.should == 37
         end
       end
 
@@ -28,11 +28,9 @@ module DumbReceipt
         it 'returns a sample receipt when you add any identifier' do
           post '/receipts/add', 'identifier' => 'waka%20fula%20kasu%20tylu'
           last_response.status.should be 200
-          last_response.headers['Content-Type'].should match %r[application/json]
-          json = JSON.parse(last_response.body)
-          json['receipt'].should_not be nil
-          json['offers'].length.should be 2
-          json['location'].should_not be nil
+          response_data['receipt'].should_not be nil
+          response_data['offers'].length.should be 2
+          response_data['location'].should_not be nil
         end
 
         context 'when you specify a fail parameter' do
@@ -74,10 +72,7 @@ module DumbReceipt
             post '/receipts/email', 'fail' => 'ReceiptNotFound'
             last_response.status.should be 404
             error['type'].should == 'ReceiptNotFound'
-            error['message'].should == [
-              'We could not email the receipt you selected because it could not',
-              ' be found.'
-            ] * ''
+            error['message'].should == 'We could not email the receipt you selected because it could not be found.'
           end
 
           it 'gives a 400 when the email is invalid or the receipt UUID is missing' do
@@ -103,7 +98,6 @@ module DumbReceipt
         it 'responds with 400 and an error message if you tell it to fail' do
           delete '/receipts/some-fake-id', 'fail' => 'yes'
           last_response.status.should be 400
-          last_response.headers['Content-Type'].should match %r[application/json]
           error['type'].should == 'ReceiptNotDeleted'
           error['message'].should == 'The receipt was not deleted'
         end

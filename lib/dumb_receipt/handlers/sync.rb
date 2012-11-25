@@ -6,7 +6,6 @@ module DumbReceipt
     class Sync < DumbReceipt::Handlers::Base
 
       get '/sync' do
-        content_type :json
         {
           sync_timestamp: Time.now.utc.iso8601,
           user:           results_for('users')[0],

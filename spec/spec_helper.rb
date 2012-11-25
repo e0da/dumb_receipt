@@ -26,5 +26,21 @@ RSpec.configure do |config|
 end
 
 def error
-  JSON.parse(last_response.body)['error']
+  response_data['error']
+end
+
+def response_data
+  JSON.parse(last_response.body)
+end
+
+def status
+  last_response.status
+end
+
+def content_type
+  last_response.header['Content-Type']
+end
+
+def body
+  last_response.body
 end

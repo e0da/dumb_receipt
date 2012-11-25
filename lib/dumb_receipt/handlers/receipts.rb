@@ -5,22 +5,18 @@ module DumbReceipt
     class Receipts < DumbReceipt::Handlers::Base
 
       get '/receipts' do
-        content_type :json
         {receipts: results_for('receipts')}.to_json
       end
 
       post '/receipts/add' do
-        content_type :json
         add_result
       end
 
       post '/receipts/email' do
-        content_type :json
         email_result
       end
 
       delete '/receipts/:id' do
-        content_type :json
         delete_result
       end
 

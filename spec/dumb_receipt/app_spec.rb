@@ -10,6 +10,10 @@ describe DumbReceipt::App do
       DumbReceipt::App
     end
 
+    def middleware
+      @middleware ||= app.instance_variable_get(:@middleware).flatten
+    end
+
     describe 'GET /' do
       it 'renders the README' do
         get '/'
@@ -32,6 +36,25 @@ describe DumbReceipt::App do
           get '/application.css'
           content_type.should match %r[text/css]
         end
+      end
+    end
+
+    describe 'middleware' do
+
+      it 'includes Offers' do
+        middleware.include? DumbReceipt::Handlers::Offers
+      end
+
+      it 'includes Receipts' do
+        middleware.include? DumbReceipt::Handlers::Receipts
+      end
+
+      it 'includes Registration' do
+        middleware.include? DumbReceipt::Handlers::Registration
+      end
+
+      it 'includes Sync' do
+        middleware.include? DumbReceipt::Handlers::Sync
       end
     end
   end

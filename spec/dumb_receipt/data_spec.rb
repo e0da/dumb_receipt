@@ -10,6 +10,10 @@ module DumbReceipt
       end
     end
 
+    def unload_data
+      DumbReceipt::Data.instance_variable_set :@data, nil
+    end
+
     describe '#data' do
 
       it 'calls .data' do

@@ -44,7 +44,3 @@ end
 def body
   last_response.body
 end
-
-def unload_data
-  DumbReceipt::Data.instance_variable_set :@data, nil
-end

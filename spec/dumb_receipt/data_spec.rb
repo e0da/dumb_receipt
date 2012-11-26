@@ -10,15 +10,6 @@ module DumbReceipt
       end
     end
 
-    around :each do |example|
-
-      # Prevent contamination of other specs by resetting data
-      #
-      unload_data
-      example.run
-      unload_data
-    end
-
     describe '#data' do
 
       it 'calls .data' do
@@ -28,6 +19,15 @@ module DumbReceipt
     end
 
     describe '.data' do
+
+      around :each do |example|
+
+        # Prevent contamination of other specs by resetting data
+        #
+        unload_data
+        example.run
+        unload_data
+      end
 
       it 'loads the data' do
         YAML.should_receive(:load_file)

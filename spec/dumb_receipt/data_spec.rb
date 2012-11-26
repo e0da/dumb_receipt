@@ -4,7 +4,7 @@ require 'dumb_receipt/data'
 module DumbReceipt
   describe DumbReceipt::Data do
 
-    let :dummy_class do
+    def dummy_class_factory
       Class.new do
         include DumbReceipt::Data
       end
@@ -18,7 +18,7 @@ module DumbReceipt
 
       it 'calls .data' do
         DumbReceipt::Data.should_receive(:data)
-        dummy_class.new.data
+        dummy_class_factory.new.data
       end
     end
 
@@ -35,12 +35,12 @@ module DumbReceipt
 
       it 'loads the data' do
         YAML.should_receive(:load_file)
-        dummy_class.new.data
+        dummy_class_factory.new.data
       end
 
-      it 'only loads the YAML file once' do
+      it 'only loads the YAML file once for all classes and instances' do
         YAML.should_receive(:load_file).once.and_return({})
-        100.times { dummy_class.new.data }
+        100.times { dummy_class_factory.new.data }
       end
     end
   end

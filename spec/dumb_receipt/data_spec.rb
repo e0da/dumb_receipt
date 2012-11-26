@@ -12,8 +12,7 @@ module DumbReceipt
 
     around :each do |example|
 
-      # Control when the data is loaded to prevent contamination of other
-      # specs.
+      # Prevent contamination of other specs by resetting data
       #
       unload_data
       example.run

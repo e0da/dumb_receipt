@@ -356,3 +356,11 @@ responses:
           error:
             type: OfferNotRedeemed
             message: The offer could not be redeemed.
+
+  location:
+    get:
+      failures:
+        location_not_found:
+          error:
+            type: LocationNotFound
+            message: We could not find the location matching the given id.

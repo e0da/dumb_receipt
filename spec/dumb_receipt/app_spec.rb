@@ -42,19 +42,19 @@ describe DumbReceipt::App do
     describe 'middleware' do
 
       it 'includes Offers' do
-        middleware.include? DumbReceipt::Handlers::Offers
+        middleware.should include DumbReceipt::Handlers::Offers
       end
 
       it 'includes Receipts' do
-        middleware.include? DumbReceipt::Handlers::Receipts
+        middleware.should include DumbReceipt::Handlers::Receipts
       end
 
       it 'includes Registration' do
-        middleware.include? DumbReceipt::Handlers::Registration
+        middleware.should include DumbReceipt::Handlers::Registration
       end
 
       it 'includes Sync' do
-        middleware.include? DumbReceipt::Handlers::Sync
+        middleware.should include DumbReceipt::Handlers::Sync
       end
     end
   end

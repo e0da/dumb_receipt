@@ -56,10 +56,6 @@ describe DumbReceipt::App do
       it 'includes Sync' do
         middleware.should include DumbReceipt::Handlers::Sync
       end
-
-      it 'includes Location' do
-        middleware.should include DumbReceipt::Handlers::Location
-      end
     end
   end
 end

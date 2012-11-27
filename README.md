@@ -20,7 +20,6 @@ the offers listed by a receipt won't necessarily exist or be returned).
 * [/sync][] will give you sample _sync_ data.
 * [/offers][] will give you sample _offers_ data.
 * [/receipts][] will give you sample _receipts_ data.
-* [/location][] will give you sample _receipts_ data.
 
 ### POST
 
@@ -99,7 +98,6 @@ URLs by visiting the URL indicated by the web server, (e.g.
 [/sync]:         /sync
 [/offers]:       /offers
 [/receipts]:     /receipts
-[/location]:     /location
 
 [/receipts/add]:    /receipts/add
 [/receipts/email]:  /receipts/email

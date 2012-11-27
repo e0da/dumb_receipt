@@ -17,6 +17,16 @@ module DumbReceipt
           response_data['receipts'].should == data['receipts']
         end
 
+        it 'returns offers' do
+          get '/receipts'
+          response_data['offers'].should == data['offers']
+        end
+
+        it 'returns locations' do
+          get '/receipts'
+          response_data['locations'].should == data['locations']
+        end
+
         it 'honors the limit parameter' do
           get '/receipts', 'limit' => 37
           response_data['receipts'].length.should == 37

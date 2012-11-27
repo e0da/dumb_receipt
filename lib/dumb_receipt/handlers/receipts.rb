@@ -5,7 +5,7 @@ module DumbReceipt
     class Receipts < DumbReceipt::Handlers::JsonBase
 
       get '/receipts' do
-        {receipts: results_for('receipts')}.to_json
+        list_results
       end
 
       post '/receipts/add' do
@@ -21,6 +21,14 @@ module DumbReceipt
       end
 
       private
+
+      def list_results
+        {
+          receipts: results_for('receipts'),
+          offers: results_for('offers'),
+          locations: results_for('locations')
+        }.to_json
+      end
 
       def add_result
         case params[:fail]

@@ -18,7 +18,7 @@ receipts:
     quantity: '2'
   zones:
   - type: header
-    image_url: https://assets.receipt.com/images/header.png
+    image_url: https://dumb-receipt.herokuapp.com/images/header.png
   offers:
   - 439c5d30-2eb7-10e2-81c1-0800200c9a66
   - 439c5d31-2eb7-10e2-81c1-0800200c9a66
@@ -114,11 +114,11 @@ offers:
 - uuid: 439c5d30-2eb7-11e2-81c1-0800200c9a66
   name: Offer 1
   contents: Lorem ipsum dolor set amit
-  image_url: https://assets.receipt.com/offers/wLioVypFNYTNb49Diklfmn3HKvOx.png
-  thumbnail_image_url: https://assets.receipt.com/offers/wLioVypFN.png
+  image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png
+  thumbnail_image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFN.png
   is_read: true
   is_redeemed: true
-  barcode_image_url: https://assets.receipt.com/offers/49Diklfmn3HKvOx.png
+  barcode_image_url: https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png
   coupon_code: ABC12345
   expires: 2012-07-30T17:00Z
   redeemd_at: 2012-07-21T09:39Z
@@ -127,11 +127,11 @@ offers:
 - uuid: 439c5d31-2eb7-11e2-81c1-0800200c9a66
   name: Offer 2
   contents: Second Offer!
-  image_url: https://assets.receipt.com/offers/wLioVypFNYTNb50Diklfmn3HKvOx.png
-  thumbnail_image_url: https://assets.receipt.com/offers/wLioVypFM.png
+  image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb50Diklfmn3HKvOx.png
+  thumbnail_image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFM.png
   is_read: true
   is_redeemed: true
-  barcode_image_url: https://assets.receipt.com/offers/50Diklfmn3HKvOx.png
+  barcode_image_url: https://dumb-receipt.herokuapp.com/images/50Diklfmn3HKvOx.png
   coupon_code: ABC12346
   expires: 2012-07-30T18:00Z
   redeemd_at: 2012-07-21T09:39Z
@@ -140,11 +140,11 @@ offers:
 - uuid: 439c5d32-2eb7-11e2-81c1-0800200c9a66
   name: Offer 1
   contents: Lorem ipsum dolor set amit
-  image_url: https://assets.receipt.com/offers/wLioVypFNYTNb49Diklfmn3HKvOx.png
-  thumbnail_image_url: https://assets.receipt.com/offers/wLioVypFN.png
+  image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png
+  thumbnail_image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFN.png
   is_read: true
   is_redeemed: true
-  barcode_image_url: https://assets.receipt.com/offers/49Diklfmn3HKvOx.png
+  barcode_image_url: https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png
   coupon_code: ABC12345
   expires: 2012-07-30T17:00Z
   redeemd_at: 2012-07-21T09:39Z
@@ -153,11 +153,11 @@ offers:
 - uuid: 452c5d30-2eb7-11e2-81c1-0800200c9a66
   name: Offer 1
   contents: Lorem ipsum dolor set amit
-  image_url: https://assets.receipt.com/offers/wLioVypFNYTNb49Diklfmn3HKvOx.png
-  thumbnail_image_url: https://assets.receipt.com/offers/wLioVypFN.png
+  image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png
+  thumbnail_image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFN.png
   is_read: true
   is_redeemed: true
-  barcode_image_url: https://assets.receipt.com/offers/49Diklfmn3HKvOx.png
+  barcode_image_url: https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png
   coupon_code: ABC12345
   expires: 2012-07-30T17:00Z
   redeemd_at: 2012-07-21T09:39Z
@@ -166,11 +166,11 @@ offers:
 - uuid: 466c5d30-2eb7-11e2-81c1-0800200c9a66
   name: Offer 1
   contents: Lorem ipsum dolor set amit
-  image_url: https://assets.receipt.com/offers/wLioVypFNYTNb49Diklfmn3HKvOx.png
-  thumbnail_image_url: https://assets.receipt.com/offers/wLioVypFN.png
+  image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png
+  thumbnail_image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFN.png
   is_read: true
   is_redeemed: true
-  barcode_image_url: https://assets.receipt.com/offers/49Diklfmn3HKvOx.png
+  barcode_image_url: https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png
   coupon_code: ABC12345
   expires: 2012-07-30T17:00Z
   redeemd_at: 2012-07-21T09:39Z
@@ -187,7 +187,7 @@ locations:
   state: California
   zip: 93117
   country: United States
-  logo_url: https://assets.receipt.com/images/logo.png
+  logo_url: https://dumb-receipt.herokuapp.com/images/logo.png
 - uuid: wLioVypFN-YTNb51Dik-lfmn3HKvOx
   name: Store 1096
   brand: Subway
@@ -196,7 +196,7 @@ locations:
   state: California
   zip: 93117
   country: United States
-  logo_url: https://assets.receipt.com/images/logo.png
+  logo_url: https://dumb-receipt.herokuapp.com/images/logo.png
 - uuid: wLioVypFN-YTNb55Dik-lfmn3HKvOx
   name: Store 1102
   brand: Panda
@@ -206,7 +206,7 @@ locations:
   state: California
   zip: 93263
   country: United States
-  logo_url: https://assets.receipt.com/images/logo.png
+  logo_url: https://dumb-receipt.herokuapp.com/images/logo.png
 - uuid: wLioVypFN-YTNb68Dik-lfmn3HKvOx
   name: Store 1117
   brand: Subway
@@ -215,7 +215,7 @@ locations:
   state: California
   zip: 93117
   country: United States
-  logo_url: https://assets.receipt.com/images/logo.png
+  logo_url: https://dumb-receipt.herokuapp.com/images/logo.png
 - uuid: wLioVypFN-YTNb64Dik-lfmn3HKvOx
   name: Store 168
   brand: Pizza Store
@@ -225,14 +225,14 @@ locations:
   state: California
   zip: 93106
   country: United States
-  logo_url: https://assets.receipt.com/images/logo.png
+  logo_url: https://dumb-receipt.herokuapp.com/images/logo.png
 
 users:
 - uuid: wLioVypFN-YTNb62Dik-lfmn3HKvOx
   first_name: Jane
   last_name: Doe
   email: jane.doe@example.com
-  profile_image_url: http://gravatar.com/wLioVypFNYTNb53Diklfmn3HKvOx.png
+  profile_image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb53Diklfmn3HKvOx.png
   sign_in_count: 5
   receipts_count: 6
   offers_count: 7
@@ -247,7 +247,7 @@ users:
   first_name: John
   last_name: Derp
   email: john.derp@example.com
-  profile_image_url: http://gravatar.com/wLioVypFNYTNb64Diklfmn3HKvOx.png
+  profile_image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb64Diklfmn3HKvOx.png
   sign_in_count: 8
   receipts_count: 9
   offers_count: 7
@@ -262,7 +262,7 @@ users:
   first_name: Lars
   last_name: Derpwich
   email: lars.derpwich@example.org
-  profile_image_url: http://gravatar.com/wLioVypFNYTNb80Diklfmn3HKvOx.png
+  profile_image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb80Diklfmn3HKvOx.png
   sign_in_count: 7
   receipts_count: 7
   offers_count: 11
@@ -277,7 +277,7 @@ users:
   first_name: Bryan
   last_name: Cranstone
   email: brycranz@example.net
-  profile_image_url: http://gravatar.com/wLioVypFNYTNb73Diklfmn3HKvOx.png
+  profile_image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb73Diklfmn3HKvOx.png
   sign_in_count: 6
   receipts_count: 10
   offers_count: 16
@@ -292,7 +292,7 @@ users:
   first_name: Lorna
   last_name: Swarlap
   email: swarlz@example.com
-  profile_image_url: http://gravatar.com/wLioVypFNYTNb83Diklfmn17HKvOx.png
+  profile_image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb83Diklfmn17HKvOx.png
   sign_in_count: 14
   receipts_count: 19
   offers_count: 8

@@ -41,6 +41,10 @@ describe DumbReceipt::App do
 
     describe 'middleware' do
 
+      it 'includes Images' do
+        middleware.should include DumbReceipt::Handlers::Images
+      end
+
       it 'includes Offers' do
         middleware.should include DumbReceipt::Handlers::Offers
       end

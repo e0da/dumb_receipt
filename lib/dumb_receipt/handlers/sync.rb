@@ -1,9 +1,9 @@
-require 'dumb_receipt/handlers/base'
+require 'dumb_receipt/handlers/json_base'
 require 'time'
 
 module DumbReceipt
   module Handlers
-    class Sync < DumbReceipt::Handlers::Base
+    class Sync < DumbReceipt::Handlers::JsonBase
 
       get '/sync' do
         {

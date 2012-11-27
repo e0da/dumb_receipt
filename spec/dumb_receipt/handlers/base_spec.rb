@@ -13,19 +13,6 @@ module DumbReceipt
       it 'includes DumbReceipt::Handlers::Helpers' do
         Base.should include DumbReceipt::Handlers::Helpers
       end
-
-      it 'sets Content-Type to application/json' do
-        class Dummy < DumbReceipt::Handlers::Base
-          get('/dummy') {'null'}
-        end
-
-        def app
-          Dummy
-        end
-
-        get '/dummy'
-        content_type.should match %r[application/json]
-      end
     end
   end
 end

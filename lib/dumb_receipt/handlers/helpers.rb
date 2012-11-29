@@ -20,11 +20,15 @@ module DumbReceipt
       end
 
       def failure(action, type)
-        data['responses'][base_class_name.downcase][action]['failures'][type].to_json
+        json data['responses'][base_class_name.downcase][action]['failures'][type]
       end
 
       def base_class_name
         self.class.name.split('::')[-1]
+      end
+
+      def json(object)
+        JSON.pretty_generate JSON.parse object.to_json
       end
     end
   end

@@ -5,7 +5,7 @@ module DumbReceipt
     class Offers < DumbReceipt::Handlers::JsonBase
 
       get '/offers' do
-        {offers: results_for('offers')}.to_json
+        json offers: results_for('offers')
       end
 
       post '/offers/read' do
@@ -30,7 +30,7 @@ module DumbReceipt
         if params[:fail]
           [400, failure('redeem', 'offer_not_redeemed')]
         else
-          { offer: data['offers'][0] }.to_json
+          json offer: data['offers'][0]
         end
       end
     end

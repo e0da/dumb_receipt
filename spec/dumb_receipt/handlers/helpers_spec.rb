@@ -39,8 +39,8 @@ module DumbReceipt
 
         it 'selects the data from the current class for the given action and type' do
           dummy_class.any_instance.stub(:base_class_name).and_return('receipts')
-          dummy_class.new.failure('add', 'receipt_not_found').should \
-            == data['responses']['receipts']['add']['failures']['receipt_not_found'].to_json
+          JSON.parse(dummy_class.new.failure('add', 'receipt_not_found')).should \
+            == JSON.parse(data['responses']['receipts']['add']['failures']['receipt_not_found'].to_json)
         end
       end
 
@@ -54,6 +54,26 @@ module DumbReceipt
         it 'works with an already base class name' do
           dummy_class.any_instance.stub(:class).and_return(Kernel)
           dummy_class.new.base_class_name.should == 'Kernel'
+        end
+      end
+
+      describe '#json' do
+
+        it 'Accepts exactly one argument' do
+          expect { dummy_class.new.json('a') }.not_to raise_error(ArgumentError)
+          expect { dummy_class.new.json('a', 'b') }.to raise_error(ArgumentError)
+        end
+
+        it 'returns a pretty-printed JSON representation of the object passed in' do
+          obj = {
+            name: 'Bjorn',
+            age: 37,
+            limbs: {
+              arms: ['left arm', 'right arm'],
+              legs: ['left leg', 'right leg']
+            }
+          }
+          dummy_class.new.json(obj).should == JSON.pretty_generate(JSON.parse obj.to_json)
         end
       end
     end

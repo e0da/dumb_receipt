@@ -15,8 +15,9 @@ module DumbReceipt
           get '/sync'
           response_data['sync_timestamp'].should_not be nil
           response_data['user'].should_not be nil
-          response_data['offers'].length.should_not be nil
-          response_data['receipts'].length.should_not be nil
+          response_data['offers'].should_not be nil
+          response_data['receipts'].should_not be nil
+          response_data['locations'].should_not be nil
         end
       end
     end

@@ -23,11 +23,11 @@ module DumbReceipt
       private
 
       def list_results
-        {
+        json({
           receipts: results_for('receipts'),
           offers: results_for('offers'),
           locations: results_for('locations')
-        }.to_json
+        })
       end
 
       def add_result
@@ -37,11 +37,11 @@ module DumbReceipt
         when 'ReceiptNotFound'
           [404, failure('add', 'receipt_not_found')]
         else
-          {
+          json({
             receipt:  data['receipts'][0],
             offers:   data['offers'][0..1],
             location: data['locations'][0],
-          }.to_json
+          })
         end
       end
 

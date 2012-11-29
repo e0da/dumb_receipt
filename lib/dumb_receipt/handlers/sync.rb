@@ -6,12 +6,13 @@ module DumbReceipt
     class Sync < DumbReceipt::Handlers::JsonBase
 
       get '/sync' do
-        {
+        json({
           sync_timestamp: Time.now.utc.iso8601,
           user:           results_for('users')[0],
           offers:         results_for('offers'),
           receipts:       results_for('receipts'),
-        }.to_json
+          locations:      results_for('locations')
+        })
       end
     end
   end

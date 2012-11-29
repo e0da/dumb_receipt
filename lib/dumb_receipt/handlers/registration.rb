@@ -15,7 +15,7 @@ module DumbReceipt
       private
 
       def result(id)
-        data['responses']['registration'][id].to_json
+        json data['responses']['registration'][id]
       end
     end
   end

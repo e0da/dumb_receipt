@@ -98,17 +98,17 @@ URLs by visiting the URL indicated by the web server, (e.g.
 [SmartReceipt]: http://receipt.com
 [MIT license]:  http://opensource.org/licenses/MIT
 
-[/registration]: /registration
-[/sync]:         /sync
 [/offers]:       /offers
 [/receipts]:     /receipts
+[/registration]: /registration
 [/stats]:        /stats
+[/sync]:         /sync
 
 [/images/whatever.png]: /images/whatever.png
 
 [/receipts/add]:    /receipts/add
-[/receipts/email]:  /receipts/email
 [/receipts/delete]: /receipts/delete
+[/receipts/email]:  /receipts/email
 
 [/offers/read]:   /offers/read
 [/offers/redeem]: /offers/redeem

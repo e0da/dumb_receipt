@@ -10,6 +10,10 @@ module DumbReceipt
         DumbReceipt::Handlers::Registration
       end
 
+      it 'inherits DumbReceipt::Handlers::Base' do
+        Registration.ancestors.should include DumbReceipt::Handlers::Base
+      end
+
       describe 'POST /registration' do
         it 'responds with success' do
           post '/registration'

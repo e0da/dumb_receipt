@@ -10,6 +10,10 @@ module DumbReceipt
         DumbReceipt::Handlers::Sync
       end
 
+      it 'inherits DumbReceipt::Handlers::Base' do
+        Sync.ancestors.should include DumbReceipt::Handlers::Base
+      end
+
       describe 'GET /sync' do
         it 'returns a sync-like response' do
           get '/sync'

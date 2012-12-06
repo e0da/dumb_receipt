@@ -10,6 +10,10 @@ module DumbReceipt
         DumbReceipt::Handlers::Receipts
       end
 
+      it 'inherits DumbReceipt::Handlers::Base' do
+        Receipts.ancestors.should include DumbReceipt::Handlers::Base
+      end
+
       describe 'GET /receipts' do
 
         it 'returns the receipts' do

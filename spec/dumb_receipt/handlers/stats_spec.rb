@@ -10,8 +10,8 @@ module DumbReceipt
         DumbReceipt::Handlers::Stats
       end
 
-      it 'inherits DumbReceipt::Handlers::JsonBase' do
-        JsonBase.ancestors.should include DumbReceipt::Handlers::JsonBase
+      it 'inherits DumbReceipt::Handlers::Base' do
+        Stats.ancestors.should include DumbReceipt::Handlers::Base
       end
 
       describe 'GET /stats' do

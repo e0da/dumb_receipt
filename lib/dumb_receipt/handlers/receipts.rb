@@ -1,8 +1,8 @@
-require 'dumb_receipt/handlers/json_base'
+require 'dumb_receipt/handlers/base'
 
 module DumbReceipt
   module Handlers
-    class Receipts < DumbReceipt::Handlers::JsonBase
+    class Receipts < DumbReceipt::Handlers::Base
 
       get '/receipts' do
         list_results

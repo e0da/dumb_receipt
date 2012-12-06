@@ -1,9 +1,9 @@
-require 'dumb_receipt/handlers/base'
 require 'base64'
+require 'sinatra/base'
 
 module DumbReceipt
   module Handlers
-    class Images < DumbReceipt::Handlers::Base
+    class Images < Sinatra::Base
 
       # A disgusting magenta rectangle png in Base64
       #

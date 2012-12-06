@@ -57,6 +57,10 @@ describe DumbReceipt::App do
         middleware.should include DumbReceipt::Handlers::Registration
       end
 
+      it 'includes Stats' do
+        middleware.should include DumbReceipt::Handlers::Stats
+      end
+
       it 'includes Sync' do
         middleware.should include DumbReceipt::Handlers::Sync
       end

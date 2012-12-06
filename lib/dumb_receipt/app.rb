@@ -8,6 +8,7 @@ require 'dumb_receipt/handlers/images'
 require 'dumb_receipt/handlers/offers'
 require 'dumb_receipt/handlers/receipts'
 require 'dumb_receipt/handlers/registration'
+require 'dumb_receipt/handlers/stats'
 require 'dumb_receipt/handlers/sync'
 
 module DumbReceipt
@@ -24,6 +25,7 @@ module DumbReceipt
     use DumbReceipt::Handlers::Offers
     use DumbReceipt::Handlers::Receipts
     use DumbReceipt::Handlers::Registration
+    use DumbReceipt::Handlers::Stats
     use DumbReceipt::Handlers::Sync
   end
 end

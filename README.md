@@ -20,6 +20,7 @@ the offers listed by a receipt won't necessarily exist or be returned).
 * [/sync][] will give you sample _sync_ data.
 * [/offers][] will give you sample _offers_ data.
 * [/receipts][] will give you sample _receipts_ data.
+* [/stats][] will give you sample _stats_ data.
 * [/images/whatever.png][] will give you sample image. You can specify a
   `fail=yes` parameter to induce a 404 error. You can put pretty much anything
   after `/images/`. All requests retrieve the same magenta rectangle.
@@ -101,6 +102,7 @@ URLs by visiting the URL indicated by the web server, (e.g.
 [/sync]:         /sync
 [/offers]:       /offers
 [/receipts]:     /receipts
+[/stats]:        /stats
 
 [/images/whatever.png]: /images/whatever.png
 

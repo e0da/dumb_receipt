@@ -1,4 +1,5 @@
 require 'simplecov'
+SimpleCov.configure { add_filter 'spec' }
 SimpleCov.start
 
 require 'dumb_receipt/data'

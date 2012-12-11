@@ -1,10 +1,6 @@
-begin
-  require 'simplecov'
-  SimpleCov.configure { add_filter 'spec' }
-  SimpleCov.start
-rescue LoadError
-  # No coverage then. Moving on...
-end
+require 'simplecov'
+SimpleCov.configure { add_filter 'spec' }
+SimpleCov.start
 
 require 'dumb_receipt/data'
 require 'rack/test'

@@ -7,11 +7,12 @@ gem 'redcarpet'
 gem 'coffee-script'
 
 group :development, :test do
-  gem 'shotgun'
-  gem 'rake'
-  gem 'rspec'
+  gem 'guard',        require: false
+  gem 'guard-rspec',  require: false
   gem 'rack-test'
-  gem 'guard'
-  gem 'guard-rspec'
-  gem 'rb-inotify', require: false
+  gem 'rake'
+  gem 'rb-inotify',   require: false
+  gem 'rspec'
+  gem 'shotgun',      require: false
+  gem 'simplecov'
 end

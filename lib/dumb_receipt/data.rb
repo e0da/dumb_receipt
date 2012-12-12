@@ -8,7 +8,7 @@ module DumbReceipt
     end
 
     def self.data
-      @data ||= YAML.load_file('lib/dumb_receipt/views/data.yml')
+      @data ||= YAML.load_file('views/data.yml')
     end
   end
 end

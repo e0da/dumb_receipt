@@ -8,6 +8,7 @@ module DumbReceipt
       include DumbReceipt::Data
       include DumbReceipt::Handlers::Helpers
 
+      set :root, File.expand_path('../../../../..', __FILE__)
       before do
         content_type :json
       end

@@ -16,6 +16,7 @@ module DumbReceipt
 
     # the implicit setting isn't working with rackup
     set :public_folder, 'public'
+    set :root, File.expand_path('../../..', __FILE__)
 
     get('/')                { markdown :README, layout_engine: :slim }
     get('/application.css') { sass     :application }

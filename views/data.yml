@@ -1,14 +1,20 @@
 ---
+
+#
+# In all cases, the first example should be the most complete. We'll write our
+# specs against the first example of each data type.
+#
+
 receipts:
 - uuid: 442c5d34-2eb7-11e2-81c1-0800200c9a66
   currency: USD
   claimed_at: 2013-10-19T09:39Z
   completed_at: 2013-11-19T09:39Z
   item_count: '4'
-  total:
-    total: '10.50'
-    tax: '0.78'
-    subtotal: '11.28'
+  totals:
+  - subtotal: '11.28'
+  - tax: '0.78'
+  - total: '10.50'
   items:
   - name: Candy
     price: '0.50'
@@ -29,10 +35,10 @@ receipts:
   claimed_at: 2013-07-19T09:39Z
   completed_at: 2013-07-19T09:39Z
   item_count: '3'
-  total:
-    total: '10.50'
-    tax: '0.78'
-    subtotal: '11.28'
+  totals:
+  - subtotal: '11.28'
+  - tax: '0.78'
+  - total: '10.50'
   items:
   - name: Candy
     price: '0.50'
@@ -48,10 +54,10 @@ receipts:
   claimed_at: 2012-12-19T09:39Z
   completed_at: 2012-14-19T09:39Z
   item_count: '4'
-  total:
-    total: '0.79'
-    tax: '0.61'
+  totals:
     subtotal: '0.85'
+    tax: '0.61'
+    total: '0.79'
   items:
   - name: Taco
     price: '0.79'
@@ -66,10 +72,10 @@ receipts:
   claimed_at: 2012-07-19T09:39Z
   completed_at: 2012-07-19T09:39Z
   item_count: '2'
-  total:
-    total: '2.48'
-    tax: '0.19'
+  totals:
     subtotal: '2.67'
+    tax: '0.19'
+    total: '2.48'
   items:
   - name: Burrito
     price: '1.49'
@@ -88,10 +94,10 @@ receipts:
   claimed_at: 2012-07-19T09:39Z
   completed_at: 2012-07-19T09:39Z
   item_count: '4'
-  total:
-    total: '9.00'
-    tax: '1.09'
+  totals:
     subtotal: '10.09'
+    tax: '1.09'
+    total: '9.00'
   items:
   - name: Bagel
     price: '3.00'

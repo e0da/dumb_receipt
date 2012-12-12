@@ -55,9 +55,9 @@ receipts:
   completed_at: 2012-14-19T09:39Z
   item_count: '4'
   totals:
-    subtotal: '0.85'
-    tax: '0.61'
-    total: '0.79'
+  - subtotal: '0.85'
+  - tax: '0.61'
+  - total: '0.79'
   items:
   - name: Taco
     price: '0.79'
@@ -73,9 +73,9 @@ receipts:
   completed_at: 2012-07-19T09:39Z
   item_count: '2'
   totals:
-    subtotal: '2.67'
-    tax: '0.19'
-    total: '2.48'
+  - subtotal: '2.67'
+  - tax: '0.19'
+  - total: '2.48'
   items:
   - name: Burrito
     price: '1.49'
@@ -95,9 +95,9 @@ receipts:
   completed_at: 2012-07-19T09:39Z
   item_count: '4'
   totals:
-    subtotal: '10.09'
-    tax: '1.09'
-    total: '9.00'
+  - subtotal: '10.09'
+  - tax: '1.09'
+  - total: '9.00'
   items:
   - name: Bagel
     price: '3.00'

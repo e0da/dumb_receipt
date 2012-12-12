@@ -33,4 +33,20 @@ describe 'YAML data structure' do
       end
     end
   end
+
+  describe 'locations' do
+
+    let(:locations) { data['locations'] }
+    let(:location)  { locations.first   }
+
+    it 'is an array' do
+      locations.class.should be Array
+    end
+
+    %w[uuid name brand address1 address2 city state zip country logo_url phone].each do |attr|
+      it "should have attribute #{attr}" do
+        location[attr].should_not be nil
+      end
+    end
+  end
 end

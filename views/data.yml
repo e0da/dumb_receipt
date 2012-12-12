@@ -192,6 +192,7 @@ locations:
   city: Goleta
   state: California
   zip: 93117
+  phone: 805-555-1234
   country: United States
   logo_url: https://dumb-receipt.herokuapp.com/images/logo.png
 - uuid: wLioVypFN-YTNb51Dik-lfmn3HKvOx
@@ -201,6 +202,7 @@ locations:
   city: Goleta
   state: California
   zip: 93117
+  phone: 805-555-2345
   country: United States
   logo_url: https://dumb-receipt.herokuapp.com/images/logo.png
 - uuid: wLioVypFN-YTNb55Dik-lfmn3HKvOx
@@ -211,6 +213,7 @@ locations:
   city: Shafter
   state: California
   zip: 93263
+  phone: 805-555-3456
   country: United States
   logo_url: https://dumb-receipt.herokuapp.com/images/logo.png
 - uuid: wLioVypFN-YTNb68Dik-lfmn3HKvOx
@@ -220,6 +223,7 @@ locations:
   city: Goleta
   state: California
   zip: 93117
+  phone: 805-555-4567
   country: United States
   logo_url: https://dumb-receipt.herokuapp.com/images/logo.png
 - uuid: wLioVypFN-YTNb64Dik-lfmn3HKvOx
@@ -230,6 +234,7 @@ locations:
   city: Santa Barbara
   state: California
   zip: 93106
+  phone: 805-555-5678
   country: United States
   logo_url: https://dumb-receipt.herokuapp.com/images/logo.png
 

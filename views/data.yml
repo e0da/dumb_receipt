@@ -7,6 +7,11 @@
 
 receipts:
 - uuid: 442c5d34-2eb7-11e2-81c1-0800200c9a66
+  cashier: Joe
+  check: 9823
+  trans: 98723
+  order: 92
+  table: 20
   currency: USD
   claimed_at: 2013-10-19T09:39Z
   completed_at: 2013-11-19T09:39Z
@@ -31,6 +36,11 @@ receipts:
   - 439c5d32-2eb7-10e2-81c1-0800200c9a66
   location: 439c5d34-2eb7-11e2-81c1-0800200c9a66
 - uuid: 440c5d34-2eb7-11e2-81c1-0800200c9a66
+  cashier: Joe
+  check: 9826
+  trans: 98727
+  order: 96
+  table: 24
   currency: USD
   claimed_at: 2013-07-19T09:39Z
   completed_at: 2013-07-19T09:39Z
@@ -50,6 +60,10 @@ receipts:
   - type: items
   location: 439c5d34-2eb7-11e2-81c1-0800200c9a66
 - uuid: 444c5d34-2eb7-11e2-81c1-0800200c9a66
+  cashier: Joe
+  check: 9832
+  trans: 98730
+  table: 24
   currency: USD
   claimed_at: 2012-12-19T09:39Z
   completed_at: 2012-14-19T09:39Z
@@ -68,6 +82,9 @@ receipts:
   - 441c5d32-2eb7-11e2-81c1-0800200c9a66
   location: 439c5d33-2eb7-11e2-81c1-0800200c9a66
 - uuid: 439c5d34-2eb7-11e2-81c1-0800200c9a66
+  cashier: Joe
+  trans: 98723
+  order: 92
   currency: USD
   claimed_at: 2012-07-19T09:39Z
   completed_at: 2012-07-19T09:39Z
@@ -90,6 +107,8 @@ receipts:
   - 446c5d32-2eb7-11e2-81c1-0800200c9a66
   location: 439c5d33-2eb7-11e2-81c1-0800200c9a66
 - uuid: 439c5d34-2eb7-11e2-81c1-0800200c9a66
+  check: 9832
+  order: 99
   currency: USD
   claimed_at: 2012-07-19T09:39Z
   completed_at: 2012-07-19T09:39Z

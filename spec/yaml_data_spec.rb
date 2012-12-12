@@ -18,7 +18,19 @@ describe 'YAML data structure' do
       receipts.class.should be Array
     end
 
-    %w[uuid currency claimed_at completed_at item_count totals].each do |attr|
+    %w[
+      cashier
+      check
+      claimed_at
+      completed_at
+      currency
+      item_count
+      order
+      table
+      totals
+      trans
+      uuid
+    ].each do |attr|
       it "should have attribute #{attr}" do
         receipt[attr].should_not be nil
       end

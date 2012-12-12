@@ -19,11 +19,16 @@ describe 'YAML data structure' do
     end
 
     %w[
+      cashier
+      check
       claimed_at
       completed_at
       currency
       item_count
+      order
+      table
       totals
+      trans
       uuid
     ].each do |attr|
       it "should have attribute #{attr}" do

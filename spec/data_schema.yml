@@ -1,0 +1,54 @@
+---
+type: map
+mapping:
+  "receipts":
+    type: seq
+    required: true
+    sequence:
+    - type: map
+      mapping:
+        "uuid":             { type: str,        required: true, unique: true }
+        "cashier":          { type: str }
+        "check":            { type: str }
+        "transaction":      { type: str }
+        "order":            { type: str }
+        "table":            { type: str }
+        "currency":         { type: str,        required: true }
+        "claimed_at":       { type: timestamp,  required: true }
+        "completed_at":     { type: timestamp,  required: true }
+        "item_count":       { type: int,        required: true }
+        "totals":
+          type: seq
+          required: true
+          sequence:
+          - type: map
+            mapping:
+              "subtotal":   { type: float }
+              "tax":        { type: float }
+              "total":      { type: float }
+        "items":
+          type: seq
+          required: true
+          sequence:
+          - type: map
+            mapping:
+              "name":       { type: str,        required: true }
+              "price":      { type: float,      required: true }
+              "quantity":   { type: int,        required: true }
+        "zones":
+          type: seq
+          required: true
+          sequence:
+          - type: map
+            mapping:
+              "type":       { type: str }
+              "image_url":  { type: str }
+        "offers":
+          type: seq
+          sequence:
+          - type: str
+            unique: true
+            pattern: /[\da-f]{8}-?([a-f\d]{4}-?){3}[a-f\d]{12}/
+        "location":
+          type: str
+          pattern: /[\da-f]{8}-?([a-f\d]{4}-?){3}[a-f\d]{12}/

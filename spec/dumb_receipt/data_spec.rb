@@ -34,6 +34,7 @@ module DumbReceipt
       end
 
       it 'loads the data' do
+        JSON.should_receive(:parse)
         YAML.should_receive(:load_file)
         dummy_class_factory.new.data
       end

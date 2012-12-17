@@ -9,10 +9,11 @@ gem 'coffee-script'
 group :development, :test do
   gem 'guard',        require: false
   gem 'guard-rspec',  require: false
-  gem 'rack-test'
-  gem 'rake'
+  gem 'kwalify',      require: false
+  gem 'rack-test',    require: false
+  gem 'rake',         require: false
   gem 'rb-inotify',   require: false
-  gem 'rspec'
+  gem 'rspec',        require: false
   gem 'shotgun',      require: false
-  gem 'simplecov'
+  gem 'simplecov',    require: false
 end

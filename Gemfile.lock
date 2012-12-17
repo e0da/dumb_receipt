@@ -18,6 +18,7 @@ GEM
     guard-rspec (2.3.1)
       guard (>= 1.1)
       rspec (~> 2.11)
+    kwalify (0.7.2)
     listen (0.6.0)
     lumberjack (1.0.2)
     method_source (0.8.1)
@@ -69,6 +70,7 @@ DEPENDENCIES
   coffee-script
   guard
   guard-rspec
+  kwalify
   rack-test
   rake
   rb-inotify

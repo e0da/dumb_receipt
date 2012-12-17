@@ -20,7 +20,7 @@ module DumbReceipt
       end
 
       def failure(action, type)
-        json data['responses'][base_class_name.downcase][action]['failures'][type]
+        json responses[base_class_name.downcase][action]['failures'][type]
       end
 
       def base_class_name

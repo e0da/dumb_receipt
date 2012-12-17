@@ -6,387 +6,328 @@
 #
 
 receipts:
-- uuid: 442c5d34-2eb7-11e2-81c1-0800200c9a66
-  cashier: Joe
-  check: 9823
-  trans: 98723
-  order: 92
-  table: 20
-  currency: USD
-  claimed_at: 2013-10-19T09:39Z
-  completed_at: 2013-11-19T09:39Z
-  item_count: '4'
+- uuid: "442c5d34-2eb7-11e2-81c1-0800200c9a66"
+  cashier: "Joe"
+  check: "9823"
+  order: "92"
+  currency: "USD"
+  claimed_at: 2013-10-19T09:39:00Z
+  completed_at: 2013-11-19T09:39:00Z
+  item_count: 4
   totals:
-  - subtotal: '11.28'
-  - tax: '0.78'
-  - total: '10.50'
+  - subtotal: 11.28
+  - tax: 0.78
+  - total: 10.50
   items:
-  - name: Candy
-    price: '0.50'
-    quantity: '1'
-  - name: Pizza
-    price: '5.00'
-    quantity: '2'
+  - name: "Candy"
+    price: 0.50
+    quantity: 1
+  - name: "Pizza"
+    price: 5.00
+    quantity: 2
   zones:
-  - type: header
-    image_url: https://dumb-receipt.herokuapp.com/images/header.png
+  - type: "header"
+    image_url: "https://dumb-receipt.herokuapp.com/images/header.png"
   offers:
-  - 439c5d30-2eb7-10e2-81c1-0800200c9a66
-  - 439c5d31-2eb7-10e2-81c1-0800200c9a66
-  - 439c5d32-2eb7-10e2-81c1-0800200c9a66
-  location: 439c5d34-2eb7-11e2-81c1-0800200c9a66
-- uuid: 440c5d34-2eb7-11e2-81c1-0800200c9a66
-  cashier: Joe
-  check: 9826
-  trans: 98727
-  order: 96
-  table: 24
-  currency: USD
-  claimed_at: 2013-07-19T09:39Z
-  completed_at: 2013-07-19T09:39Z
-  item_count: '3'
+  - "439c5d30-2eb7-10e2-81c1-0800200c9a66"
+  - "439c5d31-2eb7-10e2-81c1-0800200c9a66"
+  - "439c5d32-2eb7-10e2-81c1-0800200c9a66"
+  location: "453c5d34-2eb7-11e2-81c1-0800200c9a66"
+- uuid: "440c5d34-2eb7-11e2-81c1-0800200c9a66"
+  check: "9826"
+  order: "96"
+  currency: "USD"
+  claimed_at: 2013-07-19T09:39:00Z
+  completed_at: 2013-07-19T09:39:23Z
+  item_count: 3
   totals:
-  - subtotal: '11.28'
-  - tax: '0.78'
-  - total: '10.50'
+  - subtotal: 11.28
+  - tax: 0.78
+  - total: 10.50
   items:
-  - name: Candy
-    price: '0.50'
-    quantity: '1'
-  - name: Pizza
-    price: '5.00'
-    quantity: '2'
+  - name: "Candy"
+    price: 0.50
+    quantity: 1
+  - name: "Pizza"
+    price: 5.00
+    quantity: 2
   zones:
-  - type: items
-  location: 439c5d34-2eb7-11e2-81c1-0800200c9a66
-- uuid: 444c5d34-2eb7-11e2-81c1-0800200c9a66
-  cashier: Joe
-  check: 9832
-  trans: 98730
-  table: 24
-  currency: USD
-  claimed_at: 2012-12-19T09:39Z
-  completed_at: 2012-14-19T09:39Z
-  item_count: '4'
+  - type: "items"
+  location: "483c5d34-2eb7-11e2-81c1-0800200c9a66"
+- uuid: "444c5d34-2eb7-11e2-81c1-0800200c9a66"
+  cashier: "Joe"
+  transaction: "98730"
+  currency: "USD"
+  claimed_at: 2012-12-19T09:39:23Z
+  completed_at: 2012-12-29T09:39:32Z
+  item_count: 4
   totals:
-  - subtotal: '0.85'
-  - tax: '0.61'
-  - total: '0.79'
+  - subtotal: 0.85
+  - tax: 0.61
+  - total: 0.79
   items:
   - name: Taco
-    price: '0.79'
-    quantity: '1'
+    price: 0.79
+    quantity: 1
   zones:
-  - type: totals
+  - type: "totals"
   offers:
-  - 441c5d32-2eb7-11e2-81c1-0800200c9a66
-  location: 439c5d33-2eb7-11e2-81c1-0800200c9a66
-- uuid: 439c5d34-2eb7-11e2-81c1-0800200c9a66
-  cashier: Joe
-  trans: 98723
-  order: 92
-  currency: USD
-  claimed_at: 2012-07-19T09:39Z
-  completed_at: 2012-07-19T09:39Z
-  item_count: '2'
+  - "441c5d32-2eb7-11e2-81c1-0800200c9a66"
+  location: "439c5d33-2eb7-11e2-81c1-0800200c9a66"
+- uuid: "447c5d34-2eb7-11e2-81c1-0800200c9a66"
+  cashier: "Mary"
+  order: "92"
+  currency: "USD"
+  claimed_at: 2012-07-19T09:39:42Z
+  completed_at: 2012-07-19T09:39:17Z
+  item_count: 2
   totals:
-  - subtotal: '2.67'
-  - tax: '0.19'
-  - total: '2.48'
+  - subtotal: 2.67
+  - tax: 0.19
+  - total: 2.48
   items:
-  - name: Burrito
-    price: '1.49'
-    quantity: '1'
-  - name: Soda
-    price: '0.99'
-    quantity: '1'
+  - name: "Burrito"
+    price: 1.49
+    quantity: 1
+  - name: "Soda"
+    price: 0.99
+    quantity: 1
   zones:
-  - type: items
+  - type: "items"
   offers:
-  - 444c5d31-2eb7-11e2-81c1-0800200c9a66
-  - 446c5d32-2eb7-11e2-81c1-0800200c9a66
-  location: 439c5d33-2eb7-11e2-81c1-0800200c9a66
-- uuid: 439c5d34-2eb7-11e2-81c1-0800200c9a66
-  check: 9832
-  order: 99
-  currency: USD
-  claimed_at: 2012-07-19T09:39Z
-  completed_at: 2012-07-19T09:39Z
-  item_count: '4'
+  - "444c5d31-2eb7-11e2-81c1-0800200c9a66"
+  - "446c5d32-2eb7-11e2-81c1-0800200c9a66"
+  location: "439c5d33-2eb7-11e2-81c1-0800200c9a66"
+- uuid: "458c5d34-2eb7-11e2-81c1-0800200c9a66"
+  check: "9832"
+  order: "99"
+  currency: "USD"
+  claimed_at: 2012-07-19T09:39:23Z
+  completed_at: 2012-07-19T09:39:38Z
+  item_count: 4
   totals:
-  - subtotal: '10.09'
-  - tax: '1.09'
-  - total: '9.00'
+  - subtotal: 10.09
+  - tax: 1.09
+  - total: 9.00
   items:
-  - name: Bagel
-    price: '3.00'
-    quantity: '1'
-  - name: Sandwich
-    price: '5.00'
-    quantity: '2'
-  - name: Cookie
-    price: '1.00'
-    quantity: '1'
+  - name: "Bagel"
+    price: 3.00
+    quantity: 1
+  - name: "Sandwich"
+    price: 5.00
+    quantity: 2
+  - name: "Cookie"
+    price: 1.00
+    quantity: 1
   zones:
-  - type: totals
+  - type: "totals"
   offers:
-  - 439c5d30-2eb7-11e2-81c1-0800200c9a66
-  - 439c5d31-2eb7-11e2-81c1-0800200c9a66
-  - 439c5d32-2eb7-11e2-81c1-0800200c9a66
-  location: 439c5d33-2eb7-11e2-81c1-0800200c9a66
+  - "439c5d30-2eb7-11e2-81c1-0800200c9a66"
+  - "439c5d31-2eb7-11e2-81c1-0800200c9a66"
+  - "439c5d32-2eb7-11e2-81c1-0800200c9a66"
+  location: "439c5d33-2eb7-11e2-81c1-0800200c9a66"
 
 offers:
-- uuid: 439c5d30-2eb7-11e2-81c1-0800200c9a66
-  name: Offer 1
-  contents: Lorem ipsum dolor set amit
-  image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png
-  thumbnail_image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFN.png
+- uuid: "439c5d30-2eb7-11e2-81c1-0800200c9a66"
+  name: "Offer 1"
+  contents: "Lorem ipsum dolor set amit"
+  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
+  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
   is_read: true
   is_redeemed: true
-  barcode_image_url: https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png
-  coupon_code: ABC12345
-  expires: 2012-07-30T17:00Z
-  redeemd_at: 2012-07-21T09:39Z
-  created_at: 2012-07-19T09:39Z
-  updated_at: 2012-07-19T09:39Z
-- uuid: 439c5d31-2eb7-11e2-81c1-0800200c9a66
-  name: Offer 2
-  contents: Second Offer!
-  image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb50Diklfmn3HKvOx.png
-  thumbnail_image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFM.png
+  barcode_image_url: "https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png"
+  coupon_code: "ABC12345"
+  expires: 2012-07-30T17:00:23Z
+  redeemed_at: 2012-07-21T09:39:43Z
+  created_at: 2012-07-19T09:39:52Z
+  updated_at: 2012-07-19T09:39:47Z
+- uuid: "439c5d31-2eb7-11e2-81c1-0800200c9a66"
+  name: "Offer 2"
+  contents: "Second Offer!"
+  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb50Diklfmn3HKvOx.png"
+  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFM.png"
   is_read: true
   is_redeemed: true
-  barcode_image_url: https://dumb-receipt.herokuapp.com/images/50Diklfmn3HKvOx.png
-  coupon_code: ABC12346
-  expires: 2012-07-30T18:00Z
-  redeemd_at: 2012-07-21T09:39Z
-  created_at: 2012-07-19T09:39Z
-  updated_at: 2012-07-19T09:39Z
-- uuid: 439c5d32-2eb7-11e2-81c1-0800200c9a66
-  name: Offer 1
-  contents: Lorem ipsum dolor set amit
-  image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png
-  thumbnail_image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFN.png
+  barcode_image_url: "https://dumb-receipt.herokuapp.com/images/50Diklfmn3HKvOx.png"
+  coupon_code: "ABC12346"
+  expires: 2012-07-30T18:00:01Z
+  redeemed_at: 2012-07-21T09:39:12Z
+  created_at: 2012-07-19T09:39:23Z
+  updated_at: 2012-07-19T09:39:34Z
+- uuid: "439c5d32-2eb7-11e2-81c1-0800200c9a66"
+  name: "Offer 1"
+  contents: "Lorem ipsum dolor set amit"
+  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
+  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
   is_read: true
   is_redeemed: true
-  barcode_image_url: https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png
-  coupon_code: ABC12345
-  expires: 2012-07-30T17:00Z
-  redeemd_at: 2012-07-21T09:39Z
-  created_at: 2012-07-19T09:39Z
-  updated_at: 2012-07-19T09:39Z
-- uuid: 452c5d30-2eb7-11e2-81c1-0800200c9a66
-  name: Offer 1
-  contents: Lorem ipsum dolor set amit
-  image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png
-  thumbnail_image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFN.png
+  barcode_image_url: "https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png"
+  coupon_code: "ABC12345"
+  expires: 2012-07-30T17:00:01Z
+  redeemed_at: 2012-07-21T09:39:12Z
+  created_at: 2012-07-19T09:39:23Z
+  updated_at: 2012-07-19T09:39:34Z
+- uuid: "452c5d30-2eb7-11e2-81c1-0800200c9a66"
+  name: "Offer 1"
+  contents: "Lorem ipsum dolor set amit"
+  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
+  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
   is_read: true
   is_redeemed: true
-  barcode_image_url: https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png
-  coupon_code: ABC12345
-  expires: 2012-07-30T17:00Z
-  redeemd_at: 2012-07-21T09:39Z
-  created_at: 2012-07-19T09:39Z
-  updated_at: 2012-07-19T09:39Z
-- uuid: 466c5d30-2eb7-11e2-81c1-0800200c9a66
-  name: Offer 1
-  contents: Lorem ipsum dolor set amit
-  image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png
-  thumbnail_image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFN.png
+  barcode_image_url: "https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png"
+  coupon_code: "ABC12345"
+  expires: 2012-07-30T17:00:01Z
+  redeemed_at: 2012-07-21T09:39:12Z
+  created_at: 2012-07-19T09:39:23Z
+  updated_at: 2012-07-19T09:39:34Z
+- uuid: "466c5d30-2eb7-11e2-81c1-0800200c9a66"
+  name: "Offer 1"
+  contents: "Lorem ipsum dolor set amit"
+  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
+  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
   is_read: true
   is_redeemed: true
-  barcode_image_url: https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png
-  coupon_code: ABC12345
-  expires: 2012-07-30T17:00Z
-  redeemd_at: 2012-07-21T09:39Z
-  created_at: 2012-07-19T09:39Z
-  updated_at: 2012-07-19T09:39Z
+  barcode_image_url: "https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png"
+  coupon_code: "ABC12345"
+  expires: 2012-07-30T17:00:01Z
+  redeemed_at: 2012-07-21T09:39:12Z
+  created_at: 2012-07-19T09:39:23Z
+  updated_at: 2012-07-19T09:39:34Z
 
 locations:
-- uuid: wLioVypFN-YTNb49Dik-lfmn3HKvOx
-  name: Store 1094
-  brand: Subway
-  address1: 12345 Main St
-  address2: 'Suite #42'
-  city: Goleta
-  state: California
-  zip: 93117
-  phone: 805-555-1234
-  country: United States
-  logo_url: https://dumb-receipt.herokuapp.com/images/logo.png
-- uuid: wLioVypFN-YTNb51Dik-lfmn3HKvOx
-  name: Store 1096
-  brand: Subway
-  address1: 2347 7th St
-  city: Goleta
-  state: California
-  zip: 93117
-  phone: 805-555-2345
-  country: United States
-  logo_url: https://dumb-receipt.herokuapp.com/images/logo.png
-- uuid: wLioVypFN-YTNb55Dik-lfmn3HKvOx
-  name: Store 1102
-  brand: Panda
-  address1: 15 Commerce Dr
-  address2: 'Suite #420'
-  city: Shafter
-  state: California
-  zip: 93263
-  phone: 805-555-3456
-  country: United States
-  logo_url: https://dumb-receipt.herokuapp.com/images/logo.png
-- uuid: wLioVypFN-YTNb68Dik-lfmn3HKvOx
-  name: Store 1117
-  brand: Subway
-  address1: 125 Main St
-  city: Goleta
-  state: California
-  zip: 93117
-  phone: 805-555-4567
-  country: United States
-  logo_url: https://dumb-receipt.herokuapp.com/images/logo.png
-- uuid: wLioVypFN-YTNb64Dik-lfmn3HKvOx
-  name: Store 168
-  brand: Pizza Store
-  address1: 19823 Main St
-  address2: 'Suite #66'
-  city: Santa Barbara
-  state: California
-  zip: 93106
-  phone: 805-555-5678
-  country: United States
-  logo_url: https://dumb-receipt.herokuapp.com/images/logo.png
+- uuid: "184dc5a0-4880-11e2-bcfd-0800200c9a66"
+  name: "Store 1094"
+  brand: "Subway"
+  address1: "12345 Main St"
+  address2: "Suite #42"
+  city: "Goleta"
+  state: "California"
+  zip: "93117"
+  phone: "805-555-1234"
+  country: "United States"
+  logo_url: "https://dumb-receipt.herokuapp.com/images/logo.png"
+- uuid: "184dc5a0-4880-11e2-bcfd-0800200c9a67"
+  name: "Store 1096"
+  brand: "Subway"
+  address1: "2347 7th St"
+  address2: ""
+  city: "Goleta"
+  state: "California"
+  zip: "93117"
+  phone: "805-555-2345"
+  country: "United States"
+  logo_url: "https://dumb-receipt.herokuapp.com/images/logo.png"
+- uuid: "184dc5a0-4880-11e2-bcfd-0800200c9a68"
+  name: "Store 1102"
+  brand: "Panda"
+  address1: "15 Commerce Dr"
+  address2: "Suite #420"
+  city: "Shafter"
+  state: "California"
+  zip: "93263"
+  phone: "805-555-3456"
+  country: "United States"
+  logo_url: "https://dumb-receipt.herokuapp.com/images/logo.png"
+- uuid: "184dc5a0-4880-11e2-bcfd-0800200c9a69"
+  name: "Store 1117"
+  brand: "Subway"
+  address1: "125 Main St"
+  address2: ""
+  city: "Goleta"
+  state: "California"
+  zip: "93117"
+  phone: "805-555-4567"
+  country: "United States"
+  logo_url: "https://dumb-receipt.herokuapp.com/images/logo.png"
+- uuid: "184dc5a0-4880-11e2-bcfd-0800200c9a70"
+  name: "Store 168"
+  brand: "Pizza Store"
+  address1: "19823 Main St"
+  address2: "Suite #66"
+  city: "Santa Barbara"
+  state: "California"
+  zip: "93106"
+  phone: "805-555-5678"
+  country: "United States"
+  logo_url: "https://dumb-receipt.herokuapp.com/images/logo.png"
 
 users:
-- uuid: wLioVypFN-YTNb62Dik-lfmn3HKvOx
-  first_name: Jane
-  last_name: Doe
-  email: jane.doe@example.com
-  profile_image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb53Diklfmn3HKvOx.png
+- uuid: "184dc5b4-4880-11e2-bcfd-0800200c9a66"
+  first_name: "Jane"
+  last_name: "Doe"
+  email: "jane.doe@example.com"
+  profile_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb53Diklfmn3HKvOx.png"
   sign_in_count: 5
   receipts_count: 6
   offers_count: 7
-  created_at: 2012-07-19T09:39Z
-  updated_at: 2012-07-19T09:39Z
-  confirmed_at: 2012-07-19T09:39Z
-  current_sign_in_at: 2012-07-19T09:39Z
-  last_sign_in_at: 2012-07-19T09:39Z
-  current_sign_in_ip: 10.1.0.5
-  last_sign_in_ip: 10.1.0.5
-- uuid: wLioVypFN-YTNb86Dik-lfmn3HKvOx
-  first_name: John
-  last_name: Derp
-  email: john.derp@example.com
-  profile_image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb64Diklfmn3HKvOx.png
+  created_at: 2012-07-19T09:39:01Z
+  updated_at: 2012-07-19T09:39:12Z
+  confirmed_at: 2012-07-19T09:39:23Z
+  current_sign_in_at: 2012-07-19T09:39:34Z
+  last_sign_in_at: 2012-07-19T09:39:45Z
+  current_sign_in_ip: "10.1.0.5"
+  last_sign_in_ip: "10.1.0.5"
+- uuid: "184dc5b4-4880-11e2-bcfd-0800200c9a67"
+  first_name: "John"
+  last_name: "Derp"
+  email: "john.derp@example.com"
+  profile_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb64Diklfmn3HKvOx.png"
   sign_in_count: 8
   receipts_count: 9
   offers_count: 7
-  created_at: 2012-07-19T09:39Z
-  updated_at: 2012-07-19T09:39Z
-  confirmed_at: 2012-07-19T09:39Z
-  current_sign_in_at: 2012-07-19T09:39Z
-  last_sign_in_at: 2012-07-19T09:39Z
-  current_sign_in_ip: 10.1.0.2
-  last_sign_in_ip: 10.1.0.1
-- uuid: wLioVypFN-YTNb85Dik-lfmn3HKvOx
-  first_name: Lars
-  last_name: Derpwich
-  email: lars.derpwich@example.org
-  profile_image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb80Diklfmn3HKvOx.png
+  created_at: 2012-07-19T09:39:01Z
+  updated_at: 2012-07-19T09:39:12Z
+  confirmed_at: 2012-07-19T09:39:23Z
+  current_sign_in_at: 2012-07-19T09:39:34Z
+  last_sign_in_at: 2012-07-19T09:39:45Z
+  current_sign_in_ip: "10.1.0.2"
+  last_sign_in_ip: "10.1.0.1"
+- uuid: "184dc5b4-4880-11e2-bcfd-0800200c9a68"
+  first_name: "Lars"
+  last_name: "Derpwich"
+  email: "lars.derpwich@example.org"
+  profile_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb80Diklfmn3HKvOx.png"
   sign_in_count: 7
   receipts_count: 7
   offers_count: 11
-  created_at: 2012-07-19T09:39Z
-  updated_at: 2012-07-19T09:39Z
-  confirmed_at: 2012-07-19T09:39Z
-  current_sign_in_at: 2012-07-19T09:39Z
-  last_sign_in_at: 2012-07-19T09:39Z
-  current_sign_in_ip: 10.1.3.2
-  last_sign_in_ip: 10.1.0.9
-- uuid: wLioVypFN-YTNb94Dik-lfmn3HKvOx
-  first_name: Bryan
-  last_name: Cranstone
-  email: brycranz@example.net
-  profile_image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb73Diklfmn3HKvOx.png
+  created_at: 2012-07-19T09:39:01Z
+  updated_at: 2012-07-19T09:39:12Z
+  confirmed_at: 2012-07-19T09:39:23Z
+  current_sign_in_at: 2012-07-19T09:39:34Z
+  last_sign_in_at: 2012-07-19T09:39:45Z
+  current_sign_in_ip: "10.1.3.2"
+  last_sign_in_ip: "10.1.0.9"
+- uuid: "184dc5b4-4880-11e2-bcfd-0800200c9a70"
+  first_name: "Bryan"
+  last_name: "Cranstone"
+  email: "brycranz@example.net"
+  profile_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb73Diklfmn3HKvOx.png"
   sign_in_count: 6
   receipts_count: 10
   offers_count: 16
-  created_at: 2012-07-19T09:39Z
-  updated_at: 2012-07-19T09:39Z
-  confirmed_at: 2012-07-19T09:39Z
-  current_sign_in_at: 2012-07-19T09:39Z
-  last_sign_in_at: 2012-07-19T09:39Z
-  current_sign_in_ip: 10.1.20.2
-  last_sign_in_ip: 10.1.0.24
-- uuid: wLioVypFN-YTNb100Dik-lfmn3HKvOx
-  first_name: Lorna
-  last_name: Swarlap
-  email: swarlz@example.com
-  profile_image_url: https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb83Diklfmn17HKvOx.png
+  created_at: 2012-07-19T09:39:01Z
+  updated_at: 2012-07-19T09:39:12Z
+  confirmed_at: 2012-07-19T09:39:23Z
+  current_sign_in_at: 2012-07-19T09:39:34Z
+  last_sign_in_at: 2012-07-19T09:39:45Z
+  current_sign_in_ip: "10.1.20.2"
+  last_sign_in_ip: "10.1.0.24"
+- uuid: "184dc5b4-4880-11e2-bcfd-0800200c9a71"
+  first_name: "Lorna"
+  last_name: "Swarlap"
+  email: "swarlz@example.com"
+  profile_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb83Diklfmn17HKvOx.png"
   sign_in_count: 14
   receipts_count: 19
   offers_count: 8
-  created_at: 2012-07-19T09:39Z
-  updated_at: 2012-07-19T09:39Z
-  confirmed_at: 2012-07-19T09:39Z
-  current_sign_in_at: 2012-07-19T09:39Z
-  last_sign_in_at: 2012-07-19T09:39Z
-  current_sign_in_ip: 10.1.48.2
-  last_sign_in_ip: 10.1.0.42
+  created_at: 2012-07-19T09:39:01Z
+  updated_at: 2012-07-19T09:39:12Z
+  confirmed_at: 2012-07-19T09:39:23Z
+  current_sign_in_at: 2012-07-19T09:39:34Z
+  last_sign_in_at: 2012-07-19T09:39:45Z
+  current_sign_in_ip: "10.1.48.2"
+  last_sign_in_ip: "10.1.0.42"
 
 stats:
   total_offers_received: 28
   total_offers_redeemed: 12
-
-responses:
-  registration:
-    success:
-      auth_token: examplecu9ouV74T56dZAbJcHv1IYeciaamyj
-      user:
-        email: alice@example.com
-        name: Alice
-    failure:
-      error:
-        type: MissingRequiredField
-        message: Email address field is missing.
-  receipts:
-    add:
-      failures:
-        receipt_already_associated:
-          error:
-            type: ReceiptAlreadyAssociated
-            message: This receipt has already been claimed by another user
-        receipt_not_found:
-          error:
-            type: ReceiptNotFound
-            message: 'We could not find a receipt matching identifier: waka fula kasu tylu'
-    delete:
-      failures:
-        receipt_not_deleted:
-          error:
-            type: ReceiptNotDeleted
-            message: The receipt was not deleted
-    email:
-      failures:
-        receipt_not_found:
-          error:
-            type: ReceiptNotFound
-            message: We could not email the receipt you selected because it could not be found.
-        invalid_email_or_missing_receipt_uuid:
-          error:
-            type: InvalidEmailOrMissingReceiptUUID
-            message: We could not email the receipt you selected because the email address is invalid or the receipt UUID is missing.
-
-  offers:
-    read:
-      failures:
-        offers_not_marked_as_read:
-          error:
-            type: OffersNotMarkedAsRead
-            message: The offers could not be marked as read.
-    redeem:
-      failures:
-        offer_not_redeemed:
-          error:
-            type: OfferNotRedeemed
-            message: The offer could not be redeemed.

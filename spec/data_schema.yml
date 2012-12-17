@@ -1,0 +1,132 @@
+---
+type: map
+mapping:
+  "receipts":
+    type: seq
+    required: true
+    sequence:
+    - type: map
+      mapping:
+        "uuid":
+          type: str
+          required: true
+          unique: true
+          pattern: /[\da-f]{8}-?([a-f\d]{4}-?){3}[a-f\d]{12}/
+        "cashier":                { type: str }
+        "check":                  { type: str }
+        "transaction":            { type: str }
+        "order":                  { type: str }
+        "table":                  { type: str }
+        "currency":               { type: str,        required: true }
+        "claimed_at":             { type: timestamp,  required: true }
+        "completed_at":           { type: timestamp,  required: true }
+        "item_count":             { type: int,        required: true }
+        "totals":
+          type: seq
+          required: true
+          sequence:
+          - type: map
+            mapping:
+              "subtotal":         { type: float }
+              "tax":              { type: float }
+              "total":            { type: float }
+        "items":
+          type: seq
+          required: true
+          sequence:
+          - type: map
+            mapping:
+              "name":             { type: str,        required: true }
+              "price":            { type: float,      required: true }
+              "quantity":         { type: int,        required: true }
+        "zones":
+          type: seq
+          required: true
+          sequence:
+          - type: map
+            mapping:
+              "type":             { type: str }
+              "image_url":        { type: str }
+        "offers":
+          type: seq
+          sequence:
+          - type: str
+            unique: true
+            pattern: /[\da-f]{8}-?([a-f\d]{4}-?){3}[a-f\d]{12}/
+        "location":
+          type: str
+          pattern: /[\da-f]{8}-?([a-f\d]{4}-?){3}[a-f\d]{12}/
+  "offers":
+    type: seq
+    required: true
+    sequence:
+    - type: map
+      mapping:
+        "uuid":
+          type: str
+          required: true
+          unique: true
+          pattern: /[\da-f]{8}-?([a-f\d]{4}-?){3}[a-f\d]{12}/
+        "name":                   { type: str,        required: true }
+        "contents":               { type: str,        required: true }
+        "image_url":              { type: str,        required: true }
+        "thumbnail_image_url":    { type: str,        required: true }
+        "is_read":                { type: bool,       required: true }
+        "is_redeemed":            { type: bool,       required: true }
+        "barcode_image_url":      { type: str,        required: true }
+        "coupon_code":            { type: str,        required: true }
+        "expires":                { type: timestamp,  required: true }
+        "redeemed_at":            { type: timestamp,  required: true }
+        "created_at":             { type: timestamp,  required: true }
+        "updated_at":             { type: timestamp,  required: true }
+  "locations":
+    type: seq
+    required: true
+    sequence:
+    - type: map
+      mapping:
+        "uuid":
+          type: str
+          required: true
+          unique: true
+          pattern: /[\da-f]{8}-?([a-f\d]{4}-?){3}[a-f\d]{12}/
+        "name":                   { type: str,        required: true }
+        "brand":                  { type: str,        required: true }
+        "address1":               { type: str,        required: true }
+        "address2":               { type: str,        required: true }
+        "city":                   { type: str,        required: true }
+        "state":                  { type: str,        required: true }
+        "zip":                    { type: str,        required: true }
+        "phone":                  { type: str,        required: true }
+        "country":                { type: str,        required: true }
+        "logo_url":               { type: str,        required: true }
+  "users":
+    type: seq
+    required: true
+    sequence:
+    - type: map
+      mapping:
+        "uuid":
+          type: str
+          required: true
+          unique: true
+          pattern: /[\da-f]{8}-?([a-f\d]{4}-?){3}[a-f\d]{12}/
+        "first_name":             { type: str,        required: true }
+        "last_name":              { type: str,        required: true }
+        "email":                  { type: str,        required: true }
+        "profile_image_url":      { type: str,        required: true }
+        "sign_in_count":          { type: int,        required: true }
+        "receipts_count":         { type: int,        required: true }
+        "offers_count":           { type: int,        required: true }
+        "created_at":             { type: timestamp,  required: true }
+        "updated_at":             { type: timestamp,  required: true }
+        "confirmed_at":           { type: timestamp,  required: true }
+        "current_sign_in_at":     { type: timestamp,  required: true }
+        "last_sign_in_at":        { type: timestamp,  required: true }
+        "current_sign_in_ip":     { type: str,        required: true }
+        "last_sign_in_ip":        { type: str,        required: true }
+  "stats":
+    type: map
+    mapping:
+      "total_offers_received":  { type: int,        required: true }
+      "total_offers_redeemed":  { type: int,        required: true }

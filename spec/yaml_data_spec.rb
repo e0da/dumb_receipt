@@ -1,64 +1,17 @@
 require 'spec_helper'
+require 'kwalify'
 
 describe 'YAML data structure' do
 
-  describe 'the document root' do
-
-    it 'is a hash' do
-      data.class.should be Hash
-    end
-  end
-
-  describe 'receipts' do
-
-    let(:receipts) { data['receipts'] }
-    let(:receipt)  { receipts.first   }
-
-    it 'should be an array' do
-      receipts.class.should be Array
-    end
-
-    %w[
-      cashier
-      check
-      claimed_at
-      completed_at
-      currency
-      item_count
-      order
-      table
-      totals
-      trans
-      uuid
-    ].each do |attr|
-      it "should have attribute #{attr}" do
-        receipt[attr].should_not be nil
+  it 'validates against the schema' do
+    schema = YAML.load_file('spec/data_schema.yml')
+    validator = Kwalify::Validator.new(schema)
+    data = YAML.load_file('views/data.yml')
+    errors = validator.validate(data)
+    expect do
+      errors.each do |error|
+        raise error
       end
-    end
-
-    describe 'totals' do
-      let(:totals) { receipt['totals'] }
-      let(:total)  { totals.first      }
-
-      it 'should be an array' do
-        totals.class.should be Array
-      end
-    end
-  end
-
-  describe 'locations' do
-
-    let(:locations) { data['locations'] }
-    let(:location)  { locations.first   }
-
-    it 'is an array' do
-      locations.class.should be Array
-    end
-
-    %w[uuid name brand address1 address2 city state zip country logo_url phone].each do |attr|
-      it "should have attribute #{attr}" do
-        location[attr].should_not be nil
-      end
-    end
+    end.not_to raise_error
   end
 end

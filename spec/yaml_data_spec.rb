@@ -4,7 +4,6 @@ require 'kwalify'
 describe 'YAML data structure' do
 
   it 'validates against the schema' do
-    pending "Must move responses to another file"
     schema = YAML.load_file('spec/data_schema.yml')
     validator = Kwalify::Validator.new(schema)
     data = YAML.load_file('views/data.yml')

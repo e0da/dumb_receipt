@@ -40,7 +40,7 @@ module DumbReceipt
         it 'selects the data from the current class for the given action and type' do
           dummy_class.any_instance.stub(:base_class_name).and_return('receipts')
           JSON.parse(dummy_class.new.failure('add', 'receipt_not_found')).should \
-            == JSON.parse(data['responses']['receipts']['add']['failures']['receipt_not_found'].to_json)
+            == responses['receipts']['add']['failures']['receipt_not_found']
         end
       end
 

@@ -22,6 +22,9 @@ module DumbReceipt
     get('/application.css') { sass     :application }
     get('/application.js')  { coffee   :application }
 
+    ##
+    # Most of the work of the app is handled by these middleware classes.
+    #
     use DumbReceipt::Handlers::Images
     use DumbReceipt::Handlers::Offers
     use DumbReceipt::Handlers::Receipts

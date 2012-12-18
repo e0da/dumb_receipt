@@ -1,5 +1,5 @@
 .rvmrc
-tmp
-log
 .sass-cache
 coverage
+log
+tmp

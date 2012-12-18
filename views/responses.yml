@@ -1,52 +1,52 @@
 ---
 registration:
   success:
-    auth_token: examplecu9ouV74T56dZAbJcHv1IYeciaamyj
+    auth_token: "examplecu9ouV74T56dZAbJcHv1IYeciaamyj"
     user:
-      email: alice@example.com
-      name: Alice
+      email: "alice@example.com"
+      name: "Alice"
   failure:
     error:
-      type: MissingRequiredField
-      message: Email address field is missing.
+      type: "MissingRequiredField"
+      message: "Email address field is missing."
 receipts:
   add:
     failures:
       receipt_already_associated:
         error:
-          type: ReceiptAlreadyAssociated
-          message: This receipt has already been claimed by another user
+          type: "ReceiptAlreadyAssociated"
+          message: "This receipt has already been claimed by another user"
       receipt_not_found:
         error:
-          type: ReceiptNotFound
-          message: 'We could not find a receipt matching identifier: waka fula kasu tylu'
+          type: "ReceiptNotFound"
+          message: "We could not find a receipt matching identifier: waka fula kasu tylu"
   delete:
     failures:
       receipt_not_deleted:
         error:
-          type: ReceiptNotDeleted
-          message: The receipt was not deleted
+          type: "ReceiptNotDeleted"
+          message: "The receipt was not deleted"
   email:
     failures:
       receipt_not_found:
         error:
-          type: ReceiptNotFound
-          message: We could not email the receipt you selected because it could not be found.
+          type: "ReceiptNotFound"
+          message: "We could not email the receipt you selected because it could not be found."
       invalid_email_or_missing_receipt_uuid:
         error:
-          type: InvalidEmailOrMissingReceiptUUID
-          message: We could not email the receipt you selected because the email address is invalid or the receipt UUID is missing.
+          type: "InvalidEmailOrMissingReceiptUUID"
+          message: "We could not email the receipt you selected because the email address is invalid or the receipt UUID is missing."
 
 offers:
   read:
     failures:
       offers_not_marked_as_read:
         error:
-          type: OffersNotMarkedAsRead
-          message: The offers could not be marked as read.
+          type: "OffersNotMarkedAsRead"
+          message: "The offers could not be marked as read."
   redeem:
     failures:
       offer_not_redeemed:
         error:
-          type: OfferNotRedeemed
-          message: The offer could not be redeemed.
+          type: "OfferNotRedeemed"
+          message: "The offer could not be redeemed."

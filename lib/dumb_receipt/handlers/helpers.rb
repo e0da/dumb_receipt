@@ -28,7 +28,7 @@ module DumbReceipt
       end
 
       def json(object)
-        JSON.pretty_generate JSON.parse object.to_json
+        JSON.pretty_generate JSON.parse(object.to_json)
       end
     end
   end

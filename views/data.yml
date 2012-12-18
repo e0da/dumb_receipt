@@ -29,10 +29,9 @@ receipts:
   - type: "header"
     image_url: "https://dumb-receipt.herokuapp.com/images/header.png"
   offers:
-  - "439c5d30-2eb7-10e2-81c1-0800200c9a66"
-  - "439c5d31-2eb7-10e2-81c1-0800200c9a66"
-  - "439c5d32-2eb7-10e2-81c1-0800200c9a66"
-  location: "453c5d34-2eb7-11e2-81c1-0800200c9a66"
+  - "439c5d30-2eb7-11e2-81c1-0800200c9a66"
+  - "466c5d30-2eb7-11e2-81c1-0800200c9a66"
+  location: "184dc5a0-4880-11e2-bcfd-0800200c9a66"
 - uuid: "440c5d34-2eb7-11e2-81c1-0800200c9a66"
   check: "9826"
   order: "96"
@@ -53,7 +52,7 @@ receipts:
     quantity: 2
   zones:
   - type: "items"
-  location: "483c5d34-2eb7-11e2-81c1-0800200c9a66"
+  location: "184dc5a0-4880-11e2-bcfd-0800200c9a66"
 - uuid: "444c5d34-2eb7-11e2-81c1-0800200c9a66"
   cashier: "Joe"
   transaction: "98730"
@@ -72,8 +71,8 @@ receipts:
   zones:
   - type: "totals"
   offers:
-  - "441c5d32-2eb7-11e2-81c1-0800200c9a66"
-  location: "439c5d33-2eb7-11e2-81c1-0800200c9a66"
+  - "439c5d31-2eb7-11e2-81c1-0800200c9a66"
+  location: "184dc5a0-4880-11e2-bcfd-0800200c9a67"
 - uuid: "447c5d34-2eb7-11e2-81c1-0800200c9a66"
   cashier: "Mary"
   order: "92"
@@ -95,9 +94,8 @@ receipts:
   zones:
   - type: "items"
   offers:
-  - "444c5d31-2eb7-11e2-81c1-0800200c9a66"
-  - "446c5d32-2eb7-11e2-81c1-0800200c9a66"
-  location: "439c5d33-2eb7-11e2-81c1-0800200c9a66"
+  - "439c5d32-2eb7-11e2-81c1-0800200c9a66"
+  location: "184dc5a0-4880-11e2-bcfd-0800200c9a68"
 - uuid: "458c5d34-2eb7-11e2-81c1-0800200c9a66"
   check: "9832"
   order: "99"
@@ -122,10 +120,8 @@ receipts:
   zones:
   - type: "totals"
   offers:
-  - "439c5d30-2eb7-11e2-81c1-0800200c9a66"
-  - "439c5d31-2eb7-11e2-81c1-0800200c9a66"
-  - "439c5d32-2eb7-11e2-81c1-0800200c9a66"
-  location: "439c5d33-2eb7-11e2-81c1-0800200c9a66"
+  - "452c5d30-2eb7-11e2-81c1-0800200c9a66"
+  location: "184dc5a0-4880-11e2-bcfd-0800200c9a69"
 
 offers:
 - uuid: "439c5d30-2eb7-11e2-81c1-0800200c9a66"
@@ -237,17 +233,6 @@ locations:
   state: "California"
   zip: "93117"
   phone: "805-555-4567"
-  country: "United States"
-  logo_url: "https://dumb-receipt.herokuapp.com/images/logo.png"
-- uuid: "184dc5a0-4880-11e2-bcfd-0800200c9a70"
-  name: "Store 168"
-  brand: "Pizza Store"
-  address1: "19823 Main St"
-  address2: "Suite #66"
-  city: "Santa Barbara"
-  state: "California"
-  zip: "93106"
-  phone: "805-555-5678"
   country: "United States"
   logo_url: "https://dumb-receipt.herokuapp.com/images/logo.png"
 

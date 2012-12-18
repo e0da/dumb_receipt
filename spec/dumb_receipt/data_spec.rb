@@ -11,20 +11,12 @@ module DumbReceipt
     end
 
     def unload(method)
-      DumbReceipt::Data.instance_variable_set "@#{method}".to_s, nil
+      DumbReceipt::Data.class_variable_set "@@#{method}".to_s, nil
     end
 
     [:data, :responses].each do |method|
 
       describe "##{method}" do
-
-        it "calls .#{method}" do
-          DumbReceipt::Data.should_receive method
-          dummy_class_factory.new.send method
-        end
-      end
-
-      describe ".#{method}" do
 
         around :each do |example|
 

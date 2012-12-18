@@ -11,7 +11,7 @@ mapping:
           type: str
           required: true
           unique: true
-          pattern: /[\da-f]{8}-?([a-f\d]{4}-?){3}[a-f\d]{12}/
+          pattern: /^[\da-f]{8}-?([a-f\d]{4}-?){3}[a-f\d]{12}$/
         "cashier":                { type: str }
         "check":                  { type: str }
         "transaction":            { type: str }
@@ -52,10 +52,10 @@ mapping:
           sequence:
           - type: str
             unique: true
-            pattern: /[\da-f]{8}-?([a-f\d]{4}-?){3}[a-f\d]{12}/
+            pattern: /^[\da-f]{8}-?([a-f\d]{4}-?){3}[a-f\d]{12}$/
         "location":
           type: str
-          pattern: /[\da-f]{8}-?([a-f\d]{4}-?){3}[a-f\d]{12}/
+          pattern: /^[\da-f]{8}-?([a-f\d]{4}-?){3}[a-f\d]{12}$/
   "offers":
     type: seq
     required: true
@@ -66,7 +66,7 @@ mapping:
           type: str
           required: true
           unique: true
-          pattern: /[\da-f]{8}-?([a-f\d]{4}-?){3}[a-f\d]{12}/
+          pattern: /^[\da-f]{8}-?([a-f\d]{4}-?){3}[a-f\d]{12}$/
         "name":                   { type: str,        required: true }
         "contents":               { type: str,        required: true }
         "image_url":              { type: str,        required: true }
@@ -89,7 +89,7 @@ mapping:
           type: str
           required: true
           unique: true
-          pattern: /[\da-f]{8}-?([a-f\d]{4}-?){3}[a-f\d]{12}/
+          pattern: /^[\da-f]{8}-?([a-f\d]{4}-?){3}[a-f\d]{12}$/
         "name":                   { type: str,        required: true }
         "brand":                  { type: str,        required: true }
         "address1":               { type: str,        required: true }
@@ -110,7 +110,7 @@ mapping:
           type: str
           required: true
           unique: true
-          pattern: /[\da-f]{8}-?([a-f\d]{4}-?){3}[a-f\d]{12}/
+          pattern: /^[\da-f]{8}-?([a-f\d]{4}-?){3}[a-f\d]{12}$/
         "first_name":             { type: str,        required: true }
         "last_name":              { type: str,        required: true }
         "email":                  { type: str,        required: true }

@@ -5,10 +5,6 @@ module DumbReceipt
   module Handlers
     describe Images do
 
-      def app
-        DumbReceipt::Handlers::Images
-      end
-
       it 'serves a dummy image' do
         get '/images/whatever.png'
         content_type.should match 'image/png'

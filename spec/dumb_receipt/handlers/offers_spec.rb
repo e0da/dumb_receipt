@@ -6,10 +6,6 @@ module DumbReceipt
     describe Offers do
       include Rack::Test::Methods
 
-      def app
-        DumbReceipt::Handlers::Offers
-      end
-
       it 'inherits DumbReceipt::Handlers::Base' do
         Offers.ancestors.should include DumbReceipt::Handlers::Base
       end

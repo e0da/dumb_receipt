@@ -6,10 +6,6 @@ module DumbReceipt
     describe Stats do
       include Rack::Test::Methods
 
-      def app
-        DumbReceipt::Handlers::Stats
-      end
-
       it 'inherits DumbReceipt::Handlers::Base' do
         Stats.ancestors.should include DumbReceipt::Handlers::Base
       end
@@ -23,4 +19,3 @@ module DumbReceipt
     end
   end
 end
-

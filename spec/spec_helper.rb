@@ -40,3 +40,11 @@ end
 def body
   last_response.body
 end
+
+##
+# Returns the RSpec subject which will be the middleware or app that is being
+# spec-ed when Rack::Test::Methods methods call `app`.
+#
+def app
+  subject # inherited from RSpec::Core::Subject::ExampleMethods
+end

@@ -6,10 +6,6 @@ module DumbReceipt
     describe Sync do
       include Rack::Test::Methods
 
-      def app
-        DumbReceipt::Handlers::Sync
-      end
-
       it 'inherits DumbReceipt::Handlers::Base' do
         Sync.ancestors.should include DumbReceipt::Handlers::Base
       end

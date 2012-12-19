@@ -14,12 +14,12 @@ module DumbReceipt
 
         it 'returns the offers' do
           get '/offers'
-          response_data['offers'].should == data['offers']
+          response['offers'].should == data['offers']
         end
 
         it 'honors the limit parameter' do
           get '/offers', 'limit' => 37
-          response_data['offers'].length.should == 37
+          response['offers'].length.should == 37
         end
       end
 
@@ -43,7 +43,7 @@ module DumbReceipt
         it 'responds with success and returns the first offer' do
           post '/offers/redeem'
           status.should be 200
-          response_data['offer'].should == data['offers'][0]
+          response['offer'].should == data['offers'][0]
         end
 
         it 'fails if you pass a fail parameter' do

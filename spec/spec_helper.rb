@@ -21,12 +21,12 @@ RSpec.configure do |config|
   config.order = 'random'
 end
 
-def error
-  response_data['error']
+def response
+  JSON.parse(last_response.body)
 end
 
-def response_data
-  JSON.parse(last_response.body)
+def error
+  response['error']
 end
 
 def status

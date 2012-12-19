@@ -4,12 +4,16 @@ require 'kwalify'
 describe 'YAML data structure' do
 
   # memoized data accessors
+  #
   #   e.g. let(:receipts) { data['receipts'] }
   #
   %w[receipts offers locations users].each do |id|
     let(id.to_sym) { data[id] }
   end
 
+  ##
+  # Returns all of the UUIDs found by recursively traversing the entire Hash.
+  #
   let :all_uuids do
     def find_all_uuids(hash)
       hash.each.collect do |element|
@@ -20,7 +24,7 @@ describe 'YAML data structure' do
         end
       end.flatten.compact.sort
     end
-    find_all_uuids(data)
+    find_all_uuids data
   end
 
   it 'validates against the schema' do

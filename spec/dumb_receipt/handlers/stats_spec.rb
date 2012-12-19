@@ -13,7 +13,7 @@ module DumbReceipt
       describe 'GET /stats' do
         it 'returns the stats' do
           get '/stats'
-          response_data['stats'].should == data['stats']
+          response['stats'].should == data['stats']
         end
       end
     end

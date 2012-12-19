@@ -6,10 +6,6 @@ module DumbReceipt
     describe Stats do
       include Rack::Test::Methods
 
-      def app
-        DumbReceipt::Handlers::Stats
-      end
-
       it 'inherits DumbReceipt::Handlers::Base' do
         Stats.ancestors.should include DumbReceipt::Handlers::Base
       end
@@ -17,10 +13,9 @@ module DumbReceipt
       describe 'GET /stats' do
         it 'returns the stats' do
           get '/stats'
-          response_data['stats'].should == data['stats']
+          response['stats'].should == data['stats']
         end
       end
     end
   end
 end
-

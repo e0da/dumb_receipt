@@ -6,10 +6,6 @@ module DumbReceipt
     describe Registration do
       include Rack::Test::Methods
 
-      def app
-        DumbReceipt::Handlers::Registration
-      end
-
       it 'inherits DumbReceipt::Handlers::Base' do
         Registration.ancestors.should include DumbReceipt::Handlers::Base
       end

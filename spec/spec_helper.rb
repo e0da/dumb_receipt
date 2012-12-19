@@ -21,12 +21,12 @@ RSpec.configure do |config|
   config.order = 'random'
 end
 
-def error
-  response_data['error']
+def response
+  JSON.parse(last_response.body)
 end
 
-def response_data
-  JSON.parse(last_response.body)
+def error
+  response['error']
 end
 
 def status
@@ -39,4 +39,12 @@ end
 
 def body
   last_response.body
+end
+
+##
+# Returns the RSpec subject which will be the middleware or app that is being
+# spec-ed when Rack::Test::Methods methods call `app`.
+#
+def app
+  subject # inherited from RSpec::Core::Subject::ExampleMethods
 end

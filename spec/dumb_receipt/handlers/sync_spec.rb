@@ -6,10 +6,6 @@ module DumbReceipt
     describe Sync do
       include Rack::Test::Methods
 
-      def app
-        DumbReceipt::Handlers::Sync
-      end
-
       it 'inherits DumbReceipt::Handlers::Base' do
         Sync.ancestors.should include DumbReceipt::Handlers::Base
       end
@@ -17,11 +13,11 @@ module DumbReceipt
       describe 'GET /sync' do
         it 'returns a sync-like response' do
           get '/sync'
-          response_data['sync_timestamp'].should_not be nil
-          response_data['user'].should_not be nil
-          response_data['offers'].should_not be nil
-          response_data['receipts'].should_not be nil
-          response_data['locations'].should_not be nil
+          response['sync_timestamp'].should_not be nil
+          response['user'].should_not be nil
+          response['offers'].should_not be nil
+          response['receipts'].should_not be nil
+          response['locations'].should_not be nil
         end
       end
     end

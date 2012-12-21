@@ -1,6 +1,7 @@
 require 'spec_helper'
 require 'active_support/core_ext/numeric/time'
 require 'kwalify'
+require 'time'
 
 describe 'YAML data structure' do
 
@@ -85,7 +86,7 @@ describe 'YAML data structure' do
       #
       def offers_expiring
         offers.find_all do |offer|
-          yield Time.new(offer['expires'])
+          yield Time.parse(offer['expires'])
         end
       end
 
@@ -94,12 +95,10 @@ describe 'YAML data structure' do
       end
 
       it 'has some in the next 7 days' do
-        pending_erb
         offers_expiring { |exp| exp > Time.now and exp <= Time.now + 7.days }.should_not be_empty
       end
 
       it 'has some in the further future' do
-        pending_erb
         offers_expiring { |exp| exp > Time.now + 7.days }.should_not be_empty
       end
     end

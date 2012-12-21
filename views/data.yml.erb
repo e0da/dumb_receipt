@@ -1,5 +1,7 @@
 ---
 
+<% require 'active_support/core_ext/numeric/time' %>
+
 #
 # In all cases, the first example should be the most complete. We'll write our
 # specs against the first example of each data type.
@@ -133,7 +135,7 @@ offers:
   is_redeemed: false
   barcode_image_url: "https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png"
   coupon_code: "ABC12345"
-  expires: 2012-07-30T17:00:23Z
+  expires: <%= Time.now - 1.day %>
   redeemed_at: 1970-01-01T00:00:00Z
   created_at: 2012-07-19T09:39:52Z
   updated_at: 2012-07-19T09:39:47Z

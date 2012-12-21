@@ -31,7 +31,7 @@ describe 'YAML data structure' do
   it 'validates against the schema' do
     schema = YAML.load_file('spec/data_schema.yml')
     validator = Kwalify::Validator.new(schema)
-    data = YAML.load_file('views/data.yml')
+    data = Data.load_yaml_erb('views/data.yml.erb')
     errors = validator.validate(data)
     expect do
       errors.each do |error|

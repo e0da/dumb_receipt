@@ -5,9 +5,9 @@ gem 'slim'
 gem 'sass'
 gem 'redcarpet'
 gem 'coffee-script'
+gem 'active_support'
 
 group :development, :test do
-  gem 'active_support', require: false
   gem 'guard',          require: false
   gem 'guard-rspec',    require: false
   gem 'kwalify',        require: false

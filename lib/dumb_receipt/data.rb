@@ -1,3 +1,4 @@
+require 'erb'
 require 'json'
 require 'yaml'
 
@@ -5,33 +6,34 @@ module DumbReceipt
   module Data
 
     ##
-    # Returns a Hash of the sample API data represented in views/data.yml.
+    # Parses the file for the given method as ERB then as YAML and returns the
+    # kind of Hash you'd get from parsing the equivalent JSON.
     #
-    def data
-      @@data ||= hash_from_json_from_yaml('views/data.yml')
-    end
-
-    ##
-    # Returns a Hash of the response data (error messages, etc.) from views/responses.yml.
-    #
-    def responses
-      @@responses ||= hash_from_json_from_yaml('views/responses.yml')
-    end
-
-    private
-
-    ##
-    # Parses given YAML file and returns the kind of Hash you'd get from parsing
-    # the equivalent JSON.
+    # ## Exaplanation ##
     #
     # We store the data as YAML because it's easier to read, write and validate.
+    # We support ERB so that we can define some dynamic fields (like expiration
+    # dates that need to be relative to the time they're retrieved).
+    #
     # There are inconsistencies in the way that certain data types (e.g.
     # timestamps) are represented in YAML and JSON, so parsing the data from
     # YAML, then converting it to JSON, then parsing the JSON ensures that the
     # data is uniform so we can guarantee that it behaves the way we expect.
     #
-    def hash_from_json_from_yaml(file_path)
-      JSON.parse(YAML.load_file(file_path).to_json)
+    %w[data responses].each do |method|
+      define_method method.to_s do
+        eval %[@@#{method} ||= JSON.parse(load_yaml_erb("views/#{method}.yml.erb").to_json)]
+      end
+    end
+
+    ##
+    # Loads the YAML file after pre-processing it with ERB.
+    #
+    def load_yaml_erb(file_path)
+      erb   = File.open(file_path) { |f| f.read }
+      yaml  = ERB.new(erb).result()
+      io    = StringIO.new(yaml)
+      YAML.load io
     end
   end
 end

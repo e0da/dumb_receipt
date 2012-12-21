@@ -1,6 +1,9 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    active_support (3.0.0)
+      activesupport (= 3.0.0)
+    activesupport (3.0.0)
     coderay (1.0.8)
     coffee-script (2.2.0)
       coffee-script-source
@@ -67,6 +70,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_support
   coffee-script
   guard
   guard-rspec

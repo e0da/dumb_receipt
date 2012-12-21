@@ -1,5 +1,7 @@
 require 'spec_helper'
+require 'active_support/core_ext/numeric/time'
 require 'kwalify'
+require 'time'
 
 describe 'YAML data structure' do
 
@@ -30,7 +32,7 @@ describe 'YAML data structure' do
   it 'validates against the schema' do
     schema = YAML.load_file('spec/data_schema.yml')
     validator = Kwalify::Validator.new(schema)
-    data = YAML.load_file('views/data.yml')
+    data = Data.load_yaml_erb('views/data.yml.erb')
     errors = validator.validate(data)
     expect do
       errors.each do |error|
@@ -65,6 +67,40 @@ describe 'YAML data structure' do
     it 'always belongs to a receipt' do
       known_offers = receipts.collect { |receipt| receipt['offers'] }.flatten
       offers.each { |offer| known_offers.should include offer['uuid'] }
+    end
+
+    it 'has some unredeemed offers' do
+      offers.find { |offer| offer['is_redeemed'] == false }.should_not be nil
+    end
+
+    describe 'expiration dates' do
+
+      let(:pending_erb) { pending "ERB support for dynamic dates in YAML file" }
+
+      ##
+      # Yields the expiration date of each offer to the block
+      #
+      # ## Example ##
+      #
+      #     offers_expiring { |exp| exp < Time.now } # Offers already expired
+      #
+      def offers_expiring
+        offers.find_all do |offer|
+          yield Time.parse(offer['expires'])
+        end
+      end
+
+      it 'has some in the past' do
+        offers_expiring { |exp| exp < Time.now }.should_not be_empty
+      end
+
+      it 'has some in the next 7 days' do
+        offers_expiring { |exp| exp > Time.now and exp <= Time.now + 7.days }.should_not be_empty
+      end
+
+      it 'has some in the further future' do
+        offers_expiring { |exp| exp > Time.now + 7.days }.should_not be_empty
+      end
     end
   end
 

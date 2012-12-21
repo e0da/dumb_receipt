@@ -130,11 +130,11 @@ offers:
   image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
   thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
   is_read: true
-  is_redeemed: true
+  is_redeemed: false
   barcode_image_url: "https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png"
   coupon_code: "ABC12345"
   expires: 2012-07-30T17:00:23Z
-  redeemed_at: 2012-07-21T09:39:43Z
+  redeemed_at: 1970-01-01T00:00:00Z
   created_at: 2012-07-19T09:39:52Z
   updated_at: 2012-07-19T09:39:47Z
 - uuid: "439c5d31-2eb7-11e2-81c1-0800200c9a66"
@@ -143,11 +143,11 @@ offers:
   image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb50Diklfmn3HKvOx.png"
   thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFM.png"
   is_read: true
-  is_redeemed: true
+  is_redeemed: false
   barcode_image_url: "https://dumb-receipt.herokuapp.com/images/50Diklfmn3HKvOx.png"
   coupon_code: "ABC12346"
   expires: 2012-07-30T18:00:01Z
-  redeemed_at: 2012-07-21T09:39:12Z
+  redeemed_at: 1970-01-01T00:00:00Z
   created_at: 2012-07-19T09:39:23Z
   updated_at: 2012-07-19T09:39:34Z
 - uuid: "439c5d32-2eb7-11e2-81c1-0800200c9a66"

@@ -48,3 +48,15 @@ end
 def app
   subject # inherited from RSpec::Core::Subject::ExampleMethods
 end
+
+
+class Array
+
+  ##
+  # Returns true if the array has duplicates and false if it does not.
+  #
+  def has_duplicates?
+    self.length != self.uniq.length
+  end
+end
+

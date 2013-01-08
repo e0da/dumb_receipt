@@ -102,8 +102,7 @@ describe 'YAML data structure' do
     end
 
     it "doesn't reuse names" do
-      names = offers.collect { |offer| offer['name'] }
-      names.should_not have_duplicates
+      offers.collect { |offer| offer['name'] }.should_not have_duplicates
     end
   end
 
@@ -115,16 +114,14 @@ describe 'YAML data structure' do
     end
 
     it "doesn't reuse names" do
-      names = locations.collect { |location| location['name'] }
-      names.should_not have_duplicates
+      locations.collect { |location| location['name'] }.should_not have_duplicates
     end
   end
 
   describe 'users' do
 
     it "doesn't reuse names" do
-      names = users.collect { |user| "#{user['first_name']} #{user['last_name']}" }
-      names.should_not have_duplicates
+      users.collect { |user| "#{user['first_name']} #{user['last_name']}" }.should_not have_duplicates
     end
   end
 end

@@ -59,4 +59,3 @@ class Array
     self.length != self.uniq.length
   end
 end
-

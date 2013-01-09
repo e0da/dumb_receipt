@@ -45,7 +45,7 @@ describe 'YAML data structure' do
     all_uuids.should == all_uuids.uniq
   end
 
-  describe 'receipt data' do
+  describe 'receipts' do
 
     it 'only references offer UUIDs that exist' do
       offer_uuids = offers.collect { |offer| offer['uuid'] }
@@ -62,7 +62,7 @@ describe 'YAML data structure' do
     end
   end
 
-  describe 'offer data' do
+  describe 'offers' do
 
     it 'always belongs to a receipt' do
       known_offers = receipts.collect { |receipt| receipt['offers'] }.flatten
@@ -74,8 +74,6 @@ describe 'YAML data structure' do
     end
 
     describe 'expiration dates' do
-
-      let(:pending_erb) { pending "ERB support for dynamic dates in YAML file" }
 
       ##
       # Yields the expiration date of each offer to the block
@@ -102,13 +100,28 @@ describe 'YAML data structure' do
         offers_expiring { |exp| exp > Time.now + 7.days }.should_not be_empty
       end
     end
+
+    it "doesn't reuse names" do
+      offers.collect { |offer| offer['name'] }.should_not have_duplicates
+    end
   end
 
-  describe 'location data' do
+  describe 'locations' do
 
     it 'always belongs to a receipt' do
       known_locations = receipts.collect { |receipt| receipt['location'] }
       locations.each { |location| known_locations.should include location['uuid'] }
+    end
+
+    it "doesn't reuse names" do
+      locations.collect { |location| location['name'] }.should_not have_duplicates
+    end
+  end
+
+  describe 'users' do
+
+    it "doesn't reuse names" do
+      users.collect { |user| "#{user['first_name']} #{user['last_name']}" }.should_not have_duplicates
     end
   end
 end

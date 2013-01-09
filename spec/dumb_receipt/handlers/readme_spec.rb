@@ -5,6 +5,10 @@ module DumbReceipt
   module Handlers
     describe Readme do
 
+      it 'inherits DumbReceipt::Handlers::Base' do
+        Readme.ancestors.should include DumbReceipt::Handlers::Base
+      end
+
       describe 'GET /' do
         it 'renders the README' do
           get '/'

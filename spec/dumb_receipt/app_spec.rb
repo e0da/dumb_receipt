@@ -10,12 +10,12 @@ module DumbReceipt
 
     %w[
       Images
-      Offers
       Readme
-      Receipts
-      Registration
-      Stats
-      Sync
+      JSON::Offers
+      JSON::Receipts
+      JSON::Registration
+      JSON::Stats
+      JSON::Sync
     ].each do |klass|
       klass = eval "DumbReceipt::Handlers::#{klass}"
       it "should include middleware #{klass}" do

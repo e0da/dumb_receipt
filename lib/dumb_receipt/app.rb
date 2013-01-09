@@ -5,21 +5,24 @@ require 'sass'
 require 'coffee-script'
 
 require 'dumb_receipt/handlers/images'
-require 'dumb_receipt/handlers/offers'
 require 'dumb_receipt/handlers/readme'
-require 'dumb_receipt/handlers/receipts'
-require 'dumb_receipt/handlers/registration'
-require 'dumb_receipt/handlers/stats'
-require 'dumb_receipt/handlers/sync'
+
+require 'dumb_receipt/handlers/json/offers'
+require 'dumb_receipt/handlers/json/receipts'
+require 'dumb_receipt/handlers/json/registration'
+require 'dumb_receipt/handlers/json/stats'
+require 'dumb_receipt/handlers/json/sync'
 
 module DumbReceipt
   class App < Sinatra::Base
+
     use DumbReceipt::Handlers::Images
-    use DumbReceipt::Handlers::Offers
     use DumbReceipt::Handlers::Readme
-    use DumbReceipt::Handlers::Receipts
-    use DumbReceipt::Handlers::Registration
-    use DumbReceipt::Handlers::Stats
-    use DumbReceipt::Handlers::Sync
+
+    use DumbReceipt::Handlers::JSON::Offers
+    use DumbReceipt::Handlers::JSON::Receipts
+    use DumbReceipt::Handlers::JSON::Registration
+    use DumbReceipt::Handlers::JSON::Stats
+    use DumbReceipt::Handlers::JSON::Sync
   end
 end

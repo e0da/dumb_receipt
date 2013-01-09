@@ -60,7 +60,7 @@ module DumbReceipt
       # Returns formatted JSON output for the given object.
       #
       def json(object)
-        JSON.pretty_generate object
+        ::JSON.pretty_generate object
       end
     end
   end

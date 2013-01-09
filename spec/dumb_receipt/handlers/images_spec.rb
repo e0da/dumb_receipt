@@ -9,6 +9,10 @@ module DumbReceipt
       IMAGE_NAME = 'bettys_diner.png'
       IMAGE_TYPE = IMAGE_NAME.split('.')[-1].downcase
 
+      it 'inherits DumbReceipt::Handlers::Base' do
+        Images.ancestors.should include DumbReceipt::Handlers::Base
+      end
+
       it 'serves an image if the file exists' do
 
         image_size = File.new("#{Images.root}/public/images/#{IMAGE_NAME}").size

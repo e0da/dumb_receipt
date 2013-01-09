@@ -8,12 +8,10 @@ module DumbReceipt
 
       IMAGE_NAME = 'bettys_diner.png'
       IMAGE_TYPE = IMAGE_NAME.split('.')[-1].downcase
-      ROOT = File.expand_path("../../../../", __FILE__)
 
       it 'serves an image if the file exists' do
 
-        Images.set :root, ROOT
-        image_size = File.new("#{ROOT}/public/images/#{IMAGE_NAME}").size
+        image_size = File.new("#{Images.root}/public/images/#{IMAGE_NAME}").size
 
         get "/images/#{IMAGE_NAME}"
         last_response.headers['Content-Type'].should == "image/#{IMAGE_TYPE}"

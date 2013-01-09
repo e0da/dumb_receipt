@@ -1,8 +1,8 @@
-require 'dumb_receipt/handlers/base'
+require 'dumb_receipt/handlers/json_base'
 
 module DumbReceipt
   module Handlers
-    class Registration < DumbReceipt::Handlers::Base
+    class Registration < JsonBase
 
       post '/registration' do
         if params[:fail]

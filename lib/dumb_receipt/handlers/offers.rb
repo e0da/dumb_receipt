@@ -1,8 +1,8 @@
-require 'dumb_receipt/handlers/base'
+require 'dumb_receipt/handlers/json_base'
 
 module DumbReceipt
   module Handlers
-    class Offers < DumbReceipt::Handlers::Base
+    class Offers < JsonBase
 
       get '/offers' do
         json offers: results_for('offers')

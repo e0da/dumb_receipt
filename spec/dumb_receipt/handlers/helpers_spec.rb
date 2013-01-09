@@ -39,7 +39,7 @@ module DumbReceipt
 
         it 'selects the data from the current class for the given action and type' do
           dummy_class.any_instance.stub(:base_class_name).and_return('receipts')
-          JSON.parse(dummy_class.new.failure('add', 'receipt_not_found')).should \
+          ::JSON.parse(dummy_class.new.failure('add', 'receipt_not_found')).should \
             == responses['receipts']['add']['failures']['receipt_not_found']
         end
       end
@@ -73,7 +73,7 @@ module DumbReceipt
               legs: ['left leg', 'right leg']
             }
           }
-          dummy_class.new.json(obj).should == JSON.pretty_generate(JSON.parse obj.to_json)
+          dummy_class.new.json(obj).should == ::JSON.pretty_generate(::JSON.parse obj.to_json)
         end
       end
     end

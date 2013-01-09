@@ -36,9 +36,9 @@ module DumbReceipt
         it 'only loads the YAML file once for all classes and instances' do
 
           # FIXME: It would be nice to bind this less tightly to its internal
-          # dependency, but I haven't yet thought of a better way to test that a
-          # bunch of classes only call an included method from a module one
-          # time.
+          # implementation (JSON.parse), but I haven't yet thought of a better
+          # way to test that a bunch of classes only call an included method
+          # from a module one time.
           #
           JSON.should_receive(:parse).once.and_return({})
           100.times { dummy_class_factory.new.send method }

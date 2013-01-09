@@ -124,6 +124,50 @@ receipts:
   offers:
   - "452c5d30-2eb7-11e2-81c1-0800200c9a66"
   location: "184dc5a0-4880-11e2-bcfd-0800200c9a69"
+- uuid: "458c5d34-2eb7-11e2-81c1-0800200c9a67"
+  order: "32"
+  currency: "USD"
+  claimed_at: 2012-07-19T09:39:23Z
+  completed_at: 2012-07-19T09:39:38Z
+  item_count: 1
+  totals:
+  - subtotal: 2.89
+  - tax: 0.22
+  - total: 3.11
+  items:
+  - name: "Vegetable Bowl"
+    price: 2.89
+    quantity: 1
+  zones:
+  - type: "totals"
+  offers:
+  - "452c5d30-2eb7-11e2-81c1-0800200c9a68"
+  - "452c5d30-2eb7-11e2-81c1-0800200c9a69"
+  location: "184dc5a0-4880-11e2-bcfd-0800200c9a60"
+- uuid: "458c5d34-2eb7-11e2-81c1-0800200c9a68"
+  order: "42"
+  currency: "USD"
+  claimed_at: <%= Time.now - 3.5.days %>
+  completed_at: <%= Time.now - 3.5.days %>
+  item_count: 6
+  totals:
+  - subtotal: 12.54
+  - tax: 0.97
+  - total: 13.51
+  items:
+  - name: "Chicken Strips"
+    price: 4.39
+    quantity: 2
+  - name: "Gravy Side"
+    price: 0.79
+    quantity: 2
+  - name: "LG Drink"
+    price: 1.09
+    quantity: 2
+  zones:
+  - type: "totals"
+  offers:
+  location: "184dc5a0-4880-11e2-bcfd-0800200c9a61"
 
 offers:
 - uuid: "439c5d30-2eb7-11e2-81c1-0800200c9a66"
@@ -191,11 +235,37 @@ offers:
   redeemed_at: 2012-07-21T09:39:12Z
   created_at: 2012-07-19T09:39:23Z
   updated_at: 2012-07-19T09:39:34Z
+- uuid: "452c5d30-2eb7-11e2-81c1-0800200c9a68"
+  name: "Free Cookie!"
+  contents: "Redeem this coupon any time for a free cookie!"
+  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
+  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
+  is_read: true
+  is_redeemed: true
+  barcode_image_url: "https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png"
+  coupon_code: "ABC12345"
+  expires: <%= Time.now + 1.day %>
+  redeemed_at: <%= Time.at 0 %>
+  created_at: <%= Time.now - 3.days %>
+  updated_at: <%= Time.now - 3.days %>
+- uuid: "452c5d30-2eb7-11e2-81c1-0800200c9a69"
+  name: "Half-off Entree!"
+  contents: "Redeem this coupon for half off any non-premium entree!"
+  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
+  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
+  is_read: true
+  is_redeemed: true
+  barcode_image_url: "https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png"
+  coupon_code: "ABC12345"
+  expires: <%= Time.now - 1.day %>
+  redeemed_at: <%= Time.now - 2.days %>
+  created_at: <%= Time.now - 5.days %>
+  updated_at: <%= Time.now - 2.days %>
 
 locations:
 - uuid: "184dc5a0-4880-11e2-bcfd-0800200c9a66"
-  name: "Store 1094"
-  brand: "Subway"
+  name: "Joe's Coffee Shop"
+  brand: "Joe's Coffee Shop"
   address1: "12345 Main St"
   address2: "Suite #42"
   city: "Goleta"
@@ -203,10 +273,10 @@ locations:
   zip: "93117"
   phone: "805-555-1234"
   country: "United States"
-  logo_url: "https://dumb-receipt.herokuapp.com/images/logo.png"
+  logo_url: "https://dumb-receipt.herokuapp.com/images/joes_coffee_shop.png"
 - uuid: "184dc5a0-4880-11e2-bcfd-0800200c9a67"
-  name: "Store 1096"
-  brand: "Subway"
+  name: "Betty's Diner"
+  brand: "Betty's Diner"
   address1: "2347 7th St"
   address2: ""
   city: "Goleta"
@@ -214,10 +284,10 @@ locations:
   zip: "93117"
   phone: "805-555-2345"
   country: "United States"
-  logo_url: "https://dumb-receipt.herokuapp.com/images/logo.png"
+  logo_url: "https://dumb-receipt.herokuapp.com/images/bettys_diner.png"
 - uuid: "184dc5a0-4880-11e2-bcfd-0800200c9a68"
   name: "Store 1102"
-  brand: "Panda"
+  brand: "Subway"
   address1: "15 Commerce Dr"
   address2: "Suite #420"
   city: "Shafter"
@@ -225,7 +295,7 @@ locations:
   zip: "93263"
   phone: "805-555-3456"
   country: "United States"
-  logo_url: "https://dumb-receipt.herokuapp.com/images/logo.png"
+  logo_url: "https://dumb-receipt.herokuapp.com/images/subway.png"
 - uuid: "184dc5a0-4880-11e2-bcfd-0800200c9a69"
   name: "Store 1117"
   brand: "Subway"
@@ -236,7 +306,29 @@ locations:
   zip: "93117"
   phone: "805-555-4567"
   country: "United States"
-  logo_url: "https://dumb-receipt.herokuapp.com/images/logo.png"
+  logo_url: "https://dumb-receipt.herokuapp.com/images/subway.png"
+- uuid: "184dc5a0-4880-11e2-bcfd-0800200c9a60"
+  name: "Panda #0928"
+  brand: "Panda Express"
+  address1: "25 Left St"
+  address2: ""
+  city: "Shafter"
+  state: "California"
+  zip: "93263"
+  phone: "661-555-7460"
+  country: "United States"
+  logo_url: "https://dumb-receipt.herokuapp.com/images/panda_express.png"
+- uuid: "184dc5a0-4880-11e2-bcfd-0800200c9a61"
+  name: "IP Chicken"
+  brand: "IP Chicken"
+  address1: "255 Bit Street"
+  address2: "Suite G"
+  city: "Internet"
+  state: "CA"
+  zip: "93007"
+  phone: "805-555-7460"
+  country: "United States"
+  logo_url: "https://dumb-receipt.herokuapp.com/images/ip_chicken.png"
 
 users:
 - uuid: "184dc5b4-4880-11e2-bcfd-0800200c9a66"

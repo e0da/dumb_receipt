@@ -45,7 +45,7 @@ describe 'YAML data structure' do
     all_uuids.should == all_uuids.uniq
   end
 
-  describe 'receipts' do
+  describe 'receipt data' do
 
     it 'only references offer UUIDs that exist' do
       offer_uuids = offers.collect { |offer| offer['uuid'] }
@@ -60,9 +60,31 @@ describe 'YAML data structure' do
       location_uuids = locations.collect { |location| location['uuid'] }
       receipts.each { |receipt| location_uuids.should include receipt['location'] }
     end
+
+    it 'has sensible totals data' do
+      receipts.each do |receipt|
+
+        # Add up subtotals and item counts
+        subtotal, item_count = receipt['items'].inject([0,0]) do |sums, item|
+          sums[0] += (item['price'] * item['quantity']).round(2)
+          sums[1] += item['quantity']
+          sums
+        end
+
+        # Extract totals
+        totals = {}
+        %w[subtotal tax total].each do |key|
+          totals[key] = receipt['totals'].find { |total| total[key] }[key]
+        end
+
+        receipt['item_count'].should == item_count
+        totals['tax'].should == (totals['subtotal'] * 0.0775).round(2)
+        totals['total'].should == (totals['subtotal'] + totals['tax']).round(2)
+      end
+    end
   end
 
-  describe 'offers' do
+  describe 'offer data' do
 
     it 'always belongs to a receipt' do
       known_offers = receipts.collect { |receipt| receipt['offers'] }.flatten
@@ -106,7 +128,7 @@ describe 'YAML data structure' do
     end
   end
 
-  describe 'locations' do
+  describe 'location data' do
 
     it 'always belongs to a receipt' do
       known_locations = receipts.collect { |receipt| receipt['location'] }
@@ -118,7 +140,7 @@ describe 'YAML data structure' do
     end
   end
 
-  describe 'users' do
+  describe 'user data' do
 
     it "doesn't reuse names" do
       users.collect { |user| "#{user['first_name']} #{user['last_name']}" }.should_not have_duplicates

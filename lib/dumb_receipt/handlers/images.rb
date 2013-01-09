@@ -5,6 +5,8 @@ module DumbReceipt
   module Handlers
     class Images < Sinatra::Base
 
+      set :public_folder, 'public'
+
       # A disgusting magenta rectangle png in Base64
       #
       BASE64_PNG = <<-BASE64

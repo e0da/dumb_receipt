@@ -138,6 +138,12 @@ describe 'YAML data structure' do
     it "doesn't reuse names" do
       locations.collect { |location| location['name'] }.should_not have_duplicates
     end
+
+    it 'only references images that exist' do
+      locations.collect { |location| location['logo_url'] }.each do |url|
+        File.exists?("#{APP_ROOT}/public/images/#{url.split('/')[-1]}").should be true
+      end
+    end
   end
 
   describe 'user data' do

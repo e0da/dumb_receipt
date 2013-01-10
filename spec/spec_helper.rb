@@ -49,6 +49,7 @@ def app
   subject # inherited from RSpec::Core::Subject::ExampleMethods
 end
 
+APP_ROOT = File.expand_path('../../', __FILE__)
 
 class Array
 

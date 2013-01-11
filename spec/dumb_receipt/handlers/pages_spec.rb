@@ -29,11 +29,13 @@ module DumbReceipt
         end
       end
 
-      describe 'GET /application.js' do
-        it 'renders the results as application/javascript' do
-          get '/application.js'
-          status.should be 200
-          content_type.should match %r[application/javascript]
+      %w[application visualize].each do |script|
+        describe "GET /#{script}.js" do
+          it 'renders the results as application/javascript' do
+            get "/#{script}.js"
+            status.should be 200
+            content_type.should match %r[application/javascript]
+          end
         end
       end
 

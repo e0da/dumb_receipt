@@ -8,8 +8,12 @@ require 'coffee-script'
 module DumbReceipt
   module Handlers
     class Pages < Base
-      get('/application.css') { sass     :application }
-      get('/application.js')  { coffee   :application }
+
+      %w[application visualize].each do |script|
+        get("/#{script}.js") { coffee script.to_sym }
+      end
+
+      get('/application.css') { sass :application }
 
       get '/' do
         @title = 'README'

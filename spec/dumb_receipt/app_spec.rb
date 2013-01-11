@@ -10,7 +10,7 @@ module DumbReceipt
 
     %w[
       Images
-      Readme
+      Pages
       JSON::Offers
       JSON::Receipts
       JSON::Registration

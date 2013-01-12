@@ -22,6 +22,7 @@ module DumbReceipt
 
       get '/visualize' do
         @title = 'Visualize Data'
+        @body_class = 'visualize'
         slim     :visualize
       end
     end

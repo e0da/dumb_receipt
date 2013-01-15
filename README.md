@@ -71,6 +71,10 @@ Development
 The project is open source and hosted at GitHub:
 <https://github.com/SmartReceipt/dumb_receipt>
 
+I recommend working on this by running `guard` and watching the specs pass/fail.
+There is a special URL, [/visualize][], which shows you a human-readable view of
+the data. This is helpful for debugging.
+
 ### Setup
 
 Install dependencies
@@ -112,3 +116,5 @@ URLs by visiting the URL indicated by the web server, (e.g.
 
 [/offers/read]:   /offers/read
 [/offers/redeem]: /offers/redeem
+
+[/visualize]: /visualize

@@ -1,11 +1,14 @@
 document.addEventListener 'readystatechange', ->
-  make_the_dumb_in_dumb_receipt_red()
-  add_copyright_class_to_final_paragraph()
+  fix_up_header()
 
-add_copyright_class_to_final_paragraph = ->
-  paragraphs = document.getElementsByTagName 'p'
-  paragraphs[paragraphs.length-1].className = 'copyright'
+fix_up_header = ->
+  @header = document.getElementsByTagName('h1')[0]
+  make_the_dumb_in_dumb_receipt_red()
+  make_header_link_back_to_home()
 
 make_the_dumb_in_dumb_receipt_red = ->
-  h1 = document.getElementsByTagName('h1')[0]
-  h1.innerHTML = h1.innerHTML.replace /Dumb/, '<span class="sr_red">Dumb</span>'
+  @header.innerHTML = @header.innerHTML.replace /Dumb/, '<span class="sr_red">Dumb</span>'
+
+make_header_link_back_to_home = ->
+  @header.addEventListener 'click', ->
+    location.href = '/'

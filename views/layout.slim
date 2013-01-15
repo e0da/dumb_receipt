@@ -1,13 +1,15 @@
 doctype html
 html
   head
-    title DumbReceipt - README
+    title
+      | DumbReceipt
+      = " - #{@title}" if @title
     meta name='viewport' content='width=device-width, initial-scale=1.0'
     script type='text/javascript' src==uri('application.js')
     link rel='stylesheet' type='text/css' href==uri('bootstrap/css/bootstrap.min.css')
     link rel='stylesheet' type='text/css' href==uri('bootstrap/css/bootstrap-responsive.min.css')
     link rel='stylesheet' type='text/css' href==uri('application.css')
-  body
+  body class=="#{@body_class}"
     #page.container-fluid
       .row-fluid
         .span12

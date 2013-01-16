@@ -21,6 +21,7 @@ receipts:
   - subtotal: 10.50
   - tax: 0.81
   - total: 11.31
+  - VISA: 'XXXX-XXXX-XXXX-1234'
   items:
   - name: "MD Coffee"
     price: 0.99
@@ -46,6 +47,7 @@ receipts:
   - subtotal: 5.01
   - tax: 0.39
   - total: 5.40
+  - Mastercard: 'XXXX-XXXX-XXXX-2384'
   items:
   - name: "SM coffee"
     price: 0.79
@@ -90,6 +92,7 @@ receipts:
   - subtotal: 4.38
   - tax: 0.34
   - total: 4.72
+  - VISA: 'XXXX-XXXX-XXXX-9823'
   items:
   - name: "6\" Turkey w/ Avocado"
     price: 3.49
@@ -138,6 +141,7 @@ receipts:
   - subtotal: 2.89
   - tax: 0.22
   - total: 3.11
+  - Mastercard: 'XXXX-XXXX-XXXX-9823'
   items:
   - name: "Vegetable Bowl"
     price: 2.89
@@ -173,71 +177,6 @@ receipts:
   location: "184dc5a0-4880-11e2-bcfd-0800200c9a61"
 
 offers:
-- uuid: "439c5d30-2eb7-11e2-81c1-0800200c9a66"
-  name: "Free Small Coffee!"
-  contents: "Redeem this coupon any time for a free small coffee!"
-  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
-  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
-  is_read: true
-  is_redeemed: false
-  barcode_image_url: "https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png"
-  coupon_code: "ABC12345"
-  expires: <%= now - 1.day %>
-  redeemed_at: <%= now - 2.5.days %>
-  created_at: <%= now - 2.weeks %>
-  updated_at: <%= now - 2.5.days %>
-- uuid: "439c5d31-2eb7-11e2-81c1-0800200c9a66"
-  name: "25% Off Any Lunch Order!"
-  contents: "Come in for lunch and redeem this coupon for 25% off any lunch order!"
-  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb50Diklfmn3HKvOx.png"
-  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFM.png"
-  is_read: true
-  is_redeemed: false
-  barcode_image_url: "https://dumb-receipt.herokuapp.com/images/50Diklfmn3HKvOx.png"
-  coupon_code: "ABC12346"
-  expires: <%= now + 7.days %>
-  redeemed_at: <%= never %>
-  created_at: <%= now - 6.hours %>
-  updated_at: <%= now - 6.hours %>
-- uuid: "439c5d32-2eb7-11e2-81c1-0800200c9a66"
-  name: "2 Free Cookies!"
-  contents: "Redeem this coupon for a free cookie!"
-  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
-  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
-  is_read: true
-  is_redeemed: true
-  barcode_image_url: "https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png"
-  coupon_code: "ABC12345"
-  expires: <%= now + 8.days %>
-  redeemed_at: <%= never %>
-  created_at: <%= now - 5.days %>
-  updated_at: <%= now - 5.days %>
-- uuid: "452c5d30-2eb7-11e2-81c1-0800200c9a66"
-  name: "Free sandwich upgrade!"
-  contents: "Redeem this coupon to upgrade any 6\" sandwich to a footlong!"
-  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
-  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
-  is_read: true
-  is_redeemed: false
-  barcode_image_url: "https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png"
-  coupon_code: "ABC12345"
-  expires: <%= now + 1.5.day %>
-  redeemed_at: <%= never %>
-  created_at: <%= now - 2.weeks %>
-  updated_at: <%= now - 2.weeks %>
-- uuid: "466c5d30-2eb7-11e2-81c1-0800200c9a66"
-  name: "Half off a slice of pie!"
-  contents: "Try our world-famous pie for half off!"
-  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
-  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
-  is_read: true
-  is_redeemed: true
-  barcode_image_url: "https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png"
-  coupon_code: "ABC12345"
-  expires: <%= now + 2.weeks %>
-  redeemed_at: <%= never %>
-  created_at: <%= now - 1.5.days %>
-  updated_at: <%= now - 1.5.days %>
 - uuid: "452c5d30-2eb7-11e2-81c1-0800200c9a68"
   name: "Free Cookie!"
   contents: "Redeem this coupon any time for a free cookie!"
@@ -258,12 +197,74 @@ offers:
   thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
   is_read: true
   is_redeemed: true
-  barcode_image_url: "https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png"
   coupon_code: "ABC12345"
-  expires: <%= now - 1.day %>
+  expires: <%= now - 1.5.days %>
   redeemed_at: <%= now - 2.days %>
   created_at: <%= now - 5.days %>
   updated_at: <%= now - 2.days %>
+- uuid: "439c5d30-2eb7-11e2-81c1-0800200c9a66"
+  name: "Free Small Coffee!"
+  contents: "Redeem this coupon any time for a free small coffee!"
+  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
+  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
+  is_read: true
+  is_redeemed: false
+  barcode_image_url: "https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png"
+  coupon_code: "ABC12345"
+  expires: <%= now - 1.day %>
+  redeemed_at: <%= now - 2.5.days %>
+  created_at: <%= now - 2.weeks %>
+  updated_at: <%= now - 2.5.days %>
+- uuid: "452c5d30-2eb7-11e2-81c1-0800200c9a66"
+  name: "Free sandwich upgrade!"
+  contents: "Redeem this coupon to upgrade any 6\" sandwich to a footlong!"
+  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
+  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
+  is_read: true
+  is_redeemed: false
+  coupon_code: "ABC12345"
+  expires: <%= now + 1.5.day %>
+  redeemed_at: <%= never %>
+  created_at: <%= now - 2.weeks %>
+  updated_at: <%= now - 2.weeks %>
+- uuid: "439c5d31-2eb7-11e2-81c1-0800200c9a66"
+  name: "25% Off Any Lunch Order!"
+  contents: "Come in for lunch and redeem this coupon for 25% off any lunch order!"
+  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb50Diklfmn3HKvOx.png"
+  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFM.png"
+  is_read: true
+  is_redeemed: false
+  coupon_code: "ABC12346"
+  expires: <%= now + 7.days %>
+  redeemed_at: <%= never %>
+  created_at: <%= now - 6.hours %>
+  updated_at: <%= now - 6.hours %>
+- uuid: "439c5d32-2eb7-11e2-81c1-0800200c9a66"
+  name: "2 Free Cookies!"
+  contents: "Redeem this coupon for a free cookie!"
+  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
+  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
+  is_read: true
+  is_redeemed: true
+  barcode_image_url: "https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png"
+  coupon_code: "ABC12345"
+  expires: <%= now + 8.days %>
+  redeemed_at: <%= never %>
+  created_at: <%= now - 5.days %>
+  updated_at: <%= now - 5.days %>
+- uuid: "466c5d30-2eb7-11e2-81c1-0800200c9a66"
+  name: "Half off a slice of pie!"
+  contents: "Try our world-famous pie for half off!"
+  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
+  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
+  is_read: true
+  is_redeemed: true
+  barcode_image_url: "https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png"
+  coupon_code: "ABC12345"
+  expires: <%= now + 2.weeks %>
+  redeemed_at: <%= never %>
+  created_at: <%= now - 1.5.days %>
+  updated_at: <%= now - 1.5.days %>
 
 locations:
 - uuid: "184dc5a0-4880-11e2-bcfd-0800200c9a66"

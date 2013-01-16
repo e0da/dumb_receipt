@@ -91,6 +91,9 @@ describe 'YAML data structure' do
         receipts.find { |receipt| receipt['totals'].find { |total| pp } }.should_not be empty
       end
     end
+
+    it 'always has "four words"'
+    it 'has other metadata'
   end
 
   describe 'offer data' do

@@ -82,9 +82,25 @@ describe 'YAML data structure' do
         totals['total'].should == (totals['subtotal'] + totals['tax']).round(2)
       end
     end
+
+    it 'has some credit card examples' do
+
+      pending 'Need to write this'
+
+      %w[VISA Mastercard].each do |card_type|
+        receipts.find { |receipt| receipt['totals'].find { |total| pp } }.should_not be empty
+      end
+    end
   end
 
   describe 'offer data' do
+
+    it 'serves the offers data sorted by expiration dates in ascending order' do
+      pending
+
+      # check offers per receipt
+      # check offers all together
+    end
 
     it 'always belongs to a receipt' do
       known_offers = receipts.collect { |receipt| receipt['offers'] }.flatten
@@ -94,6 +110,8 @@ describe 'YAML data structure' do
     it 'has some unredeemed offers' do
       offers.find { |offer| offer['is_redeemed'] == false }.should_not be nil
     end
+
+    it 'includes at least one offer with no barcode URL'
 
     describe 'expiration dates' do
 

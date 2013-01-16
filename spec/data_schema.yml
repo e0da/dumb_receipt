@@ -30,6 +30,12 @@ mapping:
               "subtotal":         { type: float }
               "tax":              { type: float }
               "total":            { type: float }
+              "VISA":
+                type: str
+                pattern: /(XXXX-){3}\d{4}/
+              "Mastercard":
+                type: str
+                pattern: /(XXXX-){3}\d{4}/
         "items":
           type: seq
           required: true
@@ -73,7 +79,7 @@ mapping:
         "thumbnail_image_url":    { type: str,        required: true }
         "is_read":                { type: bool,       required: true }
         "is_redeemed":            { type: bool,       required: true }
-        "barcode_image_url":      { type: str,        required: true }
+        "barcode_image_url":      { type: str                        }
         "coupon_code":            { type: str,        required: true }
         "expires":                { type: timestamp,  required: true }
         "redeemed_at":            { type: timestamp,  required: true }

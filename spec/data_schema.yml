@@ -32,10 +32,10 @@ mapping:
               "total":            { type: float }
               "VISA":
                 type: str
-                pattern: /(XXXX-){3}\d{4}/
+                pattern: /(XXXX-?){3}\d{4}/
               "Mastercard":
                 type: str
-                pattern: /(XXXX-){3}\d{4}/
+                pattern: /(XXXX-?){3}\d{4}/
         "metadata":
           type: seq
           required: true

@@ -42,7 +42,7 @@ mapping:
           sequence:
           - type: map
             mapping:
-              "receipt_id":
+              "serial_id":
                 type: str
                 required: true
                 unique: true

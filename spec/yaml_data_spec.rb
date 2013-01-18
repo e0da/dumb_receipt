@@ -92,8 +92,22 @@ describe 'YAML data structure' do
       end
     end
 
-    it 'always has "four words"'
-    it 'has other metadata'
+    it 'always has "four words" metadata' do
+      receipts.find do |receipt|
+        receipt['metadata'].find { |pair| pair.has_key? 'serial_id' }.nil?
+      end.should be nil
+    end
+
+    it 'has other metadata' do
+      # expect {
+      #   receipts.find do |receipt|
+      #     if receipt['metadata'].find { |pair| pair.has_key? 'serial_id' }.nil?
+      #   end
+      # }.not_to raise_error
+      pending
+    end
+
+    it 'has at least one receipt with more than 12 items'
   end
 
   describe 'offer data' do
@@ -116,7 +130,7 @@ describe 'YAML data structure' do
 
     it 'includes at least one offer with no barcode URL'
 
-    describe 'expiration dates' do
+    describe 'expiration date data' do
 
       ##
       # Yields the expiration date of each offer to the block
@@ -142,6 +156,8 @@ describe 'YAML data structure' do
       it 'has some in the further future' do
         offers_expiring { |exp| exp > Time.now + 7.days }.should_not be_empty
       end
+
+      it 'is ordered by expiration date in ascending order'
     end
 
     it "doesn't reuse names" do

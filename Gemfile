@@ -8,13 +8,13 @@ gem 'coffee-script'
 gem 'active_support'
 
 group :development, :test do
-  gem 'guard',          require: false
-  gem 'guard-rspec',    require: false
-  gem 'kwalify',        require: false
-  gem 'rack-test',      require: false
-  gem 'rake',           require: false
-  gem 'rb-inotify',     require: false
-  gem 'rspec',          require: false
-  gem 'shotgun',        require: false
-  gem 'simplecov',      require: false
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'kwalify'
+  gem 'rack-test'
+  gem 'rake'
+  gem 'rb-inotify'
+  gem 'rspec'
+  gem 'shotgun'
+  gem 'simplecov'
 end

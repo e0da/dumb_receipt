@@ -11,6 +11,8 @@ require 'dumb_receipt/handlers/json/sync'
 module DumbReceipt
   class App < Sinatra::Base
 
+    enable :logging
+
     use DumbReceipt::Handlers::Images
     use DumbReceipt::Handlers::Pages
 

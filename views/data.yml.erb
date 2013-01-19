@@ -12,6 +12,9 @@ receipts:
 - uuid: "442c5d34-2eb7-11e2-81c1-0800200c9a66"
   metadata:
   - serial_id: "bebe bidi dobo bimo"
+  - order_number: "982"
+  - emp_name: "Joe"
+  - unique_check: "<%= now - 2.week %>0000161410"
   cashier: "Joe"
   check: "9823"
   order: "92"
@@ -41,6 +44,9 @@ receipts:
 - uuid: "440c5d34-2eb7-11e2-81c1-0800200c9a66"
   metadata:
   - serial_id: "mara bara rudu pipu"
+  - order_number: "92"
+  - emp_name: "Jax"
+  - unique_check: "<%= now - 1.week %>0000161410"
   check: "9826"
   order: "96"
   currency: "USD"
@@ -65,6 +71,8 @@ receipts:
 - uuid: "444c5d34-2eb7-11e2-81c1-0800200c9a66"
   metadata:
   - serial_id: "mana wana bobo wiwe"
+  - store_id: "998"
+  - emp_name: "Joe"
   cashier: "Joe"
   transaction: "98730"
   currency: "USD"
@@ -95,19 +103,52 @@ receipts:
   currency: "USD"
   claimed_at: <%= now - 2.days %>
   completed_at: <%= now - 2.days %>
-  item_count: 2
+  item_count: 18
   totals:
-  - subtotal: 4.38
-  - tax: 0.34
-  - total: 4.72
+  - subtotal: 52.41
+  - tax: 4.06
+  - total: 56.47
   - VISA: 'XXXXXXXXXXXX9823'
   items:
+  - name: "Footlong Italian Meatball"
+    price: 6.49
+    quantity: 1
+  - name: "Footlong Chicken Salad"
+    price: 5.49
+    quantity: 1
+  - name: "6\" Tuna"
+    price: 3.49
+    quantity: 1
+  - name: "6\" Veggie Combo"
+    price: 2.49
+    quantity: 1
+  - name: "6\" Veggie Pattie"
+    price: 3.49
+    quantity: 1
+  - name: "6\" Veggie Pattie no cheese"
+    price: 3.29
+    quantity: 1
+  - name: "6\" Cold Cut Combo"
+    price: 3.49
+    quantity: 1
+  - name: "6\" Chicken Salad"
+    price: 3.49
+    quantity: 1
+  - name: "6\" BMT"
+    price: 3.49
+    quantity: 1
+  - name: "6\" BMT w/ Avocado"
+    price: 3.49
+    quantity: 1
   - name: "6\" Turkey w/ Avocado"
     price: 3.49
     quantity: 1
+  - name: "Chips"
+    price: 0.99
+    quantity: 5
   - name: "Fountain Drink"
     price: 0.89
-    quantity: 1
+    quantity: 2
   zones:
   - type: "items"
   offers:
@@ -116,6 +157,7 @@ receipts:
 - uuid: "458c5d34-2eb7-11e2-81c1-0800200c9a66"
   metadata:
   - serial_id: "nana mara pipu dibo"
+  - store_id: "9872"
   check: "9832"
   order: "99"
   currency: "USD"

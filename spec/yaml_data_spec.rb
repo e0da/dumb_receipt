@@ -47,6 +47,29 @@ describe 'YAML data structure' do
 
   describe 'receipt data' do
 
+    let :receipt_lists do
+
+      class ReceiptLists
+
+        def initialize(receipts)
+          @receipts = receipts
+        end
+
+        def has_object_with_key?(list, key, args={})
+          args[:always] ||= false
+          result = @receipts.find_all do |receipt|
+            not receipt[list].find { |object| object.has_key? key }.nil?
+          end
+          if args[:always]
+            @receipts == result
+          else
+            !result.empty?
+          end
+        end
+      end
+      ReceiptLists.new(receipts)
+    end
+
     it 'only references offer UUIDs that exist' do
       offer_uuids = offers.collect { |offer| offer['uuid'] }
       receipts.each do |receipt|
@@ -84,40 +107,38 @@ describe 'YAML data structure' do
     end
 
     it 'has some credit card examples' do
-
-      pending 'Need to write this'
-
       %w[VISA Mastercard].each do |card_type|
-        receipts.find { |receipt| receipt['totals'].find { |total| pp } }.should_not be empty
+        receipt_lists.should have_object_with_key 'totals', card_type
       end
     end
 
     it 'always has "four words" metadata' do
-      receipts.find do |receipt|
-        receipt['metadata'].find { |pair| pair.has_key? 'serial_id' }.nil?
-      end.should be nil
+      receipt_lists.should have_object_with_key 'metadata', 'serial_id', always: true
     end
 
-    it 'has other metadata' do
-      # expect {
-      #   receipts.find do |receipt|
-      #     if receipt['metadata'].find { |pair| pair.has_key? 'serial_id' }.nil?
-      #   end
-      # }.not_to raise_error
-      pending
+    it 'has other optional metadata' do
+      %w[order_number store_id emp_name unique_check].each do |key|
+        receipt_lists.should have_object_with_key 'metadata', key
+      end
     end
 
-    it 'has at least one receipt with more than 12 items'
+    it 'has at least one receipt with more than 12 items' do
+      receipts.find { |receipt| receipt['items'].length > 12 }.should_not be nil
+    end
+
+    it 'should list the offers ordered by expiration date in ascending order' do
+      receipts.each do |receipt|
+        if receipt['offers']
+          linked_offers = receipt['offers'].collect do |uuid|
+            offers.find { |offer| offer['uuid'] == uuid }
+          end
+          linked_offers.sort_by { |offer| offer['expires'] }.should == linked_offers
+        end
+      end
+    end
   end
 
   describe 'offer data' do
-
-    it 'serves the offers data sorted by expiration dates in ascending order' do
-      pending
-
-      # check offers per receipt
-      # check offers all together
-    end
 
     it 'always belongs to a receipt' do
       known_offers = receipts.collect { |receipt| receipt['offers'] }.flatten
@@ -128,7 +149,9 @@ describe 'YAML data structure' do
       offers.find { |offer| offer['is_redeemed'] == false }.should_not be nil
     end
 
-    it 'includes at least one offer with no barcode URL'
+    it 'includes at least one offer with no barcode URL' do
+      offers.find { |offer| offer['barcode_image_url'] }.should_not be nil
+    end
 
     describe 'expiration date data' do
 
@@ -157,7 +180,9 @@ describe 'YAML data structure' do
         offers_expiring { |exp| exp > Time.now + 7.days }.should_not be_empty
       end
 
-      it 'is ordered by expiration date in ascending order'
+      it 'is ordered by expiration date in ascending order' do
+        offers.sort_by { |offer| offer['expires'] }.should == offers
+      end
     end
 
     it "doesn't reuse names" do

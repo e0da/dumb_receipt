@@ -42,11 +42,14 @@ mapping:
           sequence:
           - type: map
             mapping:
-              "receipt_id":
+              "serial_id":
                 type: str
-                required: true
                 unique: true
                 pattern: /^[a-z]{4} [a-z]{4} [a-z]{4} [a-z]{4}$/
+              "order_number":     { type: str }
+              "store_id":         { type: str }
+              "unique_check":     { type: str }
+              "emp_name":         { type: str }
         "items":
           type: seq
           required: true

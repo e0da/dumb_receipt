@@ -11,7 +11,10 @@
 receipts:
 - uuid: "442c5d34-2eb7-11e2-81c1-0800200c9a66"
   metadata:
-  - receipt_id: "bebe bidi dobo bimo"
+  - serial_id: "bebe bidi dobo bimo"
+  - order_number: "982"
+  - emp_name: "Joe"
+  - unique_check: "<%= now - 2.week %>0000161410"
   cashier: "Joe"
   check: "9823"
   order: "92"
@@ -40,7 +43,10 @@ receipts:
   location: "184dc5a0-4880-11e2-bcfd-0800200c9a66"
 - uuid: "440c5d34-2eb7-11e2-81c1-0800200c9a66"
   metadata:
-  - receipt_id: "mara bara rudu pipu"
+  - serial_id: "mara bara rudu pipu"
+  - order_number: "92"
+  - emp_name: "Jax"
+  - unique_check: "<%= now - 1.week %>0000161410"
   check: "9826"
   order: "96"
   currency: "USD"
@@ -64,7 +70,9 @@ receipts:
   location: "184dc5a0-4880-11e2-bcfd-0800200c9a66"
 - uuid: "444c5d34-2eb7-11e2-81c1-0800200c9a66"
   metadata:
-  - receipt_id: "mana wana bobo wiwe"
+  - serial_id: "mana wana bobo wiwe"
+  - store_id: "998"
+  - emp_name: "Joe"
   cashier: "Joe"
   transaction: "98730"
   currency: "USD"
@@ -89,25 +97,58 @@ receipts:
   location: "184dc5a0-4880-11e2-bcfd-0800200c9a67"
 - uuid: "447c5d34-2eb7-11e2-81c1-0800200c9a66"
   metadata:
-  - receipt_id: "momo dubu bobo wiwe"
+  - serial_id: "momo dubu bobo wiwe"
   cashier: "Mary"
   order: "92"
   currency: "USD"
   claimed_at: <%= now - 2.days %>
   completed_at: <%= now - 2.days %>
-  item_count: 2
+  item_count: 18
   totals:
-  - subtotal: 4.38
-  - tax: 0.34
-  - total: 4.72
+  - subtotal: 52.41
+  - tax: 4.06
+  - total: 56.47
   - VISA: 'XXXXXXXXXXXX9823'
   items:
+  - name: "Footlong Italian Meatball"
+    price: 6.49
+    quantity: 1
+  - name: "Footlong Chicken Salad"
+    price: 5.49
+    quantity: 1
+  - name: "6\" Tuna"
+    price: 3.49
+    quantity: 1
+  - name: "6\" Veggie Combo"
+    price: 2.49
+    quantity: 1
+  - name: "6\" Veggie Pattie"
+    price: 3.49
+    quantity: 1
+  - name: "6\" Veggie Pattie no cheese"
+    price: 3.29
+    quantity: 1
+  - name: "6\" Cold Cut Combo"
+    price: 3.49
+    quantity: 1
+  - name: "6\" Chicken Salad"
+    price: 3.49
+    quantity: 1
+  - name: "6\" BMT"
+    price: 3.49
+    quantity: 1
+  - name: "6\" BMT w/ Avocado"
+    price: 3.49
+    quantity: 1
   - name: "6\" Turkey w/ Avocado"
     price: 3.49
     quantity: 1
+  - name: "Chips"
+    price: 0.99
+    quantity: 5
   - name: "Fountain Drink"
     price: 0.89
-    quantity: 1
+    quantity: 2
   zones:
   - type: "items"
   offers:
@@ -115,7 +156,8 @@ receipts:
   location: "184dc5a0-4880-11e2-bcfd-0800200c9a68"
 - uuid: "458c5d34-2eb7-11e2-81c1-0800200c9a66"
   metadata:
-  - receipt_id: "nana mara pipu dibo"
+  - serial_id: "nana mara pipu dibo"
+  - store_id: "9872"
   check: "9832"
   order: "99"
   currency: "USD"
@@ -143,7 +185,7 @@ receipts:
   location: "184dc5a0-4880-11e2-bcfd-0800200c9a69"
 - uuid: "458c5d34-2eb7-11e2-81c1-0800200c9a67"
   metadata:
-  - receipt_id: "fada waba ribi bidi"
+  - serial_id: "fada waba ribi bidi"
   order: "32"
   currency: "USD"
   claimed_at: <%= now - 8.days %>
@@ -166,7 +208,7 @@ receipts:
   location: "184dc5a0-4880-11e2-bcfd-0800200c9a60"
 - uuid: "458c5d34-2eb7-11e2-81c1-0800200c9a68"
   metadata:
-  - receipt_id: "nara pobu fidu raba"
+  - serial_id: "nara pobu fidu raba"
   order: "42"
   currency: "USD"
   claimed_at: <%= now - 3.5.days %>

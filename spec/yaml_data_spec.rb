@@ -13,6 +13,10 @@ describe 'YAML data structure' do
     let(id.to_sym) { data[id] }
   end
 
+  let :expires do
+    lambda { |thing| thing['expires'] }
+  end
+
   ##
   # Returns all of the UUIDs found by recursively traversing the entire Hash.
   #
@@ -132,7 +136,7 @@ describe 'YAML data structure' do
           linked_offers = receipt['offers'].collect do |uuid|
             offers.find { |offer| offer['uuid'] == uuid }
           end
-          linked_offers.sort_by { |offer| offer['expires'] }.should == linked_offers
+          linked_offers.sort_by(&expires).should == linked_offers
         end
       end
     end
@@ -181,7 +185,7 @@ describe 'YAML data structure' do
       end
 
       it 'is ordered by expiration date in ascending order' do
-        offers.sort_by { |offer| offer['expires'] }.should == offers
+        offers.sort_by(&expires).should == offers
       end
     end
 

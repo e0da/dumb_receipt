@@ -5,8 +5,6 @@ module DumbReceipt
   module Handlers
     describe Pages do
 
-      pp Pages.views
-
       it 'inherits DumbReceipt::Handlers::Base' do
         Pages.ancestors.should include DumbReceipt::Handlers::Base
       end

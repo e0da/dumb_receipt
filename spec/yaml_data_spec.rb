@@ -74,6 +74,20 @@ describe 'YAML data structure' do
       ReceiptLists.new(receipts)
     end
 
+    def location_for(receipt)
+      locations.find { |location| location['uuid'] == receipt['location'] }
+    end
+
+    def receipts_for(brand)
+      receipts.find_all { |receipt| location_for(receipt)['brand'] == brand }
+    end
+
+    def all_serial_ids
+      receipts.collect do |receipt|
+        receipt['metadata'].find { |pair| pair.keys == ['serial_id'] }['serial_id']
+      end
+    end
+
     it 'only references offer UUIDs that exist' do
       offer_uuids = offers.collect { |offer| offer['uuid'] }
       receipts.each do |receipt|
@@ -120,6 +134,10 @@ describe 'YAML data structure' do
       receipt_lists.should have_object_with_key 'metadata', 'serial_id', always: true
     end
 
+    it "doesn't reuse serial_id (four words) values" do
+      all_serial_ids.should == all_serial_ids.uniq
+    end
+
     it 'has other optional metadata' do
       %w[order_number store_id emp_name unique_check].each do |key|
         receipt_lists.should have_object_with_key 'metadata', key
@@ -138,6 +156,12 @@ describe 'YAML data structure' do
           end
           linked_offers.sort_by(&expires).should == linked_offers
         end
+      end
+    end
+
+    ['Subway', 'Panda Express'].each do |brand|
+      it "has multiple #{brand} examples" do
+        receipts_for(brand).length.should be >= 3
       end
     end
   end

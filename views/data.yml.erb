@@ -36,7 +36,7 @@ receipts:
     quantity: 1
   zones:
   - type: "header"
-    image_url: "https://dumb-receipt.herokuapp.com/images/joes_coffee.png"
+    image_url: "<%= @root_url %>images/joes_coffee.png"
   offers:
   - "439c5d30-2eb7-11e2-81c1-0800200c9a66"
   - "466c5d30-2eb7-11e2-81c1-0800200c9a66"
@@ -305,11 +305,11 @@ offers:
 - uuid: "452c5d30-2eb7-11e2-81c1-0800200c9a68"
   name: "Free Cookie!"
   contents: "Redeem this coupon any time for a free cookie!"
-  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
-  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
+  image_url: "<%= @root_url %>images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
+  thumbnail_image_url: "<%= @root_url %>images/wLioVypFN.png"
   is_read: true
   is_redeemed: true
-  barcode_image_url: "https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png"
+  barcode_image_url: "<%= @root_url %>images/49Diklfmn3HKvOx.png"
   coupon_code: "ABC12345"
   expires: <%= now - 3.days %>
   redeemed_at: <%= now - 5.days %>
@@ -318,8 +318,8 @@ offers:
 - uuid: "452c5d30-2eb7-11e2-81c1-0800200c9a69"
   name: "Half-off Entree!"
   contents: "Redeem this coupon for half off any non-premium entree!"
-  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
-  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
+  image_url: "<%= @root_url %>images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
+  thumbnail_image_url: "<%= @root_url %>images/wLioVypFN.png"
   is_read: true
   is_redeemed: true
   coupon_code: "ABC12345"
@@ -330,11 +330,11 @@ offers:
 - uuid: "439c5d30-2eb7-11e2-81c1-0800200c9a66"
   name: "Free Small Coffee!"
   contents: "Redeem this coupon any time for a free small coffee!"
-  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
-  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
+  image_url: "<%= @root_url %>images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
+  thumbnail_image_url: "<%= @root_url %>images/wLioVypFN.png"
   is_read: true
   is_redeemed: false
-  barcode_image_url: "https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png"
+  barcode_image_url: "<%= @root_url %>images/49Diklfmn3HKvOx.png"
   coupon_code: "ABC12345"
   expires: <%= now - 1.day %>
   redeemed_at: <%= now - 2.5.days %>
@@ -343,8 +343,8 @@ offers:
 - uuid: "452c5d30-2eb7-11e2-81c1-0800200c9a66"
   name: "Free sandwich upgrade!"
   contents: "Redeem this coupon to upgrade any 6\" sandwich to a footlong!"
-  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
-  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
+  image_url: "<%= @root_url %>images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
+  thumbnail_image_url: "<%= @root_url %>images/wLioVypFN.png"
   is_read: true
   is_redeemed: false
   coupon_code: "ABC12345"
@@ -355,8 +355,8 @@ offers:
 - uuid: "439c5d31-2eb7-11e2-81c1-0800200c9a66"
   name: "25% Off Any Lunch Order!"
   contents: "Come in for lunch and redeem this coupon for 25% off any lunch order!"
-  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb50Diklfmn3HKvOx.png"
-  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFM.png"
+  image_url: "<%= @root_url %>images/wLioVypFNYTNb50Diklfmn3HKvOx.png"
+  thumbnail_image_url: "<%= @root_url %>images/wLioVypFM.png"
   is_read: true
   is_redeemed: false
   coupon_code: "ABC12346"
@@ -367,11 +367,11 @@ offers:
 - uuid: "439c5d32-2eb7-11e2-81c1-0800200c9a66"
   name: "2 Free Cookies!"
   contents: "Redeem this coupon for a free cookie!"
-  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
-  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
+  image_url: "<%= @root_url %>images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
+  thumbnail_image_url: "<%= @root_url %>images/wLioVypFN.png"
   is_read: true
   is_redeemed: true
-  barcode_image_url: "https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png"
+  barcode_image_url: "<%= @root_url %>images/49Diklfmn3HKvOx.png"
   coupon_code: "ABC12345"
   expires: <%= now + 8.days %>
   redeemed_at: <%= never %>
@@ -380,11 +380,11 @@ offers:
 - uuid: "466c5d30-2eb7-11e2-81c1-0800200c9a66"
   name: "Half off a slice of pie!"
   contents: "Try our world-famous pie for half off!"
-  image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
-  thumbnail_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFN.png"
+  image_url: "<%= @root_url %>images/eggmuffin.png"
+  thumbnail_image_url: "<%= @root_url %>images/eggmuffin.png"
   is_read: true
   is_redeemed: true
-  barcode_image_url: "https://dumb-receipt.herokuapp.com/images/49Diklfmn3HKvOx.png"
+  barcode_image_url: "<%= @root_url %>images/49Diklfmn3HKvOx.png"
   coupon_code: "ABC12345"
   expires: <%= now + 2.weeks %>
   redeemed_at: <%= never %>
@@ -402,7 +402,7 @@ locations:
   zip: "93117"
   phone: "805-555-1234"
   country: "United States"
-  logo_url: "https://dumb-receipt.herokuapp.com/images/joes-coffee-logo.jpg"
+  logo_url: "<%= @root_url %>images/joes-coffee-logo.jpg"
 - uuid: "184dc5a0-4880-11e2-bcfd-0800200c9a67"
   name: "Betty's Diner"
   brand: "Betty's Diner"
@@ -413,7 +413,7 @@ locations:
   zip: "93117"
   phone: "805-555-2345"
   country: "United States"
-  logo_url: "https://dumb-receipt.herokuapp.com/images/bettys_diner.png"
+  logo_url: "<%= @root_url %>images/bettys_diner.png"
 - uuid: "184dc5a0-4880-11e2-bcfd-0800200c9a68"
   name: "Store 1102"
   brand: "Subway"
@@ -424,7 +424,7 @@ locations:
   zip: "93263"
   phone: "805-555-3456"
   country: "United States"
-  logo_url: "https://dumb-receipt.herokuapp.com/images/subway-logo.jpg"
+  logo_url: "<%= @root_url %>images/subway-logo.jpg"
 - uuid: "184dc5a0-4880-11e2-bcfd-0800200c9a69"
   name: "Store 1117"
   brand: "Subway"
@@ -435,7 +435,7 @@ locations:
   zip: "93117"
   phone: "805-555-4567"
   country: "United States"
-  logo_url: "https://dumb-receipt.herokuapp.com/images/subway-logo.jpg"
+  logo_url: "<%= @root_url %>images/subway-logo.jpg"
 - uuid: "184dc5a0-4880-11e2-bcfd-0800200c9a60"
   name: "Panda #0928"
   brand: "Panda Express"
@@ -446,7 +446,7 @@ locations:
   zip: "93263"
   phone: "661-555-7460"
   country: "United States"
-  logo_url: "https://dumb-receipt.herokuapp.com/images/Panda_Express.png"
+  logo_url: "<%= @root_url %>images/Panda_Express.png"
 - uuid: "184dc5a0-4880-11e2-bcfd-0800200c9a61"
   name: "IP Chicken"
   brand: "IP Chicken"
@@ -457,14 +457,14 @@ locations:
   zip: "93007"
   phone: "805-555-7460"
   country: "United States"
-  logo_url: "https://dumb-receipt.herokuapp.com/images/ipchicken228.jpg"
+  logo_url: "<%= @root_url %>images/ipchicken228.jpg"
 
 users:
 - uuid: "184dc5b4-4880-11e2-bcfd-0800200c9a66"
   first_name: "Jane"
   last_name: "Doe"
   email: "jane.doe@example.com"
-  profile_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb53Diklfmn3HKvOx.png"
+  profile_image_url: "<%= @root_url %>images/wLioVypFNYTNb53Diklfmn3HKvOx.png"
   sign_in_count: 5
   receipts_count: 6
   offers_count: 7
@@ -479,7 +479,7 @@ users:
   first_name: "John"
   last_name: "Derp"
   email: "john.derp@example.com"
-  profile_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb64Diklfmn3HKvOx.png"
+  profile_image_url: "<%= @root_url %>images/wLioVypFNYTNb64Diklfmn3HKvOx.png"
   sign_in_count: 8
   receipts_count: 9
   offers_count: 7
@@ -494,7 +494,7 @@ users:
   first_name: "Lars"
   last_name: "Derpwich"
   email: "lars.derpwich@example.org"
-  profile_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb80Diklfmn3HKvOx.png"
+  profile_image_url: "<%= @root_url %>images/wLioVypFNYTNb80Diklfmn3HKvOx.png"
   sign_in_count: 7
   receipts_count: 7
   offers_count: 11
@@ -509,7 +509,7 @@ users:
   first_name: "Bryan"
   last_name: "Cranstone"
   email: "brycranz@example.net"
-  profile_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb73Diklfmn3HKvOx.png"
+  profile_image_url: "<%= @root_url %>images/wLioVypFNYTNb73Diklfmn3HKvOx.png"
   sign_in_count: 6
   receipts_count: 10
   offers_count: 16
@@ -524,7 +524,7 @@ users:
   first_name: "Lorna"
   last_name: "Swarlap"
   email: "swarlz@example.com"
-  profile_image_url: "https://dumb-receipt.herokuapp.com/images/wLioVypFNYTNb83Diklfmn17HKvOx.png"
+  profile_image_url: "<%= @root_url %>images/wLioVypFNYTNb83Diklfmn17HKvOx.png"
   sign_in_count: 14
   receipts_count: 19
   offers_count: 8

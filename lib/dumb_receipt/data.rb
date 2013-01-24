@@ -30,8 +30,18 @@ module DumbReceipt
     # Loads the YAML file after pre-processing it with ERB.
     #
     def load_yaml_erb(file_path)
+
+      # try to set the @root_url for use in templates. This only works in the
+      # context of an app, so use a dummy value if `request` doesn't exist.
+      #
+      begin
+        @root_url = request.env['REQUEST_URI'][/^.*\/\/[^\/]+\//]
+      rescue NameError, ArgumentError
+        @root_url = 'fake_root_url'
+      end
+
       erb   = File.open(file_path) { |f| f.read }
-      yaml  = ERB.new(erb).result()
+      yaml  = ERB.new(erb).result(binding)
       io    = StringIO.new(yaml)
       YAML.load io
     end

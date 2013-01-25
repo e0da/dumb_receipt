@@ -300,13 +300,15 @@ receipts:
   zones:
   - type: "totals"
   location: "184dc5a0-4880-11e2-bcfd-0800200c9a68"
+  offers:
+  - "184dc5a0-4880-11e2-bcfd-0800200c9a71"
 
 offers:
 - uuid: "452c5d30-2eb7-11e2-81c1-0800200c9a68"
-  name: "Free Cookie!"
-  contents: "Redeem this coupon any time for a free cookie!"
-  image_url: "<%= @root_url %>images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
-  thumbnail_image_url: "<%= @root_url %>images/wLioVypFN.png"
+  name: "Free 2 Entree Plate"
+  contents: "Get a free 2 entree plate with the purchase of a $25 or higher gift card."
+  image_url: "<%= @root_url %>images/panda_25.png"
+  thumbnail_image_url: "<%= @root_url %>images/panda_25.png"
   is_read: true
   is_redeemed: true
   barcode_image_url: "<%= @root_url %>images/49Diklfmn3HKvOx.png"
@@ -316,10 +318,10 @@ offers:
   created_at: <%= now - 8.days %>
   updated_at: <%= now - 8.days %>
 - uuid: "452c5d30-2eb7-11e2-81c1-0800200c9a69"
-  name: "Half-off Entree!"
-  contents: "Redeem this coupon for half off any non-premium entree!"
-  image_url: "<%= @root_url %>images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
-  thumbnail_image_url: "<%= @root_url %>images/wLioVypFN.png"
+  name: "15% Off Catering"
+  contents: "15% off your next catering order."
+  image_url: "<%= @root_url %>images/15_.png"
+  thumbnail_image_url: "<%= @root_url %>images/15_.png"
   is_read: true
   is_redeemed: true
   coupon_code: "ABC12345"
@@ -328,10 +330,10 @@ offers:
   created_at: <%= now - 5.days %>
   updated_at: <%= now - 2.days %>
 - uuid: "439c5d30-2eb7-11e2-81c1-0800200c9a66"
-  name: "Free Small Coffee!"
-  contents: "Redeem this coupon any time for a free small coffee!"
-  image_url: "<%= @root_url %>images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
-  thumbnail_image_url: "<%= @root_url %>images/wLioVypFN.png"
+  name: "Free Coffee!"
+  contents: "Free Coffee with next purchase of a sandwich before 11AM."
+  image_url: "<%= @root_url %>images/1320193145_free_coffee.png"
+  thumbnail_image_url: "<%= @root_url %>images/1320193145_free_coffee.png"
   is_read: true
   is_redeemed: false
   barcode_image_url: "<%= @root_url %>images/49Diklfmn3HKvOx.png"
@@ -341,10 +343,10 @@ offers:
   created_at: <%= now - 2.weeks %>
   updated_at: <%= now - 2.5.days %>
 - uuid: "452c5d30-2eb7-11e2-81c1-0800200c9a66"
-  name: "Free sandwich upgrade!"
-  contents: "Redeem this coupon to upgrade any 6\" sandwich to a footlong!"
-  image_url: "<%= @root_url %>images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
-  thumbnail_image_url: "<%= @root_url %>images/wLioVypFN.png"
+  name: "Free Double Meat"
+  contents: "Free Double Meat with next purchase of any 6\" or Footlong sandwich."
+  image_url: "<%= @root_url %>images/double_meat.png"
+  thumbnail_image_url: "<%= @root_url %>images/double_meat.png"
   is_read: true
   is_redeemed: false
   coupon_code: "ABC12345"
@@ -353,10 +355,10 @@ offers:
   created_at: <%= now - 2.weeks %>
   updated_at: <%= now - 2.weeks %>
 - uuid: "439c5d31-2eb7-11e2-81c1-0800200c9a66"
-  name: "25% Off Any Lunch Order!"
-  contents: "Come in for lunch and redeem this coupon for 25% off any lunch order!"
-  image_url: "<%= @root_url %>images/wLioVypFNYTNb50Diklfmn3HKvOx.png"
-  thumbnail_image_url: "<%= @root_url %>images/wLioVypFM.png"
+  name: "Buy One Get One Footlong"
+  contents: "Free Regular Footlong with next purchase of any Footlong sandwich of equal or greater value."
+  image_url: "<%= @root_url %>images/BogoFootlong.png"
+  thumbnail_image_url: "<%= @root_url %>images/BogoFootlong.png"
   is_read: true
   is_redeemed: false
   coupon_code: "ABC12346"
@@ -364,11 +366,23 @@ offers:
   redeemed_at: <%= never %>
   created_at: <%= now - 6.hours %>
   updated_at: <%= now - 6.hours %>
+- uuid: "184dc5a0-4880-11e2-bcfd-0800200c9a71"
+  name: "Free Cookie"
+  contents: "Free Cookie with next purchase of any Footlong sub."
+  image_url: "<%= @root_url %>images/freecookie.png"
+  thumbnail_image_url: "<%= @root_url %>images/freecookie.png"
+  is_read: true
+  is_redeemed: false
+  coupon_code: "ABC12346"
+  expires: <%= now + 7.2.days %>
+  redeemed_at: <%= never %>
+  created_at: <%= now - 1.day %>
+  updated_at: <%= now - 1.day %>
 - uuid: "439c5d32-2eb7-11e2-81c1-0800200c9a66"
   name: "2 Free Cookies!"
-  contents: "Redeem this coupon for a free cookie!"
-  image_url: "<%= @root_url %>images/wLioVypFNYTNb49Diklfmn3HKvOx.png"
-  thumbnail_image_url: "<%= @root_url %>images/wLioVypFN.png"
+  contents: "2 Free Cookies with next purchase of any Footlong sub."
+  image_url: "<%= @root_url %>images/2freecookies.png"
+  thumbnail_image_url: "<%= @root_url %>images/2freecookies.png"
   is_read: true
   is_redeemed: true
   barcode_image_url: "<%= @root_url %>images/49Diklfmn3HKvOx.png"
@@ -378,8 +392,8 @@ offers:
   created_at: <%= now - 5.days %>
   updated_at: <%= now - 5.days %>
 - uuid: "466c5d30-2eb7-11e2-81c1-0800200c9a66"
-  name: "Half off a slice of pie!"
-  contents: "Try our world-famous pie for half off!"
+  name: "$1 Egg & Cheese Muffin Melt"
+  contents: "$1 Egg & Cheese Muffin Melt"
   image_url: "<%= @root_url %>images/eggmuffin.png"
   thumbnail_image_url: "<%= @root_url %>images/eggmuffin.png"
   is_read: true

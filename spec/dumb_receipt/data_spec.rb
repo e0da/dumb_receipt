@@ -52,6 +52,21 @@ module DumbReceipt
         File.should_receive(:open).and_return %[---\nFOO: <%= "BAR" %>]
         dummy_class_factory.new.send(:load_yaml_erb, nil)['FOO'].should == 'BAR'
       end
+
+      it 'sets the @root_url for templates if this is a request' do
+        File.should_receive(:open).and_return %[---\nFOO: <%= @root_url %>]
+        dummy_url = 'http://dummy_url/'
+        dummy_class_factory.new.tap do |dummy|
+          dummy.define_singleton_method :request do
+            OpenStruct.new env: { 'REQUEST_URI' => dummy_url }
+          end
+        end.send(:load_yaml_erb, nil)['FOO'].should == dummy_url
+      end
+
+      it 'uses a default value if this is not a request' do
+        File.should_receive(:open).and_return %[---\nFOO: <%= @root_url %>]
+        dummy_class_factory.new.send(:load_yaml_erb, nil)['FOO'].should == 'fake_root_url'
+      end
     end
   end
 end

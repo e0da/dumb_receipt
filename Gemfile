@@ -11,7 +11,7 @@ group :development, :test do
   gem 'guard'
   gem 'guard-rspec'
   gem 'kwalify'
-  gem 'listen', github: 'justinforce/listen'
+  gem 'listen'
   gem 'rack-test'
   gem 'rake'
   gem 'rspec'

@@ -1,5 +1,6 @@
 require 'sinatra/base'
 
+require 'dumb_receipt/logging'
 require 'dumb_receipt/handlers/images'
 require 'dumb_receipt/handlers/pages'
 require 'dumb_receipt/handlers/json/offers'
@@ -11,7 +12,7 @@ require 'dumb_receipt/handlers/json/sync'
 module DumbReceipt
   class App < Sinatra::Base
 
-    enable :logging
+    use DumbReceipt::Logging
 
     use DumbReceipt::Handlers::Images
     use DumbReceipt::Handlers::Pages

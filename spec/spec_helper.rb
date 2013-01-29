@@ -19,6 +19,12 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = 'random'
+
+  # IO stream for redirecting and testing output
+  #
+  # $spec_out is specified in spec/spec_helper.rb and exists if we're running
+  # specs (as opposed to running the app)
+  $spec_out = StringIO.new
 end
 
 def response

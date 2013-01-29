@@ -6,6 +6,14 @@ module DumbReceipt
     describe Base do
       include Rack::Test::Methods
 
+      let :dummy_class do
+        Class.new(Base) { get('/') { 'OHAI' } }
+      end
+
+      def app
+        dummy_class
+      end
+
       it 'includes DumbReceipt::Handlers::Helpers' do
         Base.should include DumbReceipt::Handlers::Helpers
       end

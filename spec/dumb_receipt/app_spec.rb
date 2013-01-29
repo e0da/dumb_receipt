@@ -22,9 +22,5 @@ module DumbReceipt
         middleware.should include klass
       end
     end
-
-    it 'has logging enabled' do
-      App.logging.should be true
-    end
   end
 end

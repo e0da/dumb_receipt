@@ -213,6 +213,15 @@ describe 'YAML data structure' do
       end
     end
 
+    describe 'redemption date data' do
+
+      it 'is set to a non-zero value if the offer is redeemed' do
+        offers.find_all { |offer| offer['is_redeemed'] == true }.each do |offer|
+          Time.parse(offer['redeemed_at']).should_not == Time.at(0)
+        end
+      end
+    end
+
     it "doesn't reuse names" do
       offers.collect { |offer| offer['name'] }.should_not have_duplicates
     end

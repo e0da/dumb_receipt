@@ -5,6 +5,7 @@ gem 'slim'
 gem 'sass'
 gem 'redcarpet'
 gem 'coffee-script'
+gem 'therubyracer'
 gem 'active_support'
 
 group :development, :test do

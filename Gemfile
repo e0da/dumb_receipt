@@ -6,7 +6,7 @@ gem 'sass'
 gem 'redcarpet'
 gem 'coffee-script'
 gem 'therubyracer'
-gem 'activesupport', '~> 3.0.0'
+gem 'activesupport'
 gem 'i18n'
 
 group :development, :test do

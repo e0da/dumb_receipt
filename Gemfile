@@ -1,4 +1,4 @@
-source :rubygems
+source 'https://rubygems.org'
 
 gem 'sinatra'
 gem 'slim'
@@ -6,7 +6,8 @@ gem 'sass'
 gem 'redcarpet'
 gem 'coffee-script'
 gem 'therubyracer'
-gem 'active_support'
+gem 'activesupport'
+gem 'i18n'
 
 group :development, :test do
   gem 'guard'

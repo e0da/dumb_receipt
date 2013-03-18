@@ -7,7 +7,6 @@ gem 'redcarpet'
 gem 'coffee-script'
 gem 'therubyracer'
 gem 'activesupport'
-gem 'i18n'
 
 group :development, :test do
   gem 'guard'

@@ -1,5 +1,10 @@
-DumbReceipt [![Build Status](https://secure.travis-ci.org/SmartReceipt/dumb_receipt.png)](https://travis-ci.org/SmartReceipt/dumb_receipt) [![Dependency Status](https://gemnasium.com/SmartReceipt/dumb_receipt.png)](https://gemnasium.com/SmartReceipt/dumb_receipt) [![Code Climate](https://codeclimate.com/github/SmartReceipt/dumb_receipt.png)](https://codeclimate.com/github/SmartReceipt/dumb_receipt)
+DumbReceipt
 ===========
+
+[![Build Status](https://secure.travis-ci.org/SmartReceipt/dumb_receipt.png)](https://travis-ci.org/SmartReceipt/dumb_receipt)
+[![Coverage Status](https://coveralls.io/repos/SmartReceipt/dumb_receipt/badge.png?branch=master)](https://coveralls.io/r/SmartReceipt/dumb_receipt)
+[![Code Climate](https://codeclimate.com/github/SmartReceipt/dumb_receipt.png)](https://codeclimate.com/github/SmartReceipt/dumb_receipt)
+[![Dependency Status](https://gemnasium.com/SmartReceipt/dumb_receipt.png)](https://gemnasium.com/SmartReceipt/dumb_receipt)
 
 Serve up fake receipt and offer information for API testing
 

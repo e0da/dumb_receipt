@@ -11,6 +11,7 @@ gem 'therubyracer'
 gem 'activesupport'
 
 group :development, :test do
+  gem 'coveralls'
   gem 'guard'
   gem 'guard-rspec'
   gem 'kwalify'

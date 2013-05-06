@@ -53,7 +53,7 @@ describe 'YAML data structure' do
 
     let :receipt_lists do
 
-      class ReceiptLists
+      Class.new do
 
         def initialize(receipts)
           @receipts = receipts
@@ -70,8 +70,7 @@ describe 'YAML data structure' do
             !result.empty?
           end
         end
-      end
-      ReceiptLists.new(receipts)
+      end.new(receipts)
     end
 
     def location_for(receipt)

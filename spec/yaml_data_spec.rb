@@ -3,6 +3,8 @@ require 'active_support/core_ext/numeric/time'
 require 'kwalify'
 require 'time'
 
+TAX = 0.0775
+
 describe 'YAML data structure' do
 
   # memoized data accessors
@@ -88,6 +90,10 @@ describe 'YAML data structure' do
       end
     end
 
+    def receipt_total(receipt, key)
+      receipt['totals'].find { |total| total[key] }[key]
+    end
+
     it 'only references offer UUIDs that exist' do
       offer_uuids = offers.collect { |offer| offer['uuid'] }
       receipts.each do |receipt|
@@ -115,12 +121,13 @@ describe 'YAML data structure' do
         # Extract totals
         totals = {}
         %w[subtotal tax total].each do |key|
-          totals[key] = receipt['totals'].find { |total| total[key] }[key]
+          totals[key] = receipt_total(receipt, key)
         end
 
-        receipt['item_count'].should == item_count
-        totals['tax'].should == (totals['subtotal'] * 0.0775).round(2)
-        totals['total'].should == (totals['subtotal'] + totals['tax']).round(2)
+        item_count.should        == receipt['item_count']
+        subtotal.round(2).should == receipt_total(receipt, 'subtotal')
+        totals['tax'].should     == (totals['subtotal'] * TAX).round(2)
+        totals['total'].should   == (totals['subtotal'] + totals['tax']).round(2)
       end
     end
 

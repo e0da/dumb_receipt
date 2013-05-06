@@ -3,6 +3,8 @@ require 'active_support/core_ext/numeric/time'
 require 'kwalify'
 require 'time'
 
+TAX = 0.0775
+
 describe 'YAML data structure' do
 
   # memoized data accessors
@@ -34,15 +36,13 @@ describe 'YAML data structure' do
   end
 
   it 'validates against the schema' do
-    schema = YAML.load_file('spec/data_schema.yml')
+    schema    = YAML.load_file('spec/data_schema.yml')
     validator = Kwalify::Validator.new(schema)
-    data = Data.load_yaml_erb('views/data.yml.erb')
-    errors = validator.validate(data)
-    expect do
-      errors.each do |error|
-        raise error, error.message
-      end
-    end.not_to raise_error
+    data      = Data.load_yaml_erb('views/data.yml.erb')
+    errors    = validator.validate(data)
+
+    # Raise an error for each validation error; we expect no errors to be raised.
+    expect { errors.each { |error| raise error, error.message } }.not_to raise_error
   end
 
   it 'never reuses a UUID' do
@@ -53,7 +53,7 @@ describe 'YAML data structure' do
 
     let :receipt_lists do
 
-      class ReceiptLists
+      Class.new do
 
         def initialize(receipts)
           @receipts = receipts
@@ -70,8 +70,7 @@ describe 'YAML data structure' do
             !result.empty?
           end
         end
-      end
-      ReceiptLists.new(receipts)
+      end.new(receipts)
     end
 
     def location_for(receipt)
@@ -86,6 +85,10 @@ describe 'YAML data structure' do
       receipts.collect do |receipt|
         receipt['metadata'].find { |pair| pair.keys == ['serial_id'] }['serial_id']
       end
+    end
+
+    def receipt_total(receipt, key)
+      receipt['totals'].find { |total| total[key] }[key]
     end
 
     it 'only references offer UUIDs that exist' do
@@ -115,12 +118,13 @@ describe 'YAML data structure' do
         # Extract totals
         totals = {}
         %w[subtotal tax total].each do |key|
-          totals[key] = receipt['totals'].find { |total| total[key] }[key]
+          totals[key] = receipt_total(receipt, key)
         end
 
-        receipt['item_count'].should == item_count
-        totals['tax'].should == (totals['subtotal'] * 0.0775).round(2)
-        totals['total'].should == (totals['subtotal'] + totals['tax']).round(2)
+        item_count.should        == receipt['item_count']
+        subtotal.round(2).should == receipt_total(receipt, 'subtotal')
+        totals['tax'].should     == (totals['subtotal'] * TAX).round(2)
+        totals['total'].should   == (totals['subtotal'] + totals['tax']).round(2)
       end
     end
 

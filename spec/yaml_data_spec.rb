@@ -36,15 +36,13 @@ describe 'YAML data structure' do
   end
 
   it 'validates against the schema' do
-    schema = YAML.load_file('spec/data_schema.yml')
+    schema    = YAML.load_file('spec/data_schema.yml')
     validator = Kwalify::Validator.new(schema)
-    data = Data.load_yaml_erb('views/data.yml.erb')
-    errors = validator.validate(data)
-    expect do
-      errors.each do |error|
-        raise error, error.message
-      end
-    end.not_to raise_error
+    data      = Data.load_yaml_erb('views/data.yml.erb')
+    errors    = validator.validate(data)
+
+    # Raise an error for each validation error; we expect no errors to be raised.
+    expect { errors.each { |error| raise error, error.message } }.not_to raise_error
   end
 
   it 'never reuses a UUID' do

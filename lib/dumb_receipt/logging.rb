@@ -44,24 +44,52 @@ module DumbReceipt
     #
     def access_log
       LOG_FORMAT % [
-        env['HTTP_X_FORWARDED_FOR'] || env["REMOTE_ADDR"] || "-",
-        env["REMOTE_USER"] || "-",
-        Time.now.strftime("%d/%b/%Y %H:%M:%S"),
-        env["REQUEST_METHOD"],
-        env["PATH_INFO"],
-        env["QUERY_STRING"].empty? ? "" : "?"+env["QUERY_STRING"],
-        env["HTTP_VERSION"],
-        status.to_s[0..3],
-        extract_content_length
+        remote_addr,
+        remote_user,
+        now,
+        request_method,
+        path_info,
+        query_string,
+        http_version,
+        status_code,
+        content_length
       ]
     end
 
-    ##
-    # Returns a formatted log line. This is copied from Rack::CommonLogger.
-    #
-    def extract_content_length
-      value = headers['Content-Length'] or return '-'
-      value.to_s == '0' ? '-' : value
+    %w[
+      request_method
+      path_info
+      http_version
+    ].each do |meth|
+      define_method meth.to_sym do  # def request_method
+        env[meth.upcase]            #   env['REQUEST_METHOD']
+      end                           # end
+    end
+
+    def content_length
+      headers['Content-Length'].tap do |length|
+        return length.to_s == '0' ? '-' : length
+      end
+    end
+
+    def now
+      Time.now.strftime '%d/%b/%Y %H:%M:%S'
+    end
+
+    def remote_addr
+      env['HTTP_X_FORWARDED_FOR'] || env['REMOTE_ADDR'] || '-'
+    end
+
+    def remote_user
+      env['REMOTE_USER'] || '-'
+    end
+
+    def query_string
+      env['QUERY_STRING'].empty? ? '' : '?'+env['QUERY_STRING']
+    end
+
+    def status_code
+      status.to_s[0..3]
     end
   end
 end

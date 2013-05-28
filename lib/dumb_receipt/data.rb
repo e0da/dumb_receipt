@@ -9,7 +9,7 @@ module DumbReceipt
     # Parses the file for the given method as ERB then as YAML and returns the
     # kind of Hash you'd get from parsing the equivalent JSON.
     #
-    # ## Exaplanation ##
+    # ## Explanation ##
     #
     # We store the data as YAML because it's easier to read, write and validate.
     # We support ERB so that we can define some dynamic fields (like expiration

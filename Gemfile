@@ -9,14 +9,24 @@ gem 'redcarpet'
 gem 'coffee-script'
 gem 'activesupport'
 
+group :production do
+  gem 'puma'
+end
+
 group :development, :test do
+  gem 'rake'
+end
+
+group :development do
+  gem 'shotgun'
+end
+
+group :test do
   gem 'coveralls'
   gem 'guard'
   gem 'guard-rspec'
   gem 'kwalify'
   gem 'rack-test'
-  gem 'rake'
   gem 'rspec'
-  gem 'shotgun'
   gem 'simplecov'
 end

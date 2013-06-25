@@ -10,6 +10,7 @@ gem 'coffee-script'
 gem 'activesupport'
 
 group :production do
+  gem 'foreman'
   gem 'puma'
 end
 

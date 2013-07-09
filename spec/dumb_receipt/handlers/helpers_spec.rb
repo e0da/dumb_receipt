@@ -59,11 +59,6 @@ module DumbReceipt
 
       describe '#json' do
 
-        it 'Accepts exactly one argument' do
-          expect { dummy_class.new.json('a') }.not_to raise_error(ArgumentError)
-          expect { dummy_class.new.json('a', 'b') }.to raise_error(ArgumentError)
-        end
-
         it 'returns a pretty-printed JSON representation of the object passed in' do
           obj = {
             name: 'Bjorn',
